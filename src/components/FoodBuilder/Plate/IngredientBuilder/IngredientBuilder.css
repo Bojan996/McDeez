@@ -1,0 +1,27 @@
+.IBBurgerImg {
+    animation: gettingIn 0.3s ease-out;
+}
+
+.IBTomatoSauce {
+    position: absolute;
+    top: 20px;
+    left: 21px;
+    width: 352.5px !important;
+}
+
+.IBPizzaImg {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 352.5px !important;
+    height: 315px;
+}
+
+@keyframes gettingIn {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

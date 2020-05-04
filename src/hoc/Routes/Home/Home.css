@@ -1,0 +1,49 @@
+.HomeContainer {
+    padding-top: 100px;
+    margin-bottom: 400px;
+}
+
+.SliderDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 70px;
+    border-bottom: 1px solid lightgray;
+}
+
+.ImgDiv img {
+    border-radius: 10px;
+    max-height: 300px;
+    width: 300px;
+    transition: 0.3s ease-in-out;
+}
+
+.ImgDiv img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.UlDiv {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px gray;
+    box-sizing: border-box;
+    padding: 40px 100px;
+}
+
+.FirstCard {
+    display: flex;
+    align-items: center;
+    background-color: rgb(14, 118, 255);
+}
+
+.SpeechBubble{
+    padding: 100px 0 30px 30px;
+    height: 100%;
+    width: 50%;
+}
+
+.ManThinking{
+    height: 100%;
+    width: 45%;
+}

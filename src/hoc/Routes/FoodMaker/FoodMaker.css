@@ -1,0 +1,51 @@
+.FDContainer {
+    max-width: 100%;
+    margin: 100px 30px 400px 30px;
+}
+
+.FDLayout {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.FDMenu {
+    width: 30%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.FDMakeDiv {
+    position: sticky;
+    top: 20px;
+    width: 65%;
+    height: 94vh;
+    border: 1px solid lightcoral;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(255, 62, 62);
+}
+
+.FDFlexerDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.FDListItem {
+    width: 90% !important;
+    margin: auto !important;
+    transition: 0.3s ease-out !important;
+}
+
+.FDListItem:hover {
+    transform: scale(1.03) !important;
+}
+
+.FDPlusIcon {
+    transform: scale(1.2);
+}

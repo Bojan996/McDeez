@@ -1,0 +1,32 @@
+.NavContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 100%;
+}
+
+.LogoDiv {
+    width: 20%;
+}
+
+.NavItemDiv {
+    width: 65%;
+}
+
+.NavUnorderedList {
+    border-bottom: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.NavLi {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.NavLi:nth-child(4){
+    margin-right: 100px;
+}
