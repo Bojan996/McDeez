@@ -2,10 +2,13 @@ import React from 'react';
 import './Plate.css';
 import BurgerBuilder from './IngredientBuilder/BurgerBuilder';
 import PizzaBuilder from './IngredientBuilder/PizzaBuilder';
+import SaladBuilder from './IngredientBuilder/SaladBuilder';
 
 import BurgerTopBread from '../../../assets/images/ingredients/Burger/BurgerTopBread.svg';
 import BurgerBottomBread from '../../../assets/images/ingredients/Burger/BurgerBottomBread.svg';
 import PizzaCrust from '../../../assets/images/ingredients/Pizza/PizzaCrust.svg';
+import SaladBowl from '../../../assets/images/ingredients/Salad/bowlSalad.svg';
+
 
 
 const plate = (props) => {
@@ -38,6 +41,16 @@ const plate = (props) => {
     //     })
     // });
 
+    const checkingMenuTypeClickedHandler = (e) => {
+        for(let firstKey in props.builderState){
+            for(let secondKey in props.builderState[firstKey]){
+                if(secondKey === e){
+                    return firstKey
+                }
+            }
+        }
+    }
+
 
     switch(props.builder){
         case 'Burger': 
@@ -47,7 +60,7 @@ const plate = (props) => {
                             {
                                 props.ingredients.length === 0 ?
                                 <h1>Please Add Ingredients</h1>:
-                                props.ingredients.map((e, index) => {return <BurgerBuilder ingredient={e} key={index} clicked={() => props.clicked(props.menuTypeClicked, e, 'plateComponent', index)}/>})
+                                props.ingredients.map((e, index) => {return <BurgerBuilder ingredient={e} key={index} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
                             }
                         <img src={BurgerBottomBread} alt='Burger bottom bread'/>
                     </div>
@@ -61,11 +74,24 @@ const plate = (props) => {
                             {
                                 props.ingredients.length === 0 ?
                                 <h1 style={{position: 'absolute', top: '38%', left: '8%'}}>Please Add Ingredients</h1>:
-                                props.ingredients.map((e, index) => {return <PizzaBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(props.menuTypeClicked, e, 'plateComponent', index)}/>})
+                                props.ingredients.map((e, index) => {return <PizzaBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
                             }
                     </div>  
                 )
             break;
+        
+        case 'Salad': 
+            plate = (
+                <div className='PPlateSalad'>
+                    <img src={SaladBowl} alt='just a salad bowl'/>
+                        {
+                            props.ingredients.length === 0 ?
+                            <h1 style={{position: 'absolute', top: '38%', left: '8%'}}>Please Add Ingredients</h1>:
+                            props.ingredients.map((e, index) => {return <SaladBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
+                        }
+                </div>  
+            )
+        break;
 
         default: 
             plate = null;

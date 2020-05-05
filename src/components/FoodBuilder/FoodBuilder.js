@@ -60,8 +60,8 @@ class FoodBuilder extends Component {
             },
             Salad: {
                 Vegetables: {
-                    tomato: false,
                     lettuce: false,
+                    tomato: false,
                     cucumber: false,
                     spinach: false,
                     olive: false,
@@ -79,9 +79,7 @@ class FoodBuilder extends Component {
                 Dressing: {
                     honeyDressing: false,
                     burgerDressing: false,
-                    regularOil: false,
-                    oliveOil: false,
-                    vinegar: false
+                    pestoDressing: false
                 }
             },
             Wafel: {
@@ -181,8 +179,8 @@ class FoodBuilder extends Component {
             },
             Salad: {
                 Vegetables: {
-                    tomato: false,
                     lettuce: false,
+                    tomato: false,
                     cucumber: false,
                     spinach: false,
                     olive: false,
@@ -250,6 +248,7 @@ class FoodBuilder extends Component {
     }
 
     removingHandler = (type, item, from, theIndex) => {
+        console.log(type, item, from, theIndex);
         const updatedBuilder = {...this.state[this.props.builder]};
         const updatedBuilderType = {...updatedBuilder[type]};
         let updatedBuilderItem = null;
@@ -340,7 +339,7 @@ class FoodBuilder extends Component {
                         <MenuBuilder builder={this.state[this.props.builder]} clicked={this.menuClickHandler}/>
                     </div>
                     <div className='FBContent'>
-                        <Plate builder={this.props.builder} menuTypeClicked={this.state.menuTypeClicked} ingredients={this.state.ingredients} clicked={this.removingHandler}/>
+                        <Plate builder={this.props.builder} ingredients={this.state.ingredients} clicked={this.removingHandler} builderState={this.state[this.props.builder]}/>
                         <div className='FBAmountButtons'>
                             <button className='FBRemoveButton' onClick={() => this.removingHandler(this.state.menuTypeClicked, this.state.menuItemClicked)} disabled={!this.state.isBoolean ? this.state.disabledButton : !this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Remove</button>
                             <button className='FBAddButton' onClick={this.addingHandler} disabled={!this.state.isBoolean ? null : this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Add</button>

@@ -40,7 +40,22 @@
 .IBPizzaImg:hover {
     cursor: pointer;
     transform: scale(1.1);
-    border-right: rgba(255, 38, 0, 0.678);
+}
+
+.IBSaladImg {
+    position: absolute;
+    top: 25px;
+    left: 31px;
+    width: 336.5px !important;
+    height: 320px;
+    border-radius: 30%;
+    animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+}
+
+.IBSaladImg:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 @keyframes gettingIn {

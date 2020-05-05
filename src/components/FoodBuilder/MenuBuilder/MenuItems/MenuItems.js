@@ -16,7 +16,7 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const useStyle = makeStyles(() => {
     return {
-        secondList: {
+        secondListNoValue: {
             borderBottom: '1px solid lightgray',
             padding: '0 0 0 30px'
         }
@@ -43,7 +43,7 @@ const menuItems = (props) => {
                     {
                         Object.keys(props.builder[e]).map((el, index) => {
                             return (
-                                    <List component="div" className={classes.secondList} key={el + index}>
+                                    <List component="div" className={props.builder[e][el] > 0 || props.builder[e][el] === true ? 'MISecondListYesValue' : classes.secondListNoValue} key={el + index}>
                                         <ListItem button onClick={() => props.clicked(e, el)}>
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
