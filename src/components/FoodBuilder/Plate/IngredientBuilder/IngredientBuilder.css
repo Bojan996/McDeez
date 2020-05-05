@@ -1,5 +1,13 @@
 .IBBurgerImg {
+    border-radius: 10px;
     animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, background-color 1.2s ease-out;
+}
+
+.IBBurgerImg:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: rgba(255, 38, 0, 0.678);
 }
 
 .IBTomatoSauce {
@@ -7,6 +15,15 @@
     top: 20px;
     left: 21px;
     width: 352.5px !important;
+    border-radius: 50%;
+    animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+}
+
+.IBTomatoSauce:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    border-right: rgba(255, 38, 0, 0.678);
 }
 
 .IBPizzaImg {
@@ -15,6 +32,15 @@
     left: 20px;
     width: 352.5px !important;
     height: 315px;
+    border-radius: 50%;
+    animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+}
+
+.IBPizzaImg:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    border-right: rgba(255, 38, 0, 0.678);
 }
 
 @keyframes gettingIn {

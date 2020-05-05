@@ -14,12 +14,14 @@ class FoodBuilder extends Component {
             disabledButton: true,
             menuTypeClicked: null,
             menuItemClicked: null,
+            ingredients: [],
             Burger: {
                 Regular: {
                     salad: 0,
                     meet: 0,
                     bacon: 0,
                     cheese: 0,
+                    bread: 0,
                     onion: 0,
                     pickle: 0,
                     tomato: 0
@@ -133,12 +135,14 @@ class FoodBuilder extends Component {
             disabledButton: true,
             menuTypeClicked: null,
             menuItemClicked: null,
+            ingredients: [],
             Burger: {
                 Regular: {
                     salad: 0,
                     meet: 0,
                     bacon: 0,
                     cheese: 0,
+                    bread: 0,
                     onion: 0,
                     pickle: 0,
                     tomato: 0
@@ -196,9 +200,7 @@ class FoodBuilder extends Component {
                 Dressing: {
                     honeyDressing: false,
                     burgerDressing: false,
-                    regularOil: false,
-                    oliveOil: false,
-                    vinegar: false
+                    pestoDressing: false
                 }
             },
             Wafel: {
@@ -247,18 +249,27 @@ class FoodBuilder extends Component {
         this.props.close();
     }
 
-    removingHandler = () => {
+    removingHandler = (type, item, from, theIndex) => {
         const updatedBuilder = {...this.state[this.props.builder]};
-        const updatedBuilderType = {...updatedBuilder[this.state.menuTypeClicked]};
+        const updatedBuilderType = {...updatedBuilder[type]};
         let updatedBuilderItem = null;
+        let ingredients = [...this.state.ingredients];
+        if(from === 'plateComponent'){
+            this.menuClickHandler(type, item);
+            console.log(`deleting: from ${type}, the ${item}, the index ${theIndex}`);
+            ingredients.splice(theIndex, 1);
+        }else{
+            let index = ingredients.indexOf(item);
+            ingredients.splice(index, 1);
+        }
         if(this.state.isBoolean){
             updatedBuilderItem = false;
-            updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] = updatedBuilderItem;
-            this.setState({[this.props.builder]: updatedBuilder, booleanDisabled: false});
+            updatedBuilder[type][item] = updatedBuilderItem;
+            this.setState({[this.props.builder]: updatedBuilder, booleanDisabled: false, ingredients: ingredients});
         }else {
-            updatedBuilderItem = updatedBuilderType[this.state.menuItemClicked] - 1;
-            updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] = updatedBuilderItem;
-            this.setState({[this.props.builder]: updatedBuilder, disabledButton: updatedBuilderItem <=0});
+            updatedBuilderItem = updatedBuilderType[item] - 1;
+            updatedBuilder[type][item] = updatedBuilderItem;
+            this.setState({[this.props.builder]: updatedBuilder, disabledButton: updatedBuilderItem <=0, ingredients: ingredients});
         }
     }
 
@@ -266,16 +277,46 @@ class FoodBuilder extends Component {
         const updatedBuilder = {...this.state[this.props.builder]};
         const updatedBuilderType = {...updatedBuilder[this.state.menuTypeClicked]};
         let updatedBuilderItem = null;
+        let ingredients = [...this.state.ingredients];
         if(this.state.isBoolean){
             updatedBuilderItem = true;
             updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] = updatedBuilderItem;
-            this.setState({[this.props.builder]: updatedBuilder, booleanDisabled: true});
+            ingredients.push(this.state.menuItemClicked);
+            this.setState({[this.props.builder]: updatedBuilder, booleanDisabled: true, ingredients: ingredients});
         }else {
             updatedBuilderItem = updatedBuilderType[this.state.menuItemClicked] + 1;
             updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] = updatedBuilderItem;
-            this.setState({[this.props.builder]: updatedBuilder, disabledButton: updatedBuilderItem <=0});
+            ingredients.push(this.state.menuItemClicked);
+            this.setState({[this.props.builder]: updatedBuilder, disabledButton: updatedBuilderItem <=0, ingredients: ingredients});
         }
     }
+
+    // ANOTHER WAY FOR ADDING AND POTENTIALY REMOVING, WHICH SOME PEOPLE FIND CLEANER
+    // addingHandler = () => {
+    //     let updatedBuilder = {};
+    //     let ingredients = [...this.state.ingredients];
+    //     if(this.state.isBoolean){
+    //         updatedBuilder = {
+    //             ...this.state[this.props.builder],
+    //             [this.state.menuTypeClicked]: {
+    //                 ...this.state[this.props.builder][this.state.menuTypeClicked],
+    //                 [this.state.menuItemClicked]: true
+    //             }
+    //         }
+    //         ingredients.push(this.state.menuItemClicked);
+    //         this.setState({[this.props.builder]: updatedBuilder, booleanDisabled: true, ingredients: ingredients});
+    //     }else {
+    //         updatedBuilder = {
+    //             ...this.state[this.props.builder],
+    //             [this.state.menuTypeClicked]: {
+    //                 ...this.state[this.props.builder][this.state.menuTypeClicked],
+    //                 [this.state.menuItemClicked]: this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked] + 1
+    //             }
+    //         }
+    //         ingredients.push(this.state.menuItemClicked);
+    //         this.setState({[this.props.builder]: updatedBuilder, disabledButton: updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] <=0, ingredients: ingredients});
+    //     }
+    // }
 
     menuClickHandler = (type, item) => {
         this.setState({menuTypeClicked: type,  menuItemClicked: item, disabledButton: this.state[this.props.builder][type][item] <= 0, isBoolean: typeof this.state[this.props.builder][type][item] === "boolean"});
@@ -285,6 +326,7 @@ class FoodBuilder extends Component {
 
         if(this.props.builder !== null && this.state.menuItemClicked !== null && this.state.menuTypeClicked !== null){
             console.log(this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]);
+            console.log(this.state.ingredients);
         }
 
         return(
@@ -298,9 +340,9 @@ class FoodBuilder extends Component {
                         <MenuBuilder builder={this.state[this.props.builder]} clicked={this.menuClickHandler}/>
                     </div>
                     <div className='FBContent'>
-                        <Plate builder={this.props.builder} menuItemClicked={this.state.menuItemClicked} ingredients={this.state[this.props.builder]}/>
+                        <Plate builder={this.props.builder} menuTypeClicked={this.state.menuTypeClicked} ingredients={this.state.ingredients} clicked={this.removingHandler}/>
                         <div className='FBAmountButtons'>
-                            <button className='FBRemoveButton' onClick={this.removingHandler} disabled={!this.state.isBoolean ? this.state.disabledButton : !this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Remove</button>
+                            <button className='FBRemoveButton' onClick={() => this.removingHandler(this.state.menuTypeClicked, this.state.menuItemClicked)} disabled={!this.state.isBoolean ? this.state.disabledButton : !this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Remove</button>
                             <button className='FBAddButton' onClick={this.addingHandler} disabled={!this.state.isBoolean ? null : this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Add</button>
                         </div>
                         <button className='FBOrderButton'>ORDER NOW!</button>

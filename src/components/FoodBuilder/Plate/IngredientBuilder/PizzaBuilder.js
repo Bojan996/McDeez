@@ -23,39 +23,39 @@ import McdeezSecretSauce from '../../../../assets/images/ingredients/Pizza/mcdee
 
 const PizzaBuilder = (props) => {
 
-    switch(props.ingredients){
+    switch(props.ingredient){
         case 'tomatoSauce':
-            return <img src={TomatoSauce} alt='burger ingredients' className='IBTomatoSauce'/>
+            return <img src={TomatoSauce} alt='burger ingredients' className='IBTomatoSauce' style={{zIndex: '0'}} onClick={props.clicked}/>
         case 'mozzarella':
-            return <img src={Mozzarella} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Mozzarella} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'parmesan':
-            return <img src={Parmesan} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Parmesan} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'ham':
-            return <img src={Ham} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Ham} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'sausage':
-            return <img src={Sausage} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Sausage} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'bacon':
-            return <img src={Bacon} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Bacon} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'tuna':
-            return <img src={Tuna} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Tuna} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'mushroom':
-            return <img src={Mushroom} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Mushroom} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'onion':
-            return <img src={Onion} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Onion} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'olive':
-            return <img src={Olive} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Olive} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'tomato':
-            return <img src={Tomato} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Tomato} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'corn':
-            return <img src={Corn} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Corn} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'ketchup':
-            return <img src={Ketchup} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Ketchup} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'mayo':
-            return <img src={Mayo} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={Mayo} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'burgerSauce':
-            return <img src={BurgerSauce} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={BurgerSauce} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'mcdeezSecretSauce':
-            return <img src={McdeezSecretSauce} alt='burger ingredients' className='IBPizzaImg'/>
+            return <img src={McdeezSecretSauce} alt='burger ingredients' className='IBPizzaImg' style={{zIndex: props.style}} onClick={props.clicked}/>
         default: 
             return null;
     }
