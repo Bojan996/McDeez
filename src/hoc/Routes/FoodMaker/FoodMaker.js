@@ -109,12 +109,6 @@ class FoodMaker extends Component {
                                     </ListItemIcon>
                                     <ListItemText primary="Make your Wafel" classes={{primary: classes.listItemText}}/>
                                 </ListItem>
-                                <ListItem button className='FDListItem' onClick={() => this.showBuilderHandler('Additional')}>
-                                    <ListItemIcon>
-                                        <AddIcon color='error' fontSize='large' className='FDPlusIcon'/>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Additional Stuff" classes={{primary: classes.listItemText}}/>
-                                </ListItem>
                             </div>
                         </List>
                     </div>

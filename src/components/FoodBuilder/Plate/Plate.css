@@ -50,3 +50,11 @@
 .PPlateSalad img{
     width: 404px;
 }
+
+.PPlateWafel {
+    position: relative;
+}
+
+.PPlateWafel img {
+    width: 375px;
+}

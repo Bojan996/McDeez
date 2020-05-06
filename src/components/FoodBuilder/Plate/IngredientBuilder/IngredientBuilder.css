@@ -58,6 +58,22 @@
     transform: scale(1.1);
 }
 
+.IBWafelImg {
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    width: 336.5px !important;
+    height: 320px;
+    border-radius: 30%;
+    animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+}
+
+.IBWafelImg:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 @keyframes gettingIn {
     0%{
         transform: scale(0);

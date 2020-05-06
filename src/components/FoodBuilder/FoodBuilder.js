@@ -93,8 +93,7 @@ class FoodBuilder extends Component {
                     oreo: false,
                     kitkat: false,
                     chocolateChips: false,
-                    sprinkles: false,
-                    whipCream: false
+                    sprinkles: false
                 },
                 Fruits: {
                     banana: false,
@@ -212,8 +211,7 @@ class FoodBuilder extends Component {
                     oreo: false,
                     kitkat: false,
                     chocolateChips: false,
-                    sprinkles: false,
-                    whipCream: false
+                    sprinkles: false
                 },
                 Fruits: {
                     banana: false,

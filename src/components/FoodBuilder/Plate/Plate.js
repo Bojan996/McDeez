@@ -3,11 +3,13 @@ import './Plate.css';
 import BurgerBuilder from './IngredientBuilder/BurgerBuilder';
 import PizzaBuilder from './IngredientBuilder/PizzaBuilder';
 import SaladBuilder from './IngredientBuilder/SaladBuilder';
+import WafelBuilder from './IngredientBuilder/WafelBuilder';
 
 import BurgerTopBread from '../../../assets/images/ingredients/Burger/BurgerTopBread.svg';
 import BurgerBottomBread from '../../../assets/images/ingredients/Burger/BurgerBottomBread.svg';
 import PizzaCrust from '../../../assets/images/ingredients/Pizza/PizzaCrust.svg';
 import SaladBowl from '../../../assets/images/ingredients/Salad/bowlSalad.svg';
+import WafelCrust from '../../../assets/images/ingredients/Wafel/wafelCrust.svg';
 
 
 
@@ -88,6 +90,19 @@ const plate = (props) => {
                             props.ingredients.length === 0 ?
                             <h1 style={{position: 'absolute', top: '38%', left: '8%'}}>Please Add Ingredients</h1>:
                             props.ingredients.map((e, index) => {return <SaladBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
+                        }
+                </div>  
+            )
+        break;
+
+        case 'Wafel': 
+            plate = (
+                <div className='PPlateWafel'>
+                    <img src={WafelCrust} alt='just a wafel bowl'/>
+                        {
+                            props.ingredients.length === 0 ?
+                            <h1 style={{position: 'absolute', top: '38%', left: '6%'}}>Please Add Ingredients</h1>:
+                            props.ingredients.map((e, index) => {return <WafelBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
                         }
                 </div>  
             )
