@@ -40,7 +40,7 @@ const menuBuilder = (props) => {
                         Items
                     </Typography>
                 } className={classes.root}>
-                <MenuItems builder={props.builder} clicked={props.clicked}/>
+                <MenuItems builder={props.builder} clicked={props.clicked} prices={props.prices}/>
             </List>
             
         </div>

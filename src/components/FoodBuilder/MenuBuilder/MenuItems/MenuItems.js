@@ -38,7 +38,7 @@ const menuItems = (props) => {
                         <ListItemIcon>
                             <Icons icon={e}/>
                         </ListItemIcon>
-                        <ListItemText primary={e} />
+                        <ListItemText primary={e} secondary={props.prices[e] + '$ a piece'}/>
                     </ListItem>
                     {
                         Object.keys(props.builder[e]).map((el, index) => {

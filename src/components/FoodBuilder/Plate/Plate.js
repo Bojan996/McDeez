@@ -47,6 +47,7 @@ const plate = (props) => {
         for(let firstKey in props.builderState){
             for(let secondKey in props.builderState[firstKey]){
                 if(secondKey === e){
+                    console.log(firstKey + ' from the function');
                     return firstKey
                 }
             }
