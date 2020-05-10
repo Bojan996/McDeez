@@ -1,4 +1,4 @@
-.Container {
+.MDContainer {
     width: 70%;
     position: fixed;
     z-index: 100;
@@ -14,19 +14,19 @@
     transition: 0.3s ease-out;
 }
 
-.PictureSide {
+.MDPictureSide {
     width: 45%;
     margin: auto;
 }
 
-.PictureSide img {
+.MDPictureSide img {
     width: 90%;
     height: 60%;
     border-radius: 10px;
     margin-bottom: 20px; 
 }
 
-.PictureSide p {
+.MDPictureSide p {
     border: 1px solid lightgray;
     border-radius: 5px;
     box-shadow: 2px 2px 2px lightgray;
@@ -39,7 +39,7 @@
     line-height: 30px;
 }
 
-.NutritionSide {
+.MDNutritionSide {
     width: 45%;
     display: flex;
     flex-wrap: wrap;
@@ -47,13 +47,13 @@
     padding: 10px;
 }
 
-.NutritionSide img {
+.MDNutritionSide img {
     width: 80%;
     height: 70%;
     
 }
 
-.NutritionSide button {
+.MDNutritionSide button {
     width: 50%;
     margin-right: 50px;
     height: 12%;

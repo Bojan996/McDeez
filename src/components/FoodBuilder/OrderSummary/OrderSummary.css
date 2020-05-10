@@ -1,0 +1,8 @@
+.OSContainer {
+    border: 1px solid black;
+}
+
+.OSCardContainer {
+    display: flex;
+    justify-content: flex-start;
+}

@@ -5,6 +5,7 @@ import RestaurantMenu from '../../../components/RestaurantMenu/RestaurantMenu';
 import MenuDrawer from '../../../components/RestaurantMenu/MenuDrawer/MenuDrawer';
 import Backdrop from '../../../components/UI/Backdrop/Backdrop';
 import FoodBuilder from '../../../components/FoodBuilder/FoodBuilder';
+import OrderSummary from '../../../components/FoodBuilder/OrderSummary/OrderSummary';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -64,29 +65,11 @@ class FoodMaker extends Component {
     render(){
 
         const { classes } = this.props;
-        // let snackbar = null;
-
-        // if(this.props.addOrderSuccess){
-        //     console.log('hello from the if statement');
-        //     snackbar = (
-        //         <Snackbar open={this.state.showSnackbar} autoHideDuration={6000} onClose={this.snackbarCloseHandler}>
-        //             <Alert onClose={this.snackbarCloseHandler} severity="success">This is a success message!</Alert>
-        //         </Snackbar>
-        //     )
-        // }else if(this.props.addOrderFail){
-        //     snackbar = (
-        //         <Snackbar open={this.state.showSnackbar} autoHideDuration={6000} onClose={this.snackbarCloseHandler}>
-        //             <Alert onClose={this.snackbarCloseHandler} severity="error">This is an error message!</Alert>
-        //         </Snackbar>
-        //     )
-        // }else{
-        //     snackbar = null;
-        // }
-        
 
         return(
             <div className='FDContainer'>
                 <h1>Welcome to the food maker</h1>
+                <OrderSummary/>
                 <MenuDrawer show={this.state.showDrawer}/>
                 <Backdrop showDrawer={this.state.showDrawer} showBuilder={this.state.showBuilder} close={this.CloseHandler}/>
                 <FoodBuilder show={this.state.showBuilder} close={this.CloseHandler} builder={this.state.whichBuidler}/>

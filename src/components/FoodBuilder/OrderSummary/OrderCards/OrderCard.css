@@ -1,0 +1,53 @@
+.OCCardContainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    margin: 20px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 2px gray;
+    width: 300px;
+    height: 300px;
+}
+
+.OCBurger {
+    width: 45%;
+}
+
+.OCBurger img{
+    width: 100%;
+    padding: 0 !important;
+}
+
+.OCPizza {
+    width: 45%;
+    position: relative;
+}
+
+.OCPizza img:first-child {
+    width: 100%;
+}
+
+.OCPizza img:not(:first-child){
+    position: absolute !important;
+    top: 3px !important;
+    left: 7px !important;
+    width: 89% !important;
+    height: 39% !important;
+}
+
+.OCSalad {
+    width: 45%;
+    position: relative;
+}
+
+.OCSalad img{
+    width: 100%;
+}
+
+.OCWafel {
+    position: relative;
+}
+
+.OCWafel img {
+    width: 100%;
+}
