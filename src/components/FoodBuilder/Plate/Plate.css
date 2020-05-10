@@ -33,28 +33,94 @@
 .PPlateBurger img{
     width: 395px;
     padding: 5px 0;
+    border-radius: 10px;
+    animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, background-color 1.2s ease-out;
+}
+
+.PPlateBurger img:hover:not(:first-child):not(:last-child){
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: rgba(255, 38, 0, 0.678);
 }
 
 .PPlatePizza {
     position: relative;
 }
 
-.PPlatePizza img{
+.PPlatePizza img:first-child{
     width: 395px;
+}
+
+.PPlatePizza img:not(:first-child){
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    width: 358px;
+    height: 322px;
+    border-radius: 47%;
+    animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+}
+
+.PPlatePizza img:hover:not(:first-child){
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .PPlateSalad {
     position: relative;
 }
 
-.PPlateSalad img{
+.PPlateSalad img:first-child{
     width: 404px;
+}
+
+.PPlateSalad img:not(:first-child){
+    position: absolute;
+    top: 23px;
+    left: 31px;
+    width: 336.5px;
+    height: 320px;
+    border-radius: 30%;
+    animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+}
+
+.PPlateSalad img:hover:not(:first-child){
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .PPlateWafel {
     position: relative;
 }
 
-.PPlateWafel img {
+.PPlateWafel img:first-child{
     width: 375px;
+}
+
+.PPlateWafel img:not(:first-child){
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    width: 336.5px;
+    height: 320px;
+    border-radius: 30%;
+    animation: gettingIn 0.3s ease-out;
+    transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+}
+
+.PPlateWafel img:hover:not(:first-child){
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+@keyframes gettingIn {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
 }

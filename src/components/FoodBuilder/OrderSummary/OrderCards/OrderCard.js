@@ -17,6 +17,11 @@ import WafelCrust from '../../../../assets/images/ingredients/Wafel/wafelCrust.s
 const orderCard = (props) => {
 
     let orderImg = null;
+    let info = Object.keys(props.order).map(e => {
+        return (
+                <p>{e}</p>
+        )
+    })
     switch(props.builder){
         case 'Burger': 
             orderImg = (
@@ -71,6 +76,9 @@ const orderCard = (props) => {
     return (
         <div className='OCCardContainer'>
             {orderImg}
+            <div className='OCOrderContent'>
+                {info}
+            </div>
         </div>
     )
 }
