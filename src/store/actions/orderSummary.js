@@ -13,3 +13,9 @@ export const deleteOrderSummary = (order) => {
         order
     }
 }
+
+export const somethingFailed = () => {
+    return {
+        type: actionTypes.SOMETHING_FAILED
+    }
+}
