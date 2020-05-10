@@ -14,7 +14,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AddIcon from '@material-ui/icons/Add';
 
-
 const useStyles = theme => ({
     root: {
       width: '100%',
@@ -65,6 +64,24 @@ class FoodMaker extends Component {
     render(){
 
         const { classes } = this.props;
+        // let snackbar = null;
+
+        // if(this.props.addOrderSuccess){
+        //     console.log('hello from the if statement');
+        //     snackbar = (
+        //         <Snackbar open={this.state.showSnackbar} autoHideDuration={6000} onClose={this.snackbarCloseHandler}>
+        //             <Alert onClose={this.snackbarCloseHandler} severity="success">This is a success message!</Alert>
+        //         </Snackbar>
+        //     )
+        // }else if(this.props.addOrderFail){
+        //     snackbar = (
+        //         <Snackbar open={this.state.showSnackbar} autoHideDuration={6000} onClose={this.snackbarCloseHandler}>
+        //             <Alert onClose={this.snackbarCloseHandler} severity="error">This is an error message!</Alert>
+        //         </Snackbar>
+        //     )
+        // }else{
+        //     snackbar = null;
+        // }
         
 
         return(

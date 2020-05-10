@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './FoodBuilder.css';
+import { withSnackbar } from 'notistack';
 
 import MenuBuilder from './MenuBuilder/MenuBuilder';
 import Plate from './Plate/Plate';
 import CloseIcon from '@material-ui/icons/Close';
 import { connect } from 'react-redux';
-import { addOrderSummary } from '../../store/actions/orderSummary';
+import { addOrderSummary, somethingFailed } from '../../store/actions/orderSummary';
 
 
 
@@ -332,20 +333,26 @@ class FoodBuilder extends Component {
     orderClickedHanlder = () => {
         let newObject = {};
         let totalPrice = Number.parseFloat(this.state.totalPrice).toFixed(2);
-
-        for(let firstKey in this.state[this.props.builder]){
-            for(let [secondKey,value] of Object.entries(this.state[this.props.builder][firstKey])){
-                if(value > 0 || value === true){
-                    newObject = {
-                        ...newObject,
-                        name: this.props.builder,
-                        totalPrice: totalPrice,
-                        [secondKey]: value
+        if(this.state.totalPrice <= 1 || this.state.ingredients.length === 0){
+            this.props.somethingFailed();
+            this.props.enqueueSnackbar('This is an error message!', {variant: 'error'});
+        }else{
+            for(let firstKey in this.state[this.props.builder]){
+                for(let [secondKey,value] of Object.entries(this.state[this.props.builder][firstKey])){
+                    if(value > 0 || value === true){
+                        newObject = {
+                            ...newObject,
+                            name: this.props.builder,
+                            totalPrice: totalPrice,
+                            [secondKey]: value
+                        }
                     }
                 }
             }
+            this.props.addOrder(newObject); 
+            this.props.enqueueSnackbar('This is a success message!',  {variant: 'success'} );
+            this.resetState();
         }
-        this.props.addOrder(newObject);
     }
 
     menuClickHandler = (type, item) => {
@@ -376,7 +383,7 @@ class FoodBuilder extends Component {
                             <h1>Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h1>
                             <button className='FBAddButton' onClick={this.addingHandler} disabled={!this.state.isBoolean ? null : this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Add</button>
                         </div>
-                        <button className='FBOrderButton' onClick={this.orderClickedHanlder}>ORDER NOW!</button>
+                            <button className='FBOrderBtton' onClick={this.orderClickedHanlder}>ORDER!</button>
                     </div>
                 </div>
             </div>
@@ -388,8 +395,9 @@ class FoodBuilder extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addOrder: (order) => dispatch(addOrderSummary(order))
+        addOrder: (order) => dispatch(addOrderSummary(order)),
+        somethingFailed: () => dispatch(somethingFailed())
     }
 }
 
-export default connect(null, mapDispatchToProps)(FoodBuilder);
+export default connect(null, mapDispatchToProps)(withSnackbar(FoodBuilder));

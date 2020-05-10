@@ -2,21 +2,35 @@ import * as actionTypes from '../actions/actionTypes';
 
 
 const initialState = {
-    order: []
+    orders: [],
+    success: false,
+    fail: false
 };
 
 
 const orderSummaryReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.ADD_ORDER_SUMMARY:
-            let newOrder = [...state.order];
-            newOrder.push(action.order);
+        case actionTypes.SOMETHING_FAILED: 
             return {
-                order: newOrder
+                ...state,
+                fail: true,
+                success: false
+            }
+        case actionTypes.ADD_ORDER_SUMMARY:
+            const newOrder = [...state.orders].concat(action.order);
+            return {
+                ...state,
+                orders: newOrder,
+                success: true,
+                fail: false
             };
         case actionTypes.DELETE_ORDER_SUMMARY:
+            const newOrderState = [...state.orders].filter(e => e !== action.order)
             return {
-                ...state
+                ...state,
+                orders: newOrderState,
+                success: true,
+                fail: false
             };
         default: 
             return state;
