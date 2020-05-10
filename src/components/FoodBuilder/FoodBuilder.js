@@ -335,7 +335,7 @@ class FoodBuilder extends Component {
         let totalPrice = Number.parseFloat(this.state.totalPrice).toFixed(2);
         if(this.state.totalPrice <= 1 || this.state.ingredients.length === 0){
             this.props.somethingFailed();
-            this.props.enqueueSnackbar('This is an error message!', {variant: 'error'});
+            this.props.enqueueSnackbar('Please Add Ingredients', {variant: 'error'});
         }else{
             for(let firstKey in this.state[this.props.builder]){
                 for(let [secondKey,value] of Object.entries(this.state[this.props.builder][firstKey])){
@@ -350,7 +350,7 @@ class FoodBuilder extends Component {
                 }
             }
             this.props.addOrder(newObject); 
-            this.props.enqueueSnackbar('This is a success message!',  {variant: 'success'} );
+            this.props.enqueueSnackbar('Added to Order Summary!',  {variant: 'success'} );
             this.resetState();
         }
     }
