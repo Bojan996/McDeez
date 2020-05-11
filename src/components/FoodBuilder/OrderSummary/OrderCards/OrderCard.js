@@ -6,7 +6,6 @@ import PizzaBuilder from '../../Plate/IngredientBuilder/PizzaBuilder';
 import SaladBuilder from '../../Plate/IngredientBuilder/SaladBuilder';
 import WafelBuilder from '../../Plate/IngredientBuilder/WafelBuilder';
 
-
 import BurgerTopBread from '../../../../assets/images/ingredients/Burger/BurgerTopBread.svg';
 import BurgerBottomBread from '../../../../assets/images/ingredients/Burger/BurgerBottomBread.svg';
 import PizzaCrust from '../../../../assets/images/ingredients/Pizza/PizzaCrust.svg';
@@ -17,11 +16,12 @@ import WafelCrust from '../../../../assets/images/ingredients/Wafel/wafelCrust.s
 const orderCard = (props) => {
 
     let orderImg = null;
-    let info = Object.keys(props.order).map(e => {
-        return (
-                <p>{e}</p>
-        )
-    })
+    let info = [];
+
+    for(let i=2; i<Object.keys(props.order).length; i++){
+        info.push(Object.keys(props.order)[i]);
+    }
+
     switch(props.builder){
         case 'Burger': 
             orderImg = (
@@ -74,10 +74,15 @@ const orderCard = (props) => {
     }
 
     return (
-        <div className='OCCardContainer'>
+        <div className='OCCardContainer' onClick={props.clicked}>
             {orderImg}
             <div className='OCOrderContent'>
-                {info}
+                <h2>{props.order.name} <strong>{props.order.totalPrice}$</strong></h2>
+                <div className='OCIngredientDiv'>
+                    {info.map((e,index) => {
+                        return <span key={index}>{e.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}{typeof props.order[e] !== 'boolean' ? `(${props.order[e]})` : null}</span>
+                    })}
+                </div>
             </div>
         </div>
     )
