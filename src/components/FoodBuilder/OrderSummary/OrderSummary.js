@@ -12,9 +12,15 @@ const orderSummary = (props) => {
         return <OrderCard key={index} order={e} builder={e.name} clicked={() => props.delete(e)}/>
     })
 
+    const clickHandler = () => {
+        props.historyProp.push('/checkout');
+    }
+
+    console.log(props.orders.length);
+
     return (
         <div className='OSContainer'>
-            <h1>This is the order Summary!</h1>
+            <button className='OSCheckoutButton' onClick={clickHandler} disabled={props.orders.length === 0 ? true : false}>Continue To Checkout!</button>
             <div className='OSCardContainer'>
                 {orderCards}
             </div>

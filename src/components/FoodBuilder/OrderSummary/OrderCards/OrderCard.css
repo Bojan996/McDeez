@@ -9,15 +9,6 @@
     width: 500px;
     height: 140px;
     transition: 0.3s ease-out;
-    animation: apearing 3s ease-out;
-}
-
-.OCCardContainer:hover {
-    cursor: pointer;
-    border: 1px solid red;
-    background-color: rgb(241, 168, 168);
-    transform: scale(1.05);
-    box-shadow: 0 0 10px red;
 }
 
 /* .OCCardContainer:hover::after {
@@ -133,18 +124,4 @@
     left: 7px;
     width: 91%;
     height: 83%;
-}
-
-
-@keyframes apearing {
-    0%{
-        transform: scale(0);
-        box-shadow: 0 0 10px lightgreen;
-    }
-    25%{
-        transform: scale(1);
-    }
-    100%{
-        box-shadow: 0 0 10px lightgreen;
-    }
 }

@@ -68,7 +68,7 @@ class FoodMaker extends Component {
 
         return(
             <div className='FDContainer'>
-                <OrderSummary/>
+                <OrderSummary historyProp={this.props.history}/>
                 <MenuDrawer show={this.state.showDrawer}/>
                 <Backdrop showDrawer={this.state.showDrawer} showBuilder={this.state.showBuilder} close={this.CloseHandler}/>
                 <FoodBuilder show={this.state.showBuilder} close={this.CloseHandler} builder={this.state.whichBuidler}/>

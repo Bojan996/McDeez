@@ -1,0 +1,39 @@
+.CLayout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.COrderCards {
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.COrderCards .OCCardContainer {
+    max-width: 90%;
+    margin: 0 auto 15px auto;
+    animation: appearing 0.3s ease-out;
+}
+
+.CForm {
+    width: 65%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+.CTextField {
+    width: 35%;
+    margin: 20px;
+}
+
+
+@keyframes appearing{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
