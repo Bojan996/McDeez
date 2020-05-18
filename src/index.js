@@ -9,13 +9,15 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import authReducer from './store/reducers/auth';
 import orderSummaryReducer from './store/reducers/orderSummary';
+import orderReducer from './store/reducers/order';
 import { SnackbarProvider } from 'notistack';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     auth: authReducer,
-    orderSummary: orderSummaryReducer
+    orderSummary: orderSummaryReducer,
+    orders: orderReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(

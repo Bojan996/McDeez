@@ -1,5 +1,4 @@
 import React from 'react';
-import './IngredientBuilder.css';
 
 import Salad from '../../../../assets/images/ingredients/Burger/saladBurger.svg';
 import Meet from '../../../../assets/images/ingredients/Burger/meetBurger.svg';
@@ -21,31 +20,31 @@ const BurgerBuilder = (props) => {
 
     switch(props.ingredient){
         case 'salad':
-            return <img src={Salad} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Salad} alt='burger ingredients' onClick={props.clicked}/>
         case 'meet':
-            return <img src={Meet} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Meet} alt='burger ingredients' onClick={props.clicked}/>
         case 'bacon':
-            return <img src={Bacon} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Bacon} alt='burger ingredients' onClick={props.clicked}/>
         case 'cheese':
-            return <img src={Cheese} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Cheese} alt='burger ingredients' onClick={props.clicked}/>
         case 'onion':
-            return <img src={Onion} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Onion} alt='burger ingredients' onClick={props.clicked}/>
         case 'pickle':
-            return <img src={Pickle} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Pickle} alt='burger ingredients' onClick={props.clicked}/>
         case 'tomato':
-            return <img src={Tomato} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Tomato} alt='burger ingredients' onClick={props.clicked}/>
         case 'ketchup':
-            return <img src={Ketchup} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Ketchup} alt='burger ingredients' onClick={props.clicked}/>
         case 'mayo':
-            return <img src={Mayo} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Mayo} alt='burger ingredients' onClick={props.clicked}/>
         case 'bbqSauce':
-            return <img src={BbqSauce} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={BbqSauce} alt='burger ingredients' onClick={props.clicked}/>
         case 'burgerSauce':
-            return <img src={BurgerSauce} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={BurgerSauce} alt='burger ingredients' onClick={props.clicked}/>
         case 'mcdeezSecretSauce':
-            return <img src={McdeezSecretSauce} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={McdeezSecretSauce} alt='burger ingredients' onClick={props.clicked}/>
         case 'bread':
-            return <img src={Bread} alt='burger ingredients' className='IBBurgerImg' onClick={props.clicked}/>
+            return <img src={Bread} alt='burger ingredients' onClick={props.clicked}/>
         default: 
             return null;
     }

@@ -343,7 +343,7 @@ class FoodBuilder extends Component {
                         newObject = {
                             ...newObject,
                             name: this.props.builder,
-                            totalPrice: totalPrice,
+                            price: totalPrice,
                             [secondKey]: value
                         }
                     }

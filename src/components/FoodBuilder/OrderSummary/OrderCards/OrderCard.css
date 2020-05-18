@@ -4,50 +4,124 @@
     padding: 5px;
     margin: 20px;
     border: 1px solid lightgray;
+    border-radius: 10px;
     box-shadow: 2px 2px 2px gray;
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 140px;
+    transition: 0.3s ease-out;
+}
+
+/* .OCCardContainer:hover::after {
+    content: 'DELETE';
+    position: absolute;
+    top: 50%; 
+} */
+
+.OCOrderContent {
+    width: 70%;
+    text-align: center;
+}
+
+.OCOrderContent h2{
+    margin: 5px;
+    padding-bottom: 5px;
+    font-weight: 200;
+    letter-spacing: 9px;
+    color: rgb(136, 136, 136);
+    border-bottom: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.OCIngredientDiv {
+    margin: 10px auto 0 auto;
+    max-width: 90%;
+    max-height: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.OCIngredientDiv span{
+    width: fit-content;
+    border: 1px solid green;
+    box-shadow: 2px 2px 2px green;
+    border-radius: 10px;
+    padding: 3px 5px;
+    margin: 5px 5px;
+    color: black;
+    background-color: lightgreen;
+    font-weight: bold;
+
 }
 
 .OCBurger {
-    width: 45%;
+    width: 30%;
+    overflow: auto;
+    max-height: 100%;
+    padding-left: 10px;
 }
 
 .OCBurger img{
     width: 100%;
-    padding: 0 !important;
+    margin: auto;
 }
 
 .OCPizza {
-    width: 45%;
+    width: 30%;
     position: relative;
 }
 
 .OCPizza img:first-child {
-    width: 100%;
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    width: 95%;
 }
 
 .OCPizza img:not(:first-child){
-    position: absolute !important;
-    top: 3px !important;
-    left: 7px !important;
-    width: 89% !important;
-    height: 39% !important;
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    width: 85%;
+    height: 82%;
 }
 
 .OCSalad {
-    width: 45%;
+    width: 30%;
     position: relative;
 }
 
-.OCSalad img{
-    width: 100%;
+.OCSalad img:first-child{
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    width: 95%;
+}
+
+.OCSalad img:not(:first-child){
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 83%;
+    height: 81%;
 }
 
 .OCWafel {
+    width: 30%;
     position: relative;
 }
 
-.OCWafel img {
-    width: 100%;
+.OCWafel img:first-child{
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    width: 90%;
+}
+
+.OCWafel img:not(:first-child){
+    position: absolute;
+    top: 14px;
+    left: 7px;
+    width: 91%;
+    height: 83%;
 }
