@@ -44,7 +44,7 @@ class NavBar extends Component {
                                 <MenuItem onClick={this.closseHandler}><Link to='/'>History</Link></MenuItem>
                                 <MenuItem onClick={this.closseHandler}><Link to='/'>Careers</Link></MenuItem>
                             </Menu>
-                        <NavLink to='/' className='NavLi'>Galary</NavLink>
+                        <NavLink to='/orders' className='NavLi'>Orders</NavLink>
                         <NavLink to='/foodmaker' className='NavLi'>Make your Dish!</NavLink>
 
                             <NavLink to='/login' className='NavLi'>Login</NavLink>

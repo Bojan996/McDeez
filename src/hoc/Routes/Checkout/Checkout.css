@@ -1,6 +1,7 @@
 .CLayout {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 400px;
 }
 
 .COrderCards {
@@ -23,9 +24,21 @@
     padding: 10px;
 }
 
-.CTextField {
-    width: 35%;
-    margin: 20px;
+.CInputs{
+    width: 50%;
+    margin: 10px auto 10px auto;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+}
+
+.CInputs:focus{
+    outline: none;
+    border-color: lightblue;
+    box-shadow: 0 0 7px lightblue;
 }
 
 

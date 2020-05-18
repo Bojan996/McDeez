@@ -29,7 +29,7 @@ export const auth = (authType, email, password) => {
     return dispatch => {
         dispatch(authStart());
 
-        const apiKey = 'AIzaSyCem0xijXsoanZxUk9eucmJLm7z__ZN008';
+        const apiKey = 'AIzaSyB_znOzq7CNXrqBTTQrv0UMfbPfRUQ09Vw';
         const url = authType === 'login' ? 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + apiKey : 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + apiKey;
         const configuration = {
             email,

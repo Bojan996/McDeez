@@ -5,6 +5,7 @@ import NavBar from './components/UI/Navigation/NavBar';
 import Home from './hoc/Routes/Home/Home';
 import FoodMaker from './hoc/Routes/FoodMaker/FoodMaker';
 import Checkout from './hoc/Routes/Checkout/Checkout';
+import Orders from './hoc/Routes/Orders/Orders';
 import Login from './hoc/Routes/Auth/Login';
 import Register from './hoc/Routes/Auth/Register';
 
@@ -18,6 +19,7 @@ class App extends Component {
         <Switch>
           <Route path='/foodmaker' component={FoodMaker}/>
           <Route path='/checkout' component={Checkout}/>
+          <Route path='/orders' component={Orders}/>
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
           <Route path='/' exact component={Home}/>

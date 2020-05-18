@@ -18,8 +18,9 @@ const orderCard = (props) => {
     let orderImg = null;
     let info = [];
 
-    for(let i=2; i<Object.keys(props.order).length; i++){
-        info.push(Object.keys(props.order)[i]);
+    for(let key in props.order){
+        if(key !== 'name' && key !== 'price')
+        info.push(key);
     }
 
     switch(props.builder){
@@ -77,7 +78,7 @@ const orderCard = (props) => {
         <div className='OCCardContainer' onClick={props.clicked}>
             {orderImg}
             <div className='OCOrderContent'>
-                <h2>{props.order.name} <strong>{props.order.totalPrice}$</strong></h2>
+                <h2>{props.order.name} <strong>{props.order.price}$</strong></h2>
                 <div className='OCIngredientDiv'>
                     {info.map((e,index) => {
                         return <span key={index}>{e.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}{typeof props.order[e] !== 'boolean' ? `(${props.order[e]})` : null}</span>
