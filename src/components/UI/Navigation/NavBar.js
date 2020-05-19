@@ -6,6 +6,7 @@ import './NavBar.css';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { connect } from 'react-redux';
 
 
 class NavBar extends Component {
@@ -46,9 +47,15 @@ class NavBar extends Component {
                             </Menu>
                         <NavLink to='/orders' className='NavLi'>Orders</NavLink>
                         <NavLink to='/foodmaker' className='NavLi'>Make your Dish!</NavLink>
-
-                            <NavLink to='/login' className='NavLi'>Login</NavLink>
-                            <NavLink to='/register' className='NavLi'>SignUp</NavLink>
+                            {
+                                this.props.isAuth ?
+                                <NavLink to='/logout' className='NavLi'>Logout</NavLink>
+                                :
+                                <div>
+                                    <NavLink to='/login' className='NavLi'>Login</NavLink>
+                                    <NavLink to='/register' className='NavLi'>SignUp</NavLink>
+                                </div>
+                            }
                     </ul>
                 </div>
             </div>
@@ -56,5 +63,10 @@ class NavBar extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        isAuth: state.auth.isAuth
+    }
+}
 
-export default NavBar;
+export default connect(mapStateToProps)(NavBar);

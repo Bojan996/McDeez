@@ -16,8 +16,6 @@ const orderSummary = (props) => {
         props.historyProp.push('/checkout');
     }
 
-    console.log(props.orders.length);
-
     return (
         <div className='OSContainer'>
             <button className='OSCheckoutButton' onClick={clickHandler} disabled={props.orders.length === 0 ? true : false}>Continue To Checkout!</button>

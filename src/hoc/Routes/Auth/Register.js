@@ -3,6 +3,7 @@ import './Register.css';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../../store/actions/auth';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 
 
 class Register extends Component {
@@ -29,7 +30,7 @@ class Register extends Component {
 
     render(){
 
-        let loader = this.props.loading ? <p>Loading...</p> : null;
+        let loader = this.props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;
         let redirect = this.props.isAuth ? <Redirect to='/'/> : null;
 
         return (
