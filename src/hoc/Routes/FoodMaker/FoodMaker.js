@@ -14,6 +14,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AddIcon from '@material-ui/icons/Add';
+import Drinks from '../../../components/Drinks&Additionals/Drinks/Drinks';
 
 const useStyles = theme => ({
     root: {
@@ -34,11 +35,9 @@ const useStyles = theme => ({
         marginBottom: '20px'
     },
     header: {
-        margin: '25px 0',
+        margin: '20px 0',
         width: '100%',
-        borderBottom: '1px solid lightgray',
-        borderRadius: '5px',
-        paddingBottom: '15px'
+        paddingBottom: '35px'
     }
   });
 
@@ -47,11 +46,54 @@ class FoodMaker extends Component {
     state = {
         showDrawer: false,
         showBuilder: false,
-        whichBuidler: null
+        whichBuidler: null,
+        showOrderSummary: false,
+        drinks: {
+            Cola: {
+                price: '1.25',
+                amount: 0
+            },
+            Pepsi: {
+                price: '1.25',
+                amount: 0
+            },
+            Sprite: {
+                price: '1.00',
+                amount: 0
+            },
+            Fanta: {
+                price: '1.00',
+                amount: 0
+            },
+            Water: {
+                price: '1.50',
+                amount: 0
+            },
+            Juice: {
+                price: '1.75',
+                amount: 0
+            }
+        }
+    }
+
+    addRemoveDrinksHandler = (name, type) => {
+        const updatedDrinks = {...this.state.drinks};
+        const updatedAmount = {...updatedDrinks[name]};
+        if(type === 'remove' && updatedAmount.amount !== 0){
+            updatedAmount.amount -= 1;
+        }else if(type === 'add'){
+            updatedAmount.amount += 1;
+        }
+        updatedDrinks[name] = updatedAmount;
+        this.setState({drinks: updatedDrinks});
     }
 
     showDrawerHandler = () => {
         this.setState({showDrawer: true});
+    }
+
+    showOrderSummaryHandler = () => {
+        this.setState({showOrderSummary: !this.state.showOrderSummary});
     }
 
     showBuilderHandler = (builder) => {
@@ -68,7 +110,8 @@ class FoodMaker extends Component {
 
         return(
             <div className='FDContainer'>
-                <OrderSummary historyProp={this.props.history}/>
+                <div className='FloatingButton' onClick={this.showOrderSummaryHandler}></div>
+                <OrderSummary historyProp={this.props.history} show={this.state.showOrderSummary}/>
                 <MenuDrawer show={this.state.showDrawer}/>
                 <Backdrop showDrawer={this.state.showDrawer} showBuilder={this.state.showBuilder} close={this.CloseHandler}/>
                 <FoodBuilder show={this.state.showBuilder} close={this.CloseHandler} builder={this.state.whichBuidler}/>
@@ -110,6 +153,16 @@ class FoodMaker extends Component {
                                 </ListItem>
                             </div>
                         </List>
+                        <div className='FDDrinksAndAdditionals'>
+                            <div className='FDDrinks'>
+                                <Typography variant='h2' className={classes.header}> Drinks </Typography>
+                                {Object.keys(this.state.drinks).map(e => <Drinks type={e} key={e} clicked={this.addRemoveDrinksHandler} amount={this.state.drinks[e].amount} price={this.state.drinks[e].price} name={e}/>)}
+                            </div>
+                            <div style={{width: '0.5px', height: '400px', backgroundColor: 'lightgray'}}></div>
+                            <div className='FDAdditionals'>
+                                <Typography variant='h2' className={classes.header}> Additionals </Typography>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

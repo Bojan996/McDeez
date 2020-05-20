@@ -16,8 +16,10 @@ const orderSummary = (props) => {
         props.historyProp.push('/checkout');
     }
 
+    let classes = props.show ? 'OSContainer OSContainerOpen' : 'OSContainer OSContainerClossed';
+
     return (
-        <div className='OSContainer'>
+        <div className={classes}>
             <button className='OSCheckoutButton' onClick={clickHandler} disabled={props.orders.length === 0 ? true : false}>Continue To Checkout!</button>
             <div className='OSCardContainer'>
                 {orderCards}

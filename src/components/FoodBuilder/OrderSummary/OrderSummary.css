@@ -1,8 +1,21 @@
 .OSContainer {
+    position: fixed;
+    top: 189px;
+    right: 5px;
+    z-index: 90;
+    width: 350px;
     border: 1px solid lightgray;
     border-radius: 10px;
     box-shadow: 2px 2px 2px gray;
     padding: 20px;
+}
+
+.OSContainerOpen {
+    animation: OSGettingIn 0.4s ease-out forwards;
+}
+
+.OSContainerClossed {
+    animation: OSGettingOut 0.4s ease-out forwards;
 }
 
 .OSCardContainer {
@@ -66,5 +79,38 @@
     }
     100%{
         box-shadow: 0 0 10px lightgreen;
+    }
+}
+
+@keyframes OSGettingIn {
+    0%{
+        opacity: 0;
+        transform: translateX(0);
+    }
+    50%{
+        opacity: 0.5;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes OSGettingOut {
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0.5;
+        transform: translateY(50px);
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(120%);
     }
 }

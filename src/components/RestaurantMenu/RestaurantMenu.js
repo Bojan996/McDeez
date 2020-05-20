@@ -10,7 +10,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import EcoIcon from '@material-ui/icons/Eco';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import CakeIcon from '@material-ui/icons/Cake';
-import LocalBarIcon from '@material-ui/icons/LocalBar';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import LocalPizzaIcon from '@material-ui/icons/LocalPizza';
 
@@ -181,50 +180,6 @@ const restaurantMenu = (props) => {
                             <ArrowRightIcon />
                         </ListItemIcon>
                         <ListItemText primary="Candy Wafel"/>
-                    </ListItem>
-                    </List>
-                    <ListItem>
-                        <ListItemIcon>
-                            <LocalBarIcon fontSize='large'/>
-                        </ListItemIcon>
-                    <ListItemText primary="Drinks" />
-                </ListItem>
-                <List component="div" className={classes.secondList}>
-                    <ListItem button  onClick={props.showDrawer}>
-                        <ListItemIcon>
-                            <ArrowRightIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Cola 0.5l"/>
-                    </ListItem>
-                    <ListItem button  onClick={props.showDrawer}>
-                        <ListItemIcon>
-                            <ArrowRightIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Sprite 0.33l"/>
-                    </ListItem>
-                    <ListItem button  onClick={props.showDrawer}>
-                        <ListItemIcon>
-                            <ArrowRightIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Fanta 0,33l"/>
-                    </ListItem>
-                    <ListItem button  onClick={props.showDrawer}>
-                        <ListItemIcon>
-                            <ArrowRightIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Orange Juice 0,5l"/>
-                    </ListItem>
-                    <ListItem button  onClick={props.showDrawer}>
-                        <ListItemIcon>
-                            <ArrowRightIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Lemonade 0,5l"/>
-                    </ListItem>
-                    <ListItem button  onClick={props.showDrawer}>
-                        <ListItemIcon>
-                            <ArrowRightIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Water 0,5l"/>
                     </ListItem>
                     </List>
                 </List>
