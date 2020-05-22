@@ -1,6 +1,24 @@
 .FDContainer {
     max-width: 100%;
-    margin: 100px 30px 400px 30px;
+    margin: 100px 0 200px 0;
+}
+
+.FloatingButton{
+    display: none;
+    top: 89px;
+    right: 27px;
+    position: fixed;
+    z-index: 90;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: red;
+    transition: 0.2s ease-out;
+}
+
+.FloatingButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .FDLayout {
@@ -12,20 +30,15 @@
 }
 
 .FDMenu {
-    width: 30%;
+    width: 22%;
     border: 1px solid lightgrey;
     border-radius: 10px;
     box-shadow: 2px 2px 2px gray;
 }
 
 .FDMakeDiv {
-    position: sticky;
-    top: 20px;
-    width: 65%;
-    height: 94vh;
-    border: 1px solid lightcoral;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgb(255, 62, 62);
+    width: 73%;
+    margin-right: 25px;
 }
 
 .FDFlexerDiv {
@@ -33,12 +46,16 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-content: space-around;
+    justify-content: space-between;
 }
 
 .FDListItem {
-    width: 90% !important;
-    margin: auto !important;
+    padding: 15px 0 !important;
+    margin-bottom: 60px !important;
+    width: 45% !important;
+    border: 1px solid lightgrey !important;
+    border-radius: 10px !important;
+    box-shadow: 2px 2px 2px gray !important;
     transition: 0.3s ease-out !important;
 }
 
@@ -48,4 +65,28 @@
 
 .FDPlusIcon {
     transform: scale(1.2);
+}
+
+.FDDrinksAndAdditionals {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.FDDrinks {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FDAdditionals {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }

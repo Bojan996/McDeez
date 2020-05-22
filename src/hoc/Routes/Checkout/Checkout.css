@@ -1,0 +1,52 @@
+.CLayout {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 400px;
+}
+
+.COrderCards {
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.COrderCards .OCCardContainer {
+    max-width: 90%;
+    margin: 0 auto 15px auto;
+    animation: appearing 0.3s ease-out;
+}
+
+.CForm {
+    width: 65%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+.CInputs{
+    width: 50%;
+    margin: 10px auto 10px auto;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+}
+
+.CInputs:focus{
+    outline: none;
+    border-color: lightblue;
+    box-shadow: 0 0 7px lightblue;
+}
+
+
+@keyframes appearing{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

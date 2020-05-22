@@ -1,5 +1,4 @@
 import React from 'react';
-import './IngredientBuilder.css';
 
 import Nutela from '../../../../assets/images/ingredients/Wafel/nutelaWafel.svg';
 import Honey from '../../../../assets/images/ingredients/Wafel/honeyWafel.svg';
@@ -27,39 +26,39 @@ const SaladBuilder = (props) => {
 
     switch(props.ingredient){
         case 'nutela':
-            return <img src={Nutela} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Nutela} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'honey':
-            return <img src={Honey} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Honey} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'strawberryJam':
-            return <img src={StrawberryJam} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={StrawberryJam} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'blueberryJam':
-            return <img src={BlueberryJam} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={BlueberryJam} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'peachJam':
-            return <img src={PeachJam} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={PeachJam} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'strawberry':
-            return <img src={Strawberry} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Strawberry} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'biscuit':
-            return <img src={Biscuit} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Biscuit} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'apple':
-            return <img src={Apple} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Apple} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'cherry':
-            return <img src={Cherry} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Cherry} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'banana':
-            return <img src={Banana} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Banana} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'chocolateChips':
-            return <img src={ChocolateChips} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={ChocolateChips} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'kitkat':
-            return <img src={Kitkat} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Kitkat} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'oreo':
-            return <img src={Oreo} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Oreo} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'peach':
-            return <img src={Peach} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Peach} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'pineapple':
-            return <img src={Pineapple} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Pineapple} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'sprinkles':
-            return <img src={Sprinkles} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Sprinkles} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         case 'blueberry':
-            return <img src={Blueberry} alt='salad ingredients' className='IBWafelImg' style={{zIndex: props.style}} onClick={props.clicked}/>
+            return <img src={Blueberry} alt='salad ingredients' style={{zIndex: props.style}} onClick={props.clicked}/>
         default: 
             return null;
     }

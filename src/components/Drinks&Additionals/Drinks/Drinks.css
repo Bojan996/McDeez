@@ -1,0 +1,40 @@
+.DDrinksContainer {
+    width: 40%;
+    margin-bottom: 50px;
+}
+
+.DDrinksContainer h2{
+    font-weight: 200;
+}
+
+.DImgPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.Dimage {
+    width: 45%;
+    border-radius: 5px;
+}
+
+.DAddRemove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DPlusMinus {
+    transition: 0.2s ease-out !important;
+    border-radius: 50%;
+}
+
+.DPlusMinus:hover {
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.DPlusMinus:active {
+    background-color: rgb(43, 195, 255);
+    transform: translateY(5px);
+}
