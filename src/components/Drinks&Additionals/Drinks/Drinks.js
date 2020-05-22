@@ -16,7 +16,7 @@ const drinks = (props) => {
 
     let image = null;
 
-    switch(props.type){
+    switch(props.name){
         case 'Cola':
             image = <img src={Cola} alt='a cup of Cola' className='Dimage'/>
             break;
@@ -46,9 +46,9 @@ const drinks = (props) => {
                 <h2>{props.price}$</h2>
             </div>
             <div className='DAddRemove'>
-                <RemoveIcon color='error' fontSize='large' className='DPlusMinus' onClick={() => props.clicked(props.name, 'remove')}/>
-                <h2 style={{fontSize: '30px', padding: '10px', border: '1px solid lightgray', borderRadius: '10px', boxShadow: '2px 2px 2px gray'}}>{props.amount}</h2>
-                <AddIcon color='error' fontSize='large' className='DPlusMinus' onClick={() => props.clicked(props.name, 'add')}/>
+                <RemoveIcon color='error' fontSize='large' className='DPlusMinus' onClick={() => props.clicked(props.name, 'remove', 'drinks')}/>
+                <h2 style={{fontSize: '30px'}}>{props.amount}</h2>
+                <AddIcon color='error' fontSize='large' className='DPlusMinus' onClick={() => props.clicked(props.name, 'add', 'drinks')}/>
             </div>
         </div>
     )

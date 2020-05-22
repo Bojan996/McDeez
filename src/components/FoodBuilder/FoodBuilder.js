@@ -117,24 +117,6 @@ class FoodBuilder extends Component {
                     peach: false,
                     pineapple: false
                 }
-            },
-            Additional: {
-                
-                Fried: {
-                    frenchFries: 0,
-                    wafelFries: 0,
-                    onionRings: 0,
-                    friedCheese: 0
-                },
-                Pie: {
-                    applePie: 0,
-                    blueberryPie: 0
-                },
-                Shakes: {
-                    vanilaShake: 0,
-                    chocolateShake: 0,
-                    strawberryShake: 0
-                }
             }
         };
 
@@ -234,24 +216,6 @@ class FoodBuilder extends Component {
                     strawberry: false,
                     peach: false,
                     pineapple: false
-                }
-            },
-            Additional: {
-                
-                Fried: {
-                    frenchFries: 0,
-                    wafelFries: 0,
-                    onionRings: 0,
-                    friedCheese: 0
-                },
-                Pie: {
-                    applePie: 0,
-                    blueberryPie: 0
-                },
-                Shakes: {
-                    vanilaShake: 0,
-                    chocolateShake: 0,
-                    strawberryShake: 0
                 }
             }
         });

@@ -1,0 +1,40 @@
+.AAdditionalsContainer {
+    width: 40%;
+    margin-bottom: 50px;
+}
+
+.AAdditionalsContainer h2{
+    font-weight: 200;
+}
+
+.AImgPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.Aimage {
+    width: 45%;
+    border-radius: 5px;
+}
+
+.AAddRemove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.APlusMinus {
+    transition: 0.2s ease-out !important;
+    border-radius: 50%;
+}
+
+.APlusMinus:hover {
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.APlusMinus:active {
+    background-color: rgb(43, 195, 255);
+    transform: translateY(5px);
+}
