@@ -6,8 +6,8 @@
     border: 1px solid lightgray;
     border-radius: 10px;
     box-shadow: 2px 2px 2px gray;
-    width: 500px;
-    height: 140px;
+    width: 90%;
+    max-height: 84px;
     transition: 0.3s ease-out;
 }
 
@@ -28,8 +28,6 @@
     font-weight: 200;
     letter-spacing: 9px;
     color: rgb(136, 136, 136);
-    border-bottom: 1px solid lightgray;
-    border-radius: 3px;
 }
 
 .OCIngredientDiv {
@@ -54,7 +52,16 @@
 
 }
 
+.OCDrinksAdditionalsImages {
+    width: 33%;
+}
+
+.OCDrinksAdditionalsImages img{
+    width: 80%;
+}
+
 .OCBurger {
+    align-self: center;
     width: 30%;
     overflow: auto;
     max-height: 100%;
@@ -80,10 +87,10 @@
 
 .OCPizza img:not(:first-child){
     position: absolute;
-    top: 14px;
-    left: 15px;
-    width: 85%;
-    height: 82%;
+    top: 10px;
+    left: 12px;
+    width: 84%;
+    height: 80%;
 }
 
 .OCSalad {
@@ -100,9 +107,9 @@
 
 .OCSalad img:not(:first-child){
     position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 83%;
+    top: 9px;
+    left: 14px;
+    width: 82%;
     height: 81%;
 }
 
@@ -120,7 +127,7 @@
 
 .OCWafel img:not(:first-child){
     position: absolute;
-    top: 14px;
+    top: 8px;
     left: 7px;
     width: 91%;
     height: 83%;

@@ -1,5 +1,6 @@
 import React from 'react';
 import './OrderCard.css';
+import { drinksAdditionalsSwitch } from '../../../../helpers/switchStatements';
 
 import BurgerBuilder from '../../Plate/IngredientBuilder/BurgerBuilder';
 import PizzaBuilder from '../../Plate/IngredientBuilder/PizzaBuilder';
@@ -74,7 +75,26 @@ const orderCard = (props) => {
             
     }
 
-    return (
+    if(orderImg === null){
+        orderImg = (
+            <div className='OCDrinksAdditionalsImages'>
+                {drinksAdditionalsSwitch(props.builder)}
+            </div>
+        )
+    }
+
+    let firstWord = props.order.name.split(/(?=[A-Z])/);
+
+    let content = (
+        props.type === 'small' ?
+        <div className='OCCardContainer' onClick={props.clicked}>
+            {orderImg}
+            <div className='OCOrderContent'>
+                <h2>{firstWord[0].charAt(0).toUpperCase() + firstWord[0].slice(1)}</h2>
+                <h2><strong>{Number.parseFloat( props.order.price ).toFixed( 2 )}$</strong></h2>
+            </div>
+        </div>
+        :
         <div className='OCCardContainer' onClick={props.clicked}>
             {orderImg}
             <div className='OCOrderContent'>
@@ -86,7 +106,12 @@ const orderCard = (props) => {
                 </div>
             </div>
         </div>
+
     )
+
+
+
+    return content;
 }
 
 

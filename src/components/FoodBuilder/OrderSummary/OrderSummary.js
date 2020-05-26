@@ -9,7 +9,7 @@ import OrderCard from './OrderCards/OrderCard';
 const orderSummary = (props) => {
 
     let orderCards = props.orders.map((e, index) => {
-        return <OrderCard key={index} order={e} builder={e.name} clicked={() => props.delete(e)}/>
+        return <OrderCard key={index} order={e} builder={e.name} clicked={() => props.delete(e)} type={props.type}/>
     })
 
     const clickHandler = () => {

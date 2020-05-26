@@ -1,9 +1,13 @@
 .OSContainer {
+    background-color: white;
     position: fixed;
-    top: 189px;
-    right: 5px;
     z-index: 90;
     width: 350px;
+    max-height: 505px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 100px;
+    right: 5px;
     border: 1px solid lightgray;
     border-radius: 10px;
     box-shadow: 2px 2px 2px gray;
@@ -24,35 +28,31 @@
     flex-wrap: wrap;
 }
 
-.OSCardContainer .OCCardContainer{
-    animation: cardApearing 3s ease-out;
-}
-
 .OSCardContainer .OCCardContainer:hover{
     cursor: pointer;
-    border: 1px solid red;
-    background-color: rgb(241, 168, 168);
+    color: white;
+    border: 2px solid red;
     transform: scale(1.05);
-    box-shadow: 0 0 10px red;
+    /* box-shadow: 2px 2px 2px red; */
 }
 
 .OSCheckoutButton{
+    margin: 15px 0;
     text-decoration: none;
-    border: 1px solid rgb(1, 197, 1);
+    border: none;
     border-radius: 10px;
-    font-weight: bold;
+    font-weight: 200;
     font-size: 20px;
-    color: rgb(37, 54, 47);
+    color: rgb(240, 240, 240);
     padding: 20px;
-    background-color: rgb(113, 236, 236);
+    background-color: tomato;
     outline: none;
-    box-shadow: 2px 2px 7px black;
     transition: 0.3s ease-out;
 }
 
 .OSCheckoutButton:hover:not(:disabled){
-    transform: scale(1.1);
-    box-shadow: 2px 2px 7px rgb(54, 255, 47);
+    transform: scale(1.05);
+    box-shadow: 2px 2px 7px rgb(47, 154, 255);
     cursor: pointer;
 }
 
@@ -67,20 +67,6 @@
     border: none;
 }
 
-
-
-@keyframes cardApearing {
-    0%{
-        transform: scale(0);
-        box-shadow: 0 0 10px lightgreen;
-    }
-    25%{
-        transform: scale(1);
-    }
-    100%{
-        box-shadow: 0 0 10px lightgreen;
-    }
-}
 
 @keyframes OSGettingIn {
     0%{

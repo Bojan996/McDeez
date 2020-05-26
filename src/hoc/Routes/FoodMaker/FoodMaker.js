@@ -3,6 +3,8 @@ import propTypes from 'prop-types';
 import './FoodMaker.css';
 import { connect } from 'react-redux';
 import { addOrderSummary } from '../../../store/actions/orderSummary';
+import { foodMakerState } from '../../../assets/FoodBuilderInitialState/FoodBuilderInitialState';
+import { withSnackbar } from 'notistack';
 
 import RestaurantMenu from '../../../components/RestaurantMenu/RestaurantMenu';
 import MenuDrawer from '../../../components/RestaurantMenu/MenuDrawer/MenuDrawer';
@@ -11,6 +13,8 @@ import FoodBuilder from '../../../components/FoodBuilder/FoodBuilder';
 import OrderSummary from '../../../components/FoodBuilder/OrderSummary/OrderSummary';
 import Drinks from '../../../components/Drinks&Additionals/Drinks/Drinks';
 import Additionals from '../../../components/Drinks&Additionals/Additionals/Additionals';
+
+import OrderSummaryButton from '../../../assets/images/orderSummaryButton.svg';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -86,15 +90,15 @@ class FoodMaker extends Component {
             }
         },
         additionals: {
-            frenchFries: {
+            friesFrench: {
                 price: '1.25',
                 amount: 0
             },
-            wafelFries: {
+            wafelsFries: {
                 price: '1.75',
                 amount: 0
             },
-            friedCheese: {
+            cheeseFried: {
                 price: '1.75',
                 amount: 0
             },
@@ -156,28 +160,42 @@ class FoodMaker extends Component {
     }
 
     AddToSummaryHandler = () => {
-        Object.keys(this.state.drinksAdditionals).map(e => {
-            if(this.state.drinks[e] === undefined){
-                return this.props.addOrder({
-                    name: e,
-                    price: Number(this.state.additionals[e].price) * Number(this.state.drinksAdditionals[e]),
-                    amount: this.state.drinksAdditionals[e]
-                })
-            }else{
-                return this.props.addOrder({
-                    name: e,
-                    price: Number(this.state.drinks[e].price) * Number(this.state.drinksAdditionals[e]),
-                    amount: this.state.drinksAdditionals[e]
-                })
-            }
-        })
+        if(Object.keys(this.state.drinksAdditionals).length === 0){
+            this.props.enqueueSnackbar('Please Add Something!', {variant: 'error'});
+        }else {
+            Object.keys(this.state.drinksAdditionals).map(e => {
+                if(this.state.drinks[e] === undefined){
+                    return this.props.addOrder({
+                        name: e,
+                        price: Number(this.state.additionals[e].price) * Number(this.state.drinksAdditionals[e]),
+                        amount: this.state.drinksAdditionals[e]
+                    })
+                }else{
+                    return this.props.addOrder({
+                        name: e,
+                        price: Number(this.state.drinks[e].price) * Number(this.state.drinksAdditionals[e]),
+                        amount: this.state.drinksAdditionals[e]
+                    })
+                }
+            })
+            this.setState(foodMakerState);
+            this.props.enqueueSnackbar('Added to Order Summary!',  {variant: 'success'} );
+        }
     }
 
     render(){
 
         const { classes } = this.props;
 
-        console.log(this.state.drinksAdditionals);
+        let orderSummaryButton = null;
+        if(this.props.orderSummary.length > 0){
+            orderSummaryButton = (
+                <div className='FDFloatingButton' onClick={this.showOrderSummaryHandler}>
+                    <div className='divInFloatingButton'>{this.props.orderSummary.length}</div>
+                    <img src={OrderSummaryButton} alt='OrderSummaryButton'/>
+                </div>
+            )
+        }
 
         return(
             <div className='FDContainer'>
@@ -188,8 +206,8 @@ class FoodMaker extends Component {
                     </div>
                     <button className='FDCupponButton'> <CardGiftcardIcon fontSize='large' className='FDCuponIcon'/> Get the Cupon</button>
                 </div>
-                <div className='FDFloatingButton' onClick={this.showOrderSummaryHandler}></div>
-                <OrderSummary historyProp={this.props.history} show={this.state.showOrderSummary}/>
+                {orderSummaryButton}
+                <OrderSummary historyProp={this.props.history} show={this.state.showOrderSummary} type='small'/>
                 <MenuDrawer show={this.state.showDrawer}/>
                 <Backdrop showDrawer={this.state.showDrawer} showBuilder={this.state.showBuilder} close={this.CloseHandler}/>
                 <FoodBuilder show={this.state.showBuilder} close={this.CloseHandler} builder={this.state.whichBuidler}/>
@@ -268,6 +286,12 @@ class FoodMaker extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        orderSummary: state.orderSummary.orders
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         addOrder: (order) => dispatch(addOrderSummary(order))
@@ -279,4 +303,4 @@ FoodMaker.propTypes = {
 };
 
 
-export default connect(null, mapDispatchToProps)(withStyles(useStyles, { withTheme: true })(FoodMaker));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(useStyles, { withTheme: true })(withSnackbar(FoodMaker)));
