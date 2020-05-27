@@ -2,31 +2,66 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-height: 100%;
+    height: 60px;
+    background: rgb(235,235,235);
+    background: linear-gradient(180deg, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 75%, rgba(235,235,235,1) 100%);
 }
 
 .LogoDiv {
     width: 20%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.LogoDiv .DivOfImg{
+    width: 204px;
+    height: 41px;
+    margin-left: 30px;
+}
+
+.LogoDiv .DivOfImg img{
+    width: 100%;
+    height: 100%;
 }
 
 .NavItemDiv {
-    width: 65%;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.NavUnorderedList {
-    border-bottom: 2px solid red;
+.NavLeftDiv {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.NavRightDiv {
+    height: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+    width: 25%;
 }
 
 .NavLi {
     text-decoration: none;
-    padding: 10px;
+    padding: 22px 20px 0 20px;
+    font-weight: 200;
+    font-size: 20px;
+    color: black;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s ease-out;
 }
 
-.NavLi:nth-child(4){
-    margin-right: 100px;
+.NavLi:hover {
+    background-color: rgb(236, 236, 236);
+    border-bottom: 2px solid rgb(0, 183, 255);
+}
+
+.NavLi:active {
+    transform: scale(0.95);
 }

@@ -30,7 +30,7 @@ const useStyles = theme => ({
     root: {
       width: '100%',
       height: '80%',
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: 'transparent',
     },
     listItemText:{
         fontSize:'2.3em',
@@ -47,7 +47,7 @@ const useStyles = theme => ({
     header: {
         margin: '20px 0',
         width: '100%',
-        paddingBottom: '35px'
+        paddingBottom: '35px',
     },
     price: {
         fontWeight: '200'
@@ -303,4 +303,4 @@ FoodMaker.propTypes = {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(useStyles, { withTheme: true })(withSnackbar(FoodMaker)));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(useStyles)(withSnackbar(FoodMaker)));
