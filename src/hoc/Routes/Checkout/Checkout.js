@@ -2,23 +2,84 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Checkout.css';
 import { purchaseOrder } from '../../../store/actions/order';
+import { withStyles } from '@material-ui/core/styles';
+import { checkValidity } from '../../../helpers/checkValidity';
+import TextField from '@material-ui/core/TextField';
 
 import OrderCard from '../../../components/FoodBuilder/OrderSummary/OrderCards/OrderCard';
 
+const useStyles = theme => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: '25ch',
+      },
+    }
+  });
 
 class Checkout extends Component{
 
     state = {
         userInfo: {
-            name: '',
-            surname: '',
-            email: '',
-            adress: '',
-            floor: '',
-            apartmentNumber: '',
-            comment: ''
+            name: {
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false,
+                touched: false
+            },
+            surname: {
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false,
+                touched: false
+            },
+            email: {
+                value: '',
+                validation: {
+                    required: true,
+                    isEmail: true
+                },
+                valid: false,
+                touched: false
+            },
+            adress: {
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false,
+                touched: false
+            },
+            floor: {
+                value: '',
+                validation: {
+                    required: true,
+                    isNumeric: true
+                },
+                valid: false,
+                touched: false
+            },
+            apartmentNumber: {
+                value: '',
+                validation: {
+                    required: true,
+                    isNumeric: true
+                },
+                valid: false,
+                touched: false
+            },
+            comment: {
+                value: '',
+                validation: {},
+                valid: true
+            }
         },
-        totalPrice: null
+        totalPrice: null,
+        formIsValid: false
     }
 
     componentDidMount() {
@@ -30,40 +91,20 @@ class Checkout extends Component{
         this.setState({totalPrice: totalPriceNum});
     }
 
-    typingHandler = (event, id) => {
-        const newUserInfo = {...this.state.userInfo};
-        switch(id){
-            case 'name':
-                newUserInfo.name = event.target.value;
-                this.setState({userInfo: newUserInfo});
-                break;
-            case 'surname':
-                newUserInfo.surname = event.target.value;
-                this.setState({userInfo: newUserInfo});
-                break;
-            case 'email':
-                newUserInfo.email = event.target.value;
-                this.setState({userInfo: newUserInfo});
-                break;
-            case 'adress':
-                newUserInfo.adress = event.target.value;
-                this.setState({userInfo: newUserInfo});
-                break;
-            case 'floor':
-                newUserInfo.floor = event.target.value;
-                this.setState({userInfo: newUserInfo});
-                break;
-            case 'apartmentNumber':
-                newUserInfo.apartmentNumber = event.target.value;
-                this.setState({userInfo: newUserInfo});
-                break;
-            case 'comment':
-                newUserInfo.comment = event.target.value;
-                this.setState({userInfo: newUserInfo});
-                break;
-            default: 
-                this.setState(newUserInfo);
+    typingHandler = (event, identifier) => {
+        const updatedUserInfo = {...this.state.userInfo};
+        const updatedElement = {...updatedUserInfo[identifier]};
+
+        updatedElement.value = event.target.value;
+        updatedElement.valid = checkValidity(updatedElement.value, updatedElement.validation);
+        updatedElement.touched = true;
+        updatedUserInfo[identifier] = updatedElement;
+
+        let formIsValid = true;
+        for(let identifier in updatedUserInfo){
+            formIsValid = updatedUserInfo[identifier].valid && formIsValid;
         }
+        this.setState({userInfo: updatedUserInfo, formIsValid: formIsValid});
     }
 
     submitHandler = (event) => {
@@ -90,21 +131,21 @@ class Checkout extends Component{
                 <h1>Welcome to the checkout!</h1>
                 <div className='CLayout'>
                     <div className='COrderCards'>
-                        <h2>Your Order Summary:</h2>
+                        <h1 style={{margin: '40px auto 70px auto', fontWeight: '200', fontSize: '50px'}}>Your Order Summary:</h1>
                         {orderCards}
-                        <h2>Total Price: {this.state.totalPrice}$</h2>
+                        <h2 style={{margin: '25px auto 39px aut', fontWeight: '200', fontSize: '40px'}}>Total Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h2>
                     </div>
                     <div className='CForm'>
-                        <h2>Please fill out the information below</h2>
+                        <h1 style={{margin: '40px auto 70px auto', fontWeight: '200', fontSize: '50px'}}>Please fill out the form</h1>
                         <form onSubmit={this.submitHandler}>
-                            <input type="text" placeholder='Name' className='CInputs' onChange={(event) => this.typingHandler(event, 'name')}/>
-                            <input type="text" placeholder='Surname' className='CInputs' onChange={(event) => this.typingHandler(event, 'surname')}/>
-                            <input type="email" placeholder='Email' className='CInputs' onChange={(event) => this.typingHandler(event, 'email')}/>
-                            <input type="text" placeholder='Adress' className='CInputs' onChange={(event) => this.typingHandler(event, 'adress')}/>
-                            <input type="text" placeholder='Floor' className='CInputs' onChange={(event) => this.typingHandler(event, 'floor')}/>
-                            <input type="text" placeholder='Apartment Number' className='CInputs' onChange={(event) => this.typingHandler(event, 'apartmentNumber')}/>
-                            <textarea placeholder='Comment...' rows="5" cols="47" onChange={(event) => this.typingHandler(event, 'comment')}/>
-                            <button>Place Your Order!</button>
+                            <TextField id="outlined-basic" required={true} error={!this.state.userInfo.name.valid && this.state.userInfo.name.validation && this.state.userInfo.name.touched} label="Name" variant="outlined" className='CInputs' onChange={(event) => this.typingHandler(event, 'name')}/>
+                            <TextField id="outlined-basic" required={true} error={!this.state.userInfo.surname.valid && this.state.userInfo.surname.validation && this.state.userInfo.surname.touched} label="Surname" variant="outlined" className='CInputs' onChange={(event) => this.typingHandler(event, 'surname')}/>
+                            <TextField id="outlined-basic" required={true} error={!this.state.userInfo.email.valid && this.state.userInfo.email.validation && this.state.userInfo.email.touched} label="Email" variant="outlined" className='CInputs' onChange={(event) => this.typingHandler(event, 'email')}/>
+                            <TextField id="outlined-basic" required={true} error={!this.state.userInfo.adress.valid && this.state.userInfo.adress.validation && this.state.userInfo.adress.touched} label="Adress" variant="outlined" className='CInputs' onChange={(event) => this.typingHandler(event, 'adress')}/>
+                            <TextField id="outlined-basic" required={true} error={!this.state.userInfo.floor.valid && this.state.userInfo.floor.validation && this.state.userInfo.floor.touched} label="Floor" variant="outlined" className='CInputs' onChange={(event) => this.typingHandler(event, 'floor')}/>
+                            <TextField id="outlined-basic" required={true} error={!this.state.userInfo.apartmentNumber.valid && this.state.userInfo.apartmentNumber.validation && this.state.userInfo.apartmentNumber.touched} label="Apartment" variant="outlined" className='CInputs' onChange={(event) => this.typingHandler(event, 'apartmentNumber')}/>
+                            <TextField id="outlined-basic" label="Comment..." variant="outlined" className='CInputsComments' onChange={(event) => this.typingHandler(event, 'comment')}/>
+                            <button className='CSendOrderButton' disabled={!this.state.formIsValid}>Order!</button>
                         </form>
                     </div>
                 </div>
@@ -127,4 +168,6 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(useStyles, { withTheme: true })(Checkout));

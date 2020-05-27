@@ -12,6 +12,8 @@ import FastfoodIcon from '@material-ui/icons/Fastfood';
 import CakeIcon from '@material-ui/icons/Cake';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import LocalPizzaIcon from '@material-ui/icons/LocalPizza';
+import Fab from '@material-ui/core/Fab';
+import NavigationIcon from '@material-ui/icons/Navigation';
 
 
 const useStyles = makeStyles(theme => {
@@ -19,7 +21,9 @@ const useStyles = makeStyles(theme => {
         root: {
             width: '100%',
             height: '80%',
-            backgroundColor: theme.palette.background.paper
+            backgroundColor: theme.palette.background.paper,
+            padding: '0',
+            borderRadius: '10px'
         },
         secondList: {
             borderBottom: '1px solid lightgray',
@@ -33,6 +37,10 @@ const useStyles = makeStyles(theme => {
             borderBottom: '1px solid lightgray',
             borderRadius: '5px',
             paddingBottom: '15px'
+        },
+        BootomHeader: {
+            fontWeight: '200',
+            marginTop: '30px'
         }
     }
 })
@@ -41,6 +49,11 @@ const useStyles = makeStyles(theme => {
 const restaurantMenu = (props) => {
 
     const classes = useStyles();
+
+    const scrollUpHandler = () => {
+        const scrollTo = document.querySelector('#scrollTo');
+        scrollTo.scrollIntoView({block: 'center', behavior: 'smooth'});
+    }
 
     return (
         <Aux>
@@ -77,7 +90,7 @@ const restaurantMenu = (props) => {
                         <ListItemIcon>
                             <ArrowRightIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Fat Boy Burger"/>
+                        <ListItemText primary="Fat Boy Burger" id='scrollTo'/>
                     </ListItem>
                     <ListItem button onClick={props.showDrawer}>
                         <ListItemIcon>
@@ -182,6 +195,13 @@ const restaurantMenu = (props) => {
                         <ListItemText primary="Candy Wafel"/>
                     </ListItem>
                     </List>
+                    <Typography variant='h3' className={classes.BootomHeader}>
+                        We Say: 
+                    </Typography>
+                    <h2 style={{padding: '15px', fontWeight: '200', lineHeight:'40px', margin: '10px 0 20px 0'}}>- "Try building your own food, It's so fun!" </h2>
+                    <Fab color="primary" aria-label="scroll" className='RMScrollButton' onClick={scrollUpHandler}>
+                        <NavigationIcon fontSize='large'/>
+                    </Fab>
                 </List>
             </Aux>
     )

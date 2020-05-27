@@ -1,5 +1,5 @@
 import React from 'react';
-import './OrderCard.css';
+import { drinksAdditionalsSwitch } from '../../../../helpers/switchStatements';
 
 import BurgerBuilder from '../../Plate/IngredientBuilder/BurgerBuilder';
 import PizzaBuilder from '../../Plate/IngredientBuilder/PizzaBuilder';
@@ -29,7 +29,11 @@ const orderCard = (props) => {
                     <div className='OCBurger'>
                         <img src={BurgerTopBread} alt='Burger top bread'/>
                             {
-                                Object.keys(props.order).map((e, index) => <BurgerBuilder ingredient={e} key={index}/>)
+                                Object.keys(props.order).map(firstEl => {
+                                    return [...Array(props.order[firstEl])].map((SecondEl, index) => {
+                                        return <BurgerBuilder ingredient={firstEl} key={index}/>
+                                    })
+                                })
                             }
                         <img src={BurgerBottomBread} alt='Burger bottom bread'/>
                     </div>
@@ -74,19 +78,51 @@ const orderCard = (props) => {
             
     }
 
-    return (
-        <div className='OCCardContainer' onClick={props.clicked}>
+    if(orderImg === null){
+        orderImg = (
+            <div className='OCDrinksAdditionalsImages'>
+                {drinksAdditionalsSwitch(props.builder)}
+            </div>
+        )
+    }
+
+    let firstWord = props.order.name.split(/(?=[A-Z])/);
+
+    let content = (
+        props.type === 'small' ?
+        <div className='OCCardContainerSmall' onClick={props.clicked}>
             {orderImg}
-            <div className='OCOrderContent'>
-                <h2>{props.order.name} <strong>{props.order.price}$</strong></h2>
+            <div className='OCOrderContentSmall'>
+                <h2>{firstWord[0].charAt(0).toUpperCase() + firstWord[0].slice(1)}</h2>
+                <h2>{Number.parseFloat( props.order.price ).toFixed( 2 )}$</h2>
+            </div>
+        </div>
+        : props.type !== 'small' && info.length > 1 ?
+        <div className='OCCardContainerLarge' onClick={props.clicked}>
+            {orderImg}
+            <div className='OCOrderContentLarge'>
+                <h2>{firstWord[0].charAt(0).toUpperCase() + firstWord[0].slice(1)} <strong style={{letterSpacing: '4px'}}>{Number.parseFloat( props.order.price ).toFixed( 2 )}$</strong></h2>
                 <div className='OCIngredientDiv'>
                     {info.map((e,index) => {
-                        return <span key={index}>{e.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}{typeof props.order[e] !== 'boolean' ? `(${props.order[e]})` : null}</span>
+                        return <span key={index}>{e.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}{typeof props.order[e] !== 'boolean' ? `(${props.order[e]})` : null}, </span>
                     })}
                 </div>
             </div>
         </div>
+        :
+        <div className='OCCardContainerMedioum' onClick={props.clicked}>
+            {orderImg}
+            <div className='OCOrderContentMedioum'>
+                <h1><strong style={{letterSpacing: '4px'}}>{Number.parseFloat( props.order.price ).toFixed( 2 )}$</strong></h1>
+                <h2>{firstWord[0].charAt(0).toUpperCase() + firstWord[0].slice(1)} X {props.order[info[0]]}</h2>
+            </div>
+        </div>
+
     )
+
+
+
+    return content;
 }
 
 

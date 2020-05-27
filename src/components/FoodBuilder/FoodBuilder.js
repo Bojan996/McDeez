@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './FoodBuilder.css';
 import { withSnackbar } from 'notistack';
+import { foodBuilderState } from '../../assets/FoodBuilderInitialState/FoodBuilderInitialState';
 
 import MenuBuilder from './MenuBuilder/MenuBuilder';
 import Plate from './Plate/Plate';
@@ -121,104 +122,7 @@ class FoodBuilder extends Component {
         };
 
     resetState = () => {
-        this.setState({
-            isBoolean: false,
-            disabledButton: true,
-            menuTypeClicked: null,
-            menuItemClicked: null,
-            ingredients: [],
-            totalPrice: 1,
-            Burger: {
-                Regular: {
-                    salad: 0,
-                    meet: 0,
-                    bacon: 0,
-                    cheese: 0,
-                    bread: 0,
-                    onion: 0,
-                    pickle: 0,
-                    tomato: 0
-                },
-                Sauces: {
-                    ketchup: false,
-                    mayo: false,
-                    bbqSauce: false,
-                    burgerSauce: false,
-                    mcdeezSecretSauce: false
-                }
-            },
-            Pizza: {
-                Regular: {
-                    tomatoSauce: false,
-                    mozzarella: false,
-                    parmesan: false,
-                    ham: false,
-                    sausage: false,
-                    bacon: false,
-                    tuna: false
-                },
-                Vegetables: {
-                    mushroom: false,
-                    onion: false,
-                    olive: false,
-                    tomato: false,
-                    corn: false
-                },
-                Sauces: {
-                    ketchup: false,
-                    mayo: false,
-                    burgerSauce: false,
-                    mcdeezSecretSauce: false
-                }
-            },
-            Salad: {
-                Vegetables: {
-                    lettuce: false,
-                    tomato: false,
-                    cucumber: false,
-                    spinach: false,
-                    olive: false,
-                    onion: false,
-                    corn: false,
-                    whiteCheese: false
-                },
-                Meet: {
-                    chickenBreast: false,
-                    steak: false, 
-                    bacon: false,
-                    tuna: false,
-                    slamon: false
-                },
-                Dressing: {
-                    honeyDressing: false,
-                    burgerDressing: false,
-                    pestoDressing: false
-                }
-            },
-            Wafel: {
-                Regular: {
-                    nutela: false,
-                    honey: false,
-                    strawberryJam: false,
-                    blueberryJam: false,
-                    peachJam: false,
-                    biscuit: false,
-                    oreo: false,
-                    kitkat: false,
-                    chocolateChips: false,
-                    sprinkles: false
-                },
-                Fruits: {
-                    banana: false,
-                    apple: false,
-                    cherry: false,
-                    blueberry: false,
-                    strawberry: false,
-                    peach: false,
-                    pineapple: false
-                }
-            }
-        });
+        this.setState(foodBuilderState);
         this.props.close();
     }
 

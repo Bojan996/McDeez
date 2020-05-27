@@ -3,20 +3,16 @@
   width: 100%;
   top: 0;
   left: 0;
+  background: url('./assets/images/backgroundMcDeez.png') no-repeat;
+  background-size: cover;
 }
 
 .NavBarDiv {
   height: 100px;
 }
 
-
 ::-webkit-scrollbar {
   width: 8px;
-}
-
-::-webkit-scrollbar-button {
-  width: 100px;
-  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {

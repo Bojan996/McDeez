@@ -1,28 +1,123 @@
 .FDContainer {
     max-width: 100%;
-    margin: 100px 0 200px 0;
+    margin-bottom: 200px;
 }
 
-.FloatingButton{
-    display: none;
-    top: 89px;
+.FDFloatingButton {
+    top: 20px;
     right: 27px;
     position: fixed;
     z-index: 90;
-    width: 70px;
-    height: 70px;
+    width: 200px;
+    height: 67px;
+    animation: orderSummaryGettingIn 0.45s ease-out;
+}
+
+.FDFloatingButton img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.FDFloatingButton img:active{
+    transform: translateY(10px);
+}
+
+@keyframes orderSummaryGettingIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.divInFloatingButton{
+    font-size: 25px;
+    z-index: 91;
+    color: white;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 15px;
+    right: 22px;
+    background-color: tomato;
     border-radius: 50%;
-    background-color: red;
+    animation: divInFloatingButton 1s ease-out;
+}
+
+@keyframes divInFloatingButton {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.FDFloatingButton img{
+    width: 100%;
+    height: 100%;
     transition: 0.2s ease-out;
 }
 
-.FloatingButton:hover{
+.FDCuponDivContainer {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.FDHeaderCupon {
+    width: 30%;
+    margin: 30px 300px 100px 50px;
+}
+
+.FDHeaderCupon h1 {
+    text-shadow: 1px 1px 2px rgb(58, 58, 58);
+    border-radius: 10px;
+    color: white;
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.FDHeaderCupon h2{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.FDCupponButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    color: rgb(0, 0, 0);
+    width: 20%;
+    font-size: 27px;
+    font-weight: 200;
+    outline: none;
+    padding: 15px 10px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    transition: 0.3s ease-out;
+}
+
+.FDCupponButton:hover{
     cursor: pointer;
-    transform: scale(1.1);
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgb(89, 202, 89);
+}
+
+.FDCuponIcon {
+    font-size: 50px !important;
 }
 
 .FDLayout {
-    margin-top: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -50,7 +145,7 @@
 }
 
 .FDListItem {
-    padding: 15px 0 !important;
+    padding: 15px 0 15px 10px !important;
     margin-bottom: 60px !important;
     width: 45% !important;
     border: 1px solid lightgrey !important;
@@ -89,4 +184,83 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.RMScrollButton {
+    margin-bottom: 26px !important;
+    width: 80px !important;
+    height: 80px !important;
+    background-color: rgb(38, 174, 228) !important;
+    animation: upanddown 1s infinite;
+}
+
+.RMScrollButton:hover{
+    animation-play-state: paused;
+}
+
+@keyframes upanddown{
+    0% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.FDPrice {
+    width: 100%;
+    margin: 50px auto 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.FDDrinksAdditionalsButton {
+    font-size: 20px !important;
+    font-weight: 200 !important;
+    padding: 10px 25px !important;
+    color: rgb(33, 189, 85) !important;
+    border-color: rgb(33, 189, 85) !important;
+    border-width: 1.5px !important;
+    border-radius: 7px !important;
+    transition: transform 0.2s ease-out !important;
+}
+
+.FDDrinksAdditionalsButton:active {
+    transform: translateY(5px);
+}
+
+.FDDrinksAdditionalsSummary {
+    max-width: 100%;
+    border: 1px solid lightgray;
+    border-top: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-top: 40px;
+}
+
+.FDDrinksAdditionalsSummary h1{
+    margin: 0 0 31.5px 0;
+    font-weight: 200;
+}
+
+.AddedSpans {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 200;
+    animation: spansGettingIn 0.3s ease-out;
+}
+
+@keyframes spansGettingIn {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
 }

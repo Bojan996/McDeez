@@ -108,7 +108,7 @@
     height: 320px;
     border-radius: 30%;
     animation: gettingIn 0.3s ease-out;
-    transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+    transition: transform 0.3s ease-out;
 }
 
 .PPlateWafel img:hover:not(:first-child){
