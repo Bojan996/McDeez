@@ -43,7 +43,7 @@ class NavBar extends Component {
                 <div className='NavItemDiv'>
                     <div className='NavLeftDiv'>
                         <NavLink to='/' className='NavLi' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}}>Home</NavLink>
-                        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.clickHandler(event)} style={buttonStyle}>About</Button>
+                        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.clickHandler(event)} style={buttonStyle}>About <i className="fas fa-caret-down" style={{paddingLeft: '10px'}}></i></Button>
                             <Menu id="simple-menu" anchorEl={this.state.dropDownOpen} keepMounted open={Boolean(this.state.dropDownOpen)} onClose={this.closseHandler}>
                                 <MenuItem onClick={this.closseHandler}><Link to='/'>What We Do?</Link></MenuItem>
                                 <MenuItem onClick={this.closseHandler}><Link to='/'>History</Link></MenuItem>
@@ -55,12 +55,12 @@ class NavBar extends Component {
                         {
                             this.props.isAuth ?
                             <div className='NavRightDiv'>
-                            <NavLink to='/logout' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'>Logout</NavLink>
+                            <NavLink to='/logout' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi' style={{paddingRight: '10px'}}><i className="fas fa-sign-out-alt"></i> Logout</NavLink>
                             </div>
                             :
                             <div className='NavRightDiv'>
-                                <NavLink to='/login' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'>Login</NavLink>
-                                <NavLink to='/register' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'>SignUp</NavLink>
+                                <NavLink to='/login' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'><i className="fas fa-sign-in-alt" style={{paddingRight: '10px'}}></i> Login</NavLink>
+                                <NavLink to='/register' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'><i className="fas fa-user-plus" style={{paddingRight: '10px'}}></i> Sign Up</NavLink>
                            </div>
                         }
                 </div>
