@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 const Logo = props => {
     return (
         <Link to='/'> 
-            <div className='DivOfImg'>
                 <img src={McDeezLogo} alt='The official McDeez logo'/>
-            </div>
         </Link>
     );
 }

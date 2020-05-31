@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import { AnimatedSwitch } from 'react-router-transition';
+
 import NavBar from './components/UI/Navigation/NavBar';
 import Home from './hoc/Routes/Home/Home';
 import FoodMaker from './hoc/Routes/FoodMaker/FoodMaker';
@@ -21,34 +23,68 @@ class App extends Component {
   render() {
 
     let routes = (
-      <Switch>
+      <AnimatedSwitch
+      atEnter={{ opacity: 0 }}
+      atLeave={{ opacity: 0 }}
+      atActive={{ opacity: 1 }}
+      className="switch-wrapper"
+    >
           <Route path='/foodmaker' component={FoodMaker}/>
           <Route path='/checkout' component={Checkout}/>
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
           <Route path='/' exact component={Home}/>
           <Redirect to='/'/>
-        </Switch>
+        </AnimatedSwitch>
     )
 
     if(this.props.isAuth){
       routes = (
-        <Switch>
+        <AnimatedSwitch
+      atEnter={{ opacity: 0 }}
+      atLeave={{ opacity: 0 }}
+      atActive={{ opacity: 1 }}
+      className="switch-wrapper"
+    >
             <Route path='/foodmaker' component={FoodMaker}/>
             <Route path='/checkout' component={Checkout}/>
             <Route path='/orders' component={Orders}/>
             <Route path='/logout' component={Logout}/>
             <Route path='/' exact component={Home}/>
             <Redirect to='/'/>
-          </Switch>
+          </AnimatedSwitch>
       )
     }
 
+    window.onscroll = () => {
+      if(this.props.orders.length === 0 || document.querySelector('.FDFloatingButton') === null){
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          document.querySelector('.NavContainer').style.padding = '0';
+          document.querySelector('.LogoDiv').style.height = '41px';
+        } else {
+          document.querySelector('.NavContainer').style.padding = '15px 0';
+          document.querySelector('.LogoDiv').style.height = '53px';
+        }
+      }else{
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          document.querySelector('.NavContainer').style.padding = '0';
+          document.querySelector('.LogoDiv').style.height = '41px';
+          document.querySelector('.FDFloatingButton').style.top = '57px';
+          document.querySelector('.divInFloatingButton').style.top = '53px';
+          document.querySelector('.OSContainer').style.top = '131px';
+        } else {
+          document.querySelector('.NavContainer').style.padding = '15px 0';
+          document.querySelector('.LogoDiv').style.height = '53px';
+          document.querySelector('.FDFloatingButton').style.top = '90px';
+          document.querySelector('.divInFloatingButton').style.top = '84px';
+          document.querySelector('.OSContainer').style.top = '166px';
+        }
+      }
+  }
+
     return (
       <div className="App">
-        <div className='NavBarDiv'>
           <NavBar/>
-        </div>
         {routes}
       </div>
     );
@@ -57,7 +93,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    orders: state.orderSummary.orders
   }
 }
 

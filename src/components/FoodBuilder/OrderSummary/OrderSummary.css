@@ -6,12 +6,13 @@
     max-height: 505px;
     overflow-y: auto;
     overflow-x: hidden;
-    top: 100px;
+    top: 131px;
     right: 5px;
     border: 1px solid lightgray;
     border-radius: 10px;
     box-shadow: 2px 2px 2px gray;
     padding: 20px;
+    transition: 0.3s ease-out;
 }
 
 .OSContainerOpen {
@@ -37,7 +38,7 @@
     font-size: 20px;
     color: rgb(240, 240, 240);
     padding: 20px;
-    background-color: tomato;
+    background-color: rgb(233, 80, 53);
     outline: none;
     transition: 0.2s ease-out;
 }
@@ -113,8 +114,8 @@
 .OCCardContainerSmall:hover{
     cursor: pointer;
     color: white;
-    border: 1px solid red;
-    box-shadow: 2px 2px 2px red;
+    border: 1px solid rgb(233, 80, 53);
+    box-shadow: 2px 2px 2px rgb(233, 80, 53);
 }
 
 .OCCardContainerSmall:hover::after {
