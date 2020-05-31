@@ -102,6 +102,9 @@ export const foodBuilderState = () => {
 export const foodMakerState = () => {
     return {
         showDrawer: false,
+        drawerClicked: '',
+        drawerIngredients: '',
+        drawerPrice: '',
         showBuilder: false,
         whichBuidler: null,
         showOrderSummary: false,

@@ -58,6 +58,9 @@ class FoodMaker extends Component {
 
     state = {
         showDrawer: false,
+        drawerClicked: '',
+        drawerIngredients: '',
+        drawerPrice: '',
         showBuilder: false,
         whichBuidler: null,
         showOrderSummary: false,
@@ -143,8 +146,8 @@ class FoodMaker extends Component {
         this.setState({[from]: updatedState, totalPriceDrinksAdditionals: updatedPrice, drinksAdditionals: updatedDrinksAdditionals});
     }
 
-    showDrawerHandler = () => {
-        this.setState({showDrawer: true});
+    showDrawerHandler = (type, ingredients, price) => {
+        this.setState({drawerClicked: type, drawerIngredients: ingredients, drawerPrice: price, showDrawer: true});
     }
 
     showOrderSummaryHandler = () => {
@@ -155,11 +158,11 @@ class FoodMaker extends Component {
         this.setState({showBuilder: true, whichBuidler: builder});
     }
 
-    CloseHandler = () => {
-        this.setState({showBuilder: false, showDrawer: false});
+    closeHandler = () => {
+        this.setState({showBuilder: false, showDrawer: false, drawerClicked: '', drawerIngredients: '', drawerPrice: ''});
     }
 
-    AddToSummaryHandler = () => {
+    addToSummaryHandler = () => {
         if(Object.keys(this.state.drinksAdditionals).length === 0){
             this.props.enqueueSnackbar('Please Add Something!', {variant: 'error'});
         }else {
@@ -182,6 +185,22 @@ class FoodMaker extends Component {
             this.props.enqueueSnackbar('Added to Order Summary!',  {variant: 'success'} );
         }
     }
+
+    // addToSummaryPremadeMenuHandler = () => {
+    //     if((this.state.drawerClicked || this.state.drawerIngredients || this.state.drawerPrice) === null){
+    //         this.props.enqueueSnackbar('Please Add Something!', {variant: 'error'});
+    //     }else {
+
+    //         this.props.addOrder({
+    //             name: this.state.drawerClicked,
+    //             price: Number(this.state.drawerPrice),
+    //             amount: 1
+    //         });
+
+    //         this.setState(foodMakerState);
+    //         this.props.enqueueSnackbar('Added to Order Summary!',  {variant: 'success'} );
+    //     }
+    // }
 
     render(){
 
@@ -213,9 +232,9 @@ class FoodMaker extends Component {
                 {orderSummaryButton}
                 {openSummaryBackdrop}
                 <OrderSummary historyProp={this.props.history} show={this.state.showOrderSummary} type='small'/>
-                <MenuDrawer show={this.state.showDrawer}/>
-                <Backdrop showDrawer={this.state.showDrawer} showBuilder={this.state.showBuilder} close={this.CloseHandler}/>
-                <FoodBuilder show={this.state.showBuilder} close={this.CloseHandler} builder={this.state.whichBuidler}/>
+                <MenuDrawer type={this.state.drawerClicked} ingredients={this.state.drawerIngredients} price={this.state.drawerPrice} show={this.state.showDrawer} clicked={this.addToSummaryPremadeMenuHandler}/>
+                <Backdrop showDrawer={this.state.showDrawer} showBuilder={this.state.showBuilder} close={this.closeHandler}/>
+                <FoodBuilder show={this.state.showBuilder} close={this.closeHandler} builder={this.state.whichBuidler}/>
 
                 <div className='FDLayout'>
                     <div className='FDMenu'>
@@ -268,7 +287,7 @@ class FoodMaker extends Component {
                         <div className='FDPrice'>
                             <Typography variant='h3' className={classes.price}>Drinks & Adds:</Typography>
                             <Typography variant='h3' className={classes.price} style={{paddingRight: '80px'}}>{Number.parseFloat( this.state.totalPriceDrinksAdditionals ).toFixed( 2 )}$</Typography>
-                            <Button variant="outlined" size="large" color="primary" className='FDDrinksAdditionalsButton' onClick={this.AddToSummaryHandler}> Add To Summary </Button>
+                            <Button variant="outlined" size="large" color="primary" className='FDDrinksAdditionalsButton' onClick={this.addToSummaryHandler}> Add To Summary </Button>
                         </div>
                         <div className='FDDrinksAdditionalsSummary'>
                             <h1>You Added: </h1>

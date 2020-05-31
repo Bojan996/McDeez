@@ -1,6 +1,8 @@
 .FDContainer {
     max-width: 100%;
     margin-bottom: 200px;
+    overflow-x: hidden;
+    animation: componentsrGettingIn 0.6s ease-out;
 }
 
 .FDFloatingButton {
@@ -120,6 +122,7 @@
 
 .FDLayout {
     margin-top: 100px;
+    margin-bottom: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -224,7 +227,7 @@
     font-size: 20px !important;
     font-weight: 200 !important;
     padding: 10px 25px !important;
-    color: rgb(33, 189, 85) !important;
+    color: rgb(26, 156, 70) !important;
     border-color: rgb(33, 189, 85) !important;
     border-width: 1.5px !important;
     border-radius: 7px !important;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Redirect } from 'react-router-dom';
-import { AnimatedSwitch } from 'react-router-transition';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 import NavBar from './components/UI/Navigation/NavBar';
 import Home from './hoc/Routes/Home/Home';
@@ -23,36 +22,26 @@ class App extends Component {
   render() {
 
     let routes = (
-      <AnimatedSwitch
-      atEnter={{ opacity: 0 }}
-      atLeave={{ opacity: 0 }}
-      atActive={{ opacity: 1 }}
-      className="switch-wrapper"
-    >
+      <Switch>
           <Route path='/foodmaker' component={FoodMaker}/>
           <Route path='/checkout' component={Checkout}/>
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
           <Route path='/' exact component={Home}/>
           <Redirect to='/'/>
-        </AnimatedSwitch>
+        </Switch>
     )
 
     if(this.props.isAuth){
       routes = (
-        <AnimatedSwitch
-      atEnter={{ opacity: 0 }}
-      atLeave={{ opacity: 0 }}
-      atActive={{ opacity: 1 }}
-      className="switch-wrapper"
-    >
+        <Switch>
             <Route path='/foodmaker' component={FoodMaker}/>
             <Route path='/checkout' component={Checkout}/>
             <Route path='/orders' component={Orders}/>
             <Route path='/logout' component={Logout}/>
             <Route path='/' exact component={Home}/>
             <Redirect to='/'/>
-          </AnimatedSwitch>
+          </Switch>
       )
     }
 
