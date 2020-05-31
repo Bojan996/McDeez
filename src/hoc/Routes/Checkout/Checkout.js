@@ -128,7 +128,6 @@ class Checkout extends Component{
 
         return(
             <div className='CCheckoutContent'>
-                <h1>Welcome to the checkout!</h1>
                 <div className='CLayout'>
                     <div className='COrderCards'>
                         <h1 style={{margin: '40px auto 70px auto', fontWeight: '200', fontSize: '50px'}}>Your Order Summary:</h1>

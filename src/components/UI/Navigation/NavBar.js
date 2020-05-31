@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Logo from '../../Logo/Logo';
 import './NavBar.css';
-
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import { connect } from 'react-redux';
 
 
@@ -26,15 +22,6 @@ class NavBar extends Component {
 
     render() {
 
-        const buttonStyle = {
-            textDecoration: 'none',
-            padding: '10px 20px 0 20px',
-            height: '100%',
-            fontSize: '20px',
-            fontWeight: '200',
-            color: 'black'
-        }
-
         return (
             <div className='NavContainer'>
                 <div className='LogoDiv'>
@@ -42,25 +29,27 @@ class NavBar extends Component {
                 </div>
                 <div className='NavItemDiv'>
                     <div className='NavLeftDiv'>
-                        <NavLink to='/' className='NavLi' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}}>Home</NavLink>
-                        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => this.clickHandler(event)} style={buttonStyle}>About <i className="fas fa-caret-down" style={{paddingLeft: '10px'}}></i></Button>
-                            <Menu id="simple-menu" anchorEl={this.state.dropDownOpen} keepMounted open={Boolean(this.state.dropDownOpen)} onClose={this.closseHandler}>
-                                <MenuItem onClick={this.closseHandler}><Link to='/'>What We Do?</Link></MenuItem>
-                                <MenuItem onClick={this.closseHandler}><Link to='/'>History</Link></MenuItem>
-                                <MenuItem onClick={this.closseHandler}><Link to='/'>Careers</Link></MenuItem>
-                            </Menu>
-                        <NavLink to='/orders' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'>Orders</NavLink>
-                        <NavLink to='/foodmaker' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'>Make your Dish!</NavLink>
+                        <NavLink to='/' className='NavLi' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #FFDF82'}}>Home</NavLink>
+                        <div className='NavDropDownDiv'>
+                            <h2>About <i style={{paddingLeft: '10px'}} className="fas fa-sort-down"></i></h2>
+                            <div className='NavDropDownContent'>
+                                <Link to='/home' className='DropDownLinks'>Why us?</Link>
+                                <Link to='/home' className='DropDownLinks'>History</Link>
+                                <Link to='/home' className='DropDownLinks'>Careers</Link>
+                            </div>
+                        </div>
+                        <NavLink to='/orders' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #FFDF82'}} className='NavLi'>Orders</NavLink>
+                        <NavLink to='/foodmaker' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #FFDF82'}} className='NavLi'>Menu</NavLink>
                     </div>
                         {
                             this.props.isAuth ?
                             <div className='NavRightDiv'>
-                            <NavLink to='/logout' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi' style={{paddingRight: '10px'}}><i className="fas fa-sign-out-alt"></i> Logout</NavLink>
+                            <NavLink to='/logout' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #FFDF82'}} className='NavLi' style={{paddingRight: '10px'}}><i className="fas fa-sign-out-alt"></i> Logout</NavLink>
                             </div>
                             :
                             <div className='NavRightDiv'>
-                                <NavLink to='/login' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'><i className="fas fa-sign-in-alt" style={{paddingRight: '10px'}}></i> Login</NavLink>
-                                <NavLink to='/register' exact activeStyle={{backgroundColor: 'rgb(236, 236, 236)', borderBottom: '2px solid rgb(0, 183, 255)'}} className='NavLi'><i className="fas fa-user-plus" style={{paddingRight: '10px'}}></i> Sign Up</NavLink>
+                                <NavLink to='/login' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #FFDF82'}} className='NavLi'><i className="fas fa-sign-in-alt" style={{paddingRight: '10px'}}></i> Login</NavLink>
+                                <NavLink to='/register' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #FFDF82'}} className='NavLi'><i className="fas fa-user-plus" style={{paddingRight: '10px'}}></i> Sign Up</NavLink>
                            </div>
                         }
                 </div>

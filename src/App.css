@@ -3,12 +3,14 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: url('./assets/images/backgroundMcDeez.png') no-repeat;
-  background-size: cover;
 }
 
-.NavBarDiv {
-  height: 60px;
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
 }
 
 ::-webkit-scrollbar {
@@ -40,4 +42,13 @@
 
 ::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+@keyframes componentsrGettingIn {
+  0%{
+      opacity: 0.7;
+  }
+  100%{
+      opacity: 1;
+  }
 }

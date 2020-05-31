@@ -1,22 +1,27 @@
 import React from 'react';
 import './MenuDrawer.css';
+import { whichDrawer } from '../../../helpers/switchStatements';
 
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
+import nutritionFacts from '../../../assets/images/menuDrawer/nutritionFactsCooler.png';
 
 const menuDrawer = (props) => {
+    let image = whichDrawer(props.type);
     return (
         <div className='MDContainer' style={{
             transform: props.show ? 'translateX(0)' : 'translateX(160vh)',
             opacity: props.show ? '1' : '0'
         }}>
             <div className='MDPictureSide'>
-                <img src='https://media.bizj.us/view/img/10100451/burger*750xx2020-1142-0-256.jpg' alt='the burger'/>
-                <h2>The Kings Burger</h2>
-                <p>- A susam based bread crust with lot's of meat and cheese in it.<br/> <br/>- Salad, Bacon, Cheese are the main ingrediants in this burger. <br/> <br/>-The creamy stuff are ketcup, mayo and mustard!</p>
+                <Typography variant='h2' className='MDHeader'> <span>{props.type}</span><span>{props.price}$</span></Typography>
+                {image}
+                <h2 className='MDIngredients'>Ingredients: </h2>
+                <p>{props.ingredients}</p>
+                <Button variant="outlined" size="large" color="primary" className='FDDrinksAdditionalsButton' onClick={props.clicked}> Add To Summary </Button>
             </div>
-            <div className='MDNutritionSide'>
-                <img src='https://lightlife.com/wp-content/uploads/2019/05/Lightlife-Burger-US-Retail-NFP-FINAL.jpg' alt='the nutrition value'/>
-                <button>Put in Order!</button>
-            </div>
+            <img src={nutritionFacts} className='MDNutritionImg' alt='the nutrition value'/>
         </div>
     )
 }
