@@ -48,9 +48,29 @@
     width: 70%;
 }
 
-.FBAmountButtons {
+.FBHeader {
+    margin: 0 0 10px 0;
+    font-weight: 200;
+    font-size: 45px;
+    padding: 27px 0 16px 0;
+    border-bottom: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.FBPlateButtonsContainer {
+    height: 70%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.FBAmountButtons {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .FBAmountButtons button {
@@ -62,7 +82,6 @@
     box-shadow: 4px 4px 2px rgb(145, 145, 145);
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 50px;
     transition: 0.2s ease-out;
 }
 

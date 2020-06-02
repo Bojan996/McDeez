@@ -59,7 +59,7 @@ const orderCard = (props) => {
             {orderImg}
             <div className='OCOrderContentMedioum'>
                 <h1><strong style={{letterSpacing: '4px'}}>{Number.parseFloat( props.order.price ).toFixed( 2 )}$</strong></h1>
-                <h2>{firstWord[0].charAt(0).toUpperCase() + firstWord[0].slice(1)} X {props.order[info[0]]}</h2>
+                <h2>{firstWord[0].charAt(0).toUpperCase() + firstWord[0].slice(1)}    X{props.order[info[0]]}</h2>
             </div>
         </div>
 

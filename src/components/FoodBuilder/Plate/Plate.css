@@ -1,19 +1,4 @@
-.PContainer {
-    height: 500px;
-    width: 100%;
-}
-
-.Ph1 {
-    margin: 0 0 10px 0;
-    font-weight: 200;
-    font-size: 45px;
-    padding: 27px 0 16px 0;
-    border-bottom: 1px solid lightgray;
-    border-radius: 5px;
-}
-
 .POverflowDiv {
-    margin: auto;
     overflow-y: auto;
     height: 370px;
     width: 500px;

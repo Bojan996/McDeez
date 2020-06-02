@@ -127,7 +127,6 @@ class FoodBuilder extends Component {
     }
 
     removingHandler = (type, item, from, theIndex) => {
-        console.log(type, item, from, theIndex);
         const updatedBuilder = {...this.state[this.props.builder]};
         const updatedBuilderType = {...updatedBuilder[type]};
         let updatedBuilderItem = null;
@@ -153,21 +152,25 @@ class FoodBuilder extends Component {
     }
 
     addingHandler = () => {
-        const updatedBuilder = {...this.state[this.props.builder]};
-        const updatedBuilderType = {...updatedBuilder[this.state.menuTypeClicked]};
-        let updatedBuilderItem = null;
-        let ingredients = [...this.state.ingredients];
-        let totalPrice = this.state.totalPrice + prices[this.state.menuTypeClicked];
-        if(this.state.isBoolean){
-            updatedBuilderItem = true;
-            updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] = updatedBuilderItem;
-            ingredients.push(this.state.menuItemClicked);
-            this.setState({[this.props.builder]: updatedBuilder, ingredients: ingredients, totalPrice: totalPrice});
+        if(this.state.menuItemClicked === null){
+            this.props.enqueueSnackbar('Please choose an item!', {variant: 'error'});
         }else {
-            updatedBuilderItem = updatedBuilderType[this.state.menuItemClicked] + 1;
-            updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] = updatedBuilderItem;
-            ingredients.push(this.state.menuItemClicked);
-            this.setState({[this.props.builder]: updatedBuilder, disabledButton: updatedBuilderItem <=0, ingredients: ingredients,  totalPrice: totalPrice});
+            const updatedBuilder = {...this.state[this.props.builder]};
+            const updatedBuilderType = {...updatedBuilder[this.state.menuTypeClicked]};
+            let updatedBuilderItem = null;
+            let ingredients = [...this.state.ingredients];
+            let totalPrice = this.state.totalPrice + prices[this.state.menuTypeClicked];
+            if(this.state.isBoolean){
+                updatedBuilderItem = true;
+                updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] = updatedBuilderItem;
+                ingredients.push(this.state.menuItemClicked);
+                this.setState({[this.props.builder]: updatedBuilder, ingredients: ingredients, totalPrice: totalPrice});
+            }else {
+                updatedBuilderItem = updatedBuilderType[this.state.menuItemClicked] + 1;
+                updatedBuilder[this.state.menuTypeClicked][this.state.menuItemClicked] = updatedBuilderItem;
+                ingredients.push(this.state.menuItemClicked);
+                this.setState({[this.props.builder]: updatedBuilder, disabledButton: updatedBuilderItem <=0, ingredients: ingredients,  totalPrice: totalPrice});
+            }
         }
     }
 
@@ -241,13 +244,16 @@ class FoodBuilder extends Component {
                         <MenuBuilder builder={this.state[this.props.builder]} clicked={this.menuClickHandler} prices={prices}/>
                     </div>
                     <div className='FBContent'>
-                        <Plate builder={this.props.builder} ingredients={this.state.ingredients} clicked={this.removingHandler} builderState={this.state[this.props.builder]}/>
-                        <div className='FBAmountButtons'>
-                            <button className='FBRemoveButton' onClick={() => this.removingHandler(this.state.menuTypeClicked, this.state.menuItemClicked)} disabled={!this.state.isBoolean ? this.state.disabledButton : !this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Remove</button>
-                            <h1>Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h1>
-                            <button className='FBAddButton' onClick={this.addingHandler} disabled={!this.state.isBoolean ? null : this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Add</button>
+                        <h1 className='FBHeader'>Make your {this.props.builder}</h1>
+                        <div className='FBPlateButtonsContainer'>
+                            <div className='FBAmountButtons'>
+                                <button className='FBAddButton' onClick={this.addingHandler} disabled={!this.state.isBoolean ? null : this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Add Ingredient</button>
+                                <button className='FBRemoveButton' onClick={() => this.removingHandler(this.state.menuTypeClicked, this.state.menuItemClicked)} disabled={!this.state.isBoolean ? this.state.disabledButton : !this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Remove Ingredient</button>
+                                <button className='FBOrderBtton' onClick={this.orderClickedHanlder}>ORDER!</button>
+                            </div>
+                            <Plate builder={this.props.builder} ingredients={this.state.ingredients} clicked={this.removingHandler} builderState={this.state[this.props.builder]}/>
                         </div>
-                            <button className='FBOrderBtton' onClick={this.orderClickedHanlder}>ORDER!</button>
+                        <h1>Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h1>
                     </div>
                 </div>
             </div>

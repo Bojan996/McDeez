@@ -115,14 +115,11 @@ const plate = (props) => {
     }
     
     return (
-        <div className='PContainer'>
-            <h1 className='Ph1'>Make your {props.builder}</h1>
             <div className='POverflowDiv'>
                 <div className='PPlateFlexer'>
                     {plate}
                 </div>
             </div>
-        </div>
     )
 }
 
