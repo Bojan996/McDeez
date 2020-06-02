@@ -101,7 +101,7 @@
     display: flex;
     position: relative;
     justify-content: space-around;
-    padding: 5px;
+    padding: 5px 0;
     margin: 20px;
     border: 1px solid lightgray;
     border-radius: 10px;
@@ -113,7 +113,6 @@
 
 .OCCardContainerSmall:hover{
     cursor: pointer;
-    color: white;
     border: 1px solid rgb(233, 80, 53);
     box-shadow: 2px 2px 2px rgb(233, 80, 53);
 }
@@ -149,11 +148,17 @@
 }
 
 .OCCardContainerSmall .OCDrinksAdditionalsImages {
-    width: 33%;
+    align-self: center;
+    width: 28%;
 }
 
-.OCCardContainerSmall .OCDrinksAdditionalsImages img{
-    width: 80%;
+.OCCardContainerSmall .OCPremadeMenuImages {
+    align-self: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 1px;
+    width: 36.5%;
+    height: 95px;
 }
 
 .OCCardContainerSmall .OCBurger {
@@ -183,7 +188,7 @@
 
 .OCCardContainerSmall .OCPizza img:not(:first-child){
     position: absolute;
-    top: 10px;
+    top: 12px;
     left: 12px;
     width: 84%;
     height: 80%;
@@ -203,8 +208,8 @@
 
 .OCCardContainerSmall .OCSalad img:not(:first-child){
     position: absolute;
-    top: 9px;
-    left: 14px;
+    top: 11px;
+    left: 13px;
     width: 82%;
     height: 81%;
 }
@@ -223,7 +228,7 @@
 
 .OCCardContainerSmall .OCWafel img:not(:first-child){
     position: absolute;
-    top: 8px;
+    top: 9px;
     left: 7px;
     width: 91%;
     height: 83%;

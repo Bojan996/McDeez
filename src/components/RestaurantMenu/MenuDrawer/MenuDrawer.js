@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import nutritionFacts from '../../../assets/images/menuDrawer/nutritionFactsCooler.png';
 
 const menuDrawer = (props) => {
-    let image = whichDrawer(props.type);
+    let image = whichDrawer(props.type, 'Menu Drawer');
     return (
         <div className='MDContainer' style={{
             transform: props.show ? 'translateX(0)' : 'translateX(160vh)',

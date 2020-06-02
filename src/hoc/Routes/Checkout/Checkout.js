@@ -111,7 +111,15 @@ class Checkout extends Component{
         event.preventDefault();
         const fullOrder = {
             orders: [...this.props.orders],
-            orderData: {...this.state.userInfo},
+            orderData: {
+                adress: this.state.userInfo.adress.value,
+                apartmentNumber: this.state.userInfo.apartmentNumber.value,
+                comment: this.state.userInfo.comment.value,
+                email: this.state.userInfo.email.value,
+                floor: this.state.userInfo.floor.value,
+                name: this.state.userInfo.name.value,
+                surname: this.state.userInfo.surname.value
+            },
             price: this.state.totalPrice,
             userId: this.props.userId
         }

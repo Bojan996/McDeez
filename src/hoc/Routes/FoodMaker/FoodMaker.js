@@ -170,12 +170,14 @@ class FoodMaker extends Component {
                 if(this.state.drinks[e] === undefined){
                     return this.props.addOrder({
                         name: e,
+                        type: 'Drinks And Additionals',
                         price: Number(this.state.additionals[e].price) * Number(this.state.drinksAdditionals[e]),
                         amount: this.state.drinksAdditionals[e]
                     })
                 }else{
                     return this.props.addOrder({
                         name: e,
+                        type: 'Drinks And Additionals',
                         price: Number(this.state.drinks[e].price) * Number(this.state.drinksAdditionals[e]),
                         amount: this.state.drinksAdditionals[e]
                     })
@@ -186,21 +188,20 @@ class FoodMaker extends Component {
         }
     }
 
-    // addToSummaryPremadeMenuHandler = () => {
-    //     if((this.state.drawerClicked || this.state.drawerIngredients || this.state.drawerPrice) === null){
-    //         this.props.enqueueSnackbar('Please Add Something!', {variant: 'error'});
-    //     }else {
-
-    //         this.props.addOrder({
-    //             name: this.state.drawerClicked,
-    //             price: Number(this.state.drawerPrice),
-    //             amount: 1
-    //         });
-
-    //         this.setState(foodMakerState);
-    //         this.props.enqueueSnackbar('Added to Order Summary!',  {variant: 'success'} );
-    //     }
-    // }
+    addToSummaryPremadeMenuHandler = () => {
+        if((this.state.drawerClicked || this.state.drawerIngredients || this.state.drawerPrice) === null){
+            this.props.enqueueSnackbar('Please Add Something!', {variant: 'error'});
+        }else {
+            this.props.addOrder({
+                name: this.state.drawerClicked,
+                price: Number(this.state.drawerPrice),
+                amount: 1,
+                type: 'Premade Menu'
+            });
+            this.setState(foodMakerState);
+            this.props.enqueueSnackbar('Added to Order Summary!',  {variant: 'success'} );
+        }
+    }
 
     render(){
 

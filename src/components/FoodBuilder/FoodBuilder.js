@@ -212,6 +212,7 @@ class FoodBuilder extends Component {
                             ...newObject,
                             name: this.props.builder,
                             price: totalPrice,
+                            type: 'Food Builder',
                             [secondKey]: value
                         }
                     }
@@ -228,11 +229,6 @@ class FoodBuilder extends Component {
     }
 
     render() {
-
-        if(this.props.builder !== null && this.state.menuItemClicked !== null && this.state.menuTypeClicked !== null){
-            console.log(this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]);
-            console.log(this.state.ingredients);
-        }
 
         return(
             <div className='FBContainer' style={{

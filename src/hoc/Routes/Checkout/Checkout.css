@@ -156,9 +156,9 @@
 
 .OCCardContainerLarge .OCPizza img:not(:first-child){
     position: absolute;
-    width: 145px;
-    top: 13px;
-    left: 12px;
+    width: 146px;
+    top: 14px;
+    left: 11px;
 }
 
 .OCCardContainerLarge .OCSalad {
@@ -176,7 +176,7 @@
 .OCCardContainerLarge .OCSalad img:not(:first-child){
     position: absolute;
     width: 145px;
-    top: 13px;
+    top: 14px;
     left: 12px;
 }
 
@@ -228,9 +228,11 @@
 }
 
 .OCCardContainerMedioum .OCDrinksAdditionalsImages{
-    width: 30%;
+    width: 130px;
 }
 
-.OCCardContainerMedioum .OCDrinksAdditionalsImages img{
-    width: 125px;
+.OCCardContainerMedioum .OCPremadeMenuImages{
+    border-radius: 10px;
+    width: 190px;
+    box-shadow: 2px 2px 2px rgb(161, 161, 161);
 }

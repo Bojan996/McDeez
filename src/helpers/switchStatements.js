@@ -1,5 +1,7 @@
 import React from 'react';
 
+//Drinks And Additionals
+
 import Cola from '../assets/images/Drinks/cocacola.png';
 import Sprite from '../assets/images/Drinks/sprite.jpg';
 import Fanta from '../assets/images/Drinks/fanta.png';
@@ -33,106 +35,169 @@ import salmonRice from '../assets/images/menuDrawer/salmonRice.jpeg';
 import tuna from '../assets/images/menuDrawer/tuna.jpg';
 import veggieBurger from '../assets/images/menuDrawer/veggieBurger.jpg';
 
-export const drinksAdditionalsSwitch = (type) => {
+//Food Builder
 
-    let image = null;
+import BurgerBuilder from '../components/FoodBuilder/Plate/IngredientBuilder/BurgerBuilder';
+import PizzaBuilder from '../components/FoodBuilder/Plate/IngredientBuilder/PizzaBuilder';
+import SaladBuilder from '../components/FoodBuilder/Plate/IngredientBuilder/SaladBuilder';
+import WafelBuilder from '../components/FoodBuilder/Plate/IngredientBuilder/WafelBuilder';
+import BurgerTopBread from '../assets/images/ingredients/Burger/BurgerTopBread.svg';
+import BurgerBottomBread from '../assets/images/ingredients/Burger/BurgerBottomBread.svg';
+import PizzaCrust from '../assets/images/ingredients/Pizza/PizzaCrust.svg';
+import SaladBowl from '../assets/images/ingredients/Salad/bowlSalad.svg';
+import WafelCrust from '../assets/images/ingredients/Wafel/wafelCrust.svg';
+
+
+export const foodBuilder = (type, order) => {
+
+    switch(type){
+        case 'Burger': 
+            return (
+                    <div className='OCBurger'>
+                        <img src={BurgerTopBread} alt='Burger top bread'/>
+                            {
+                                Object.keys(order).map(firstEl => {
+                                    return [...Array(order[firstEl])].map((SecondEl, index) => {
+                                        return <BurgerBuilder ingredient={firstEl} key={index}/>
+                                    })
+                                })
+                            }
+                        <img src={BurgerBottomBread} alt='Burger bottom bread'/>
+                    </div>
+                )
+
+        case 'Pizza': 
+            return (
+                    <div className='OCPizza'>
+                        <img src={PizzaCrust} alt='just a pizza crust'/>
+                            {
+                                 Object.keys(order).map((e, index) => <PizzaBuilder ingredient={e} key={index} style={index + 1}/>)
+                            }
+                    </div>  
+                )
+        
+        case 'Salad': 
+            return (
+                    <div className='OCSalad'>
+                        <img src={SaladBowl} alt='just a salad bowl'/>
+                            {
+                                Object.keys(order).map((e, index) => <SaladBuilder ingredient={e} key={index} style={index + 1}/>)
+                            }
+                    </div>  
+                )
+
+        case 'Wafel': 
+            return (
+                    <div className='OCWafel'>
+                        <img src={WafelCrust} alt='just a wafel bowl'/>
+                            {
+                                Object.keys(order).map((e, index) => <WafelBuilder ingredient={e} key={index} style={index + 1}/>)
+                            }
+                    </div>  
+                )
+
+        default: 
+            return null;
+            
+    }
+
+}
+
+
+
+export const drinksAdditionalsSwitch = (type, place) => {
+
+    let classesDrinks = (
+        place === 'Food Maker' ?
+        'FDDrinks'
+        :
+        'OCDrinksAdditionalsImages'
+    )
+
+    let classesAdditionals = (
+        place === 'Food Maker' ?
+        'FDAdditionals'
+        :
+        'OCDrinksAdditionalsImages'
+    )
 
     switch(type){
         case 'Cola':
-            image = <img src={Cola} alt='a cup of Cola' className='FDDrinks'/>
-            return image;
+            return <img src={Cola} alt='a cup of Cola' className={classesDrinks}/>
         case 'Sprite':
-            image = <img src={Sprite} alt='a cup of Sprite' className='FDDrinks'/>
-            return image;
+            return <img src={Sprite} alt='a cup of Sprite' className={classesDrinks}/>
         case 'Fanta':
-            image = <img src={Fanta} alt='a cup of Fanta' className='FDDrinks'/>
-            return image;
+            return <img src={Fanta} alt='a cup of Fanta' className={classesDrinks}/>
         case 'Pepsi':
-            image = <img src={Pepsi} alt='a cup of Pepsi' className='FDDrinks'/>
-            return image;
+            return <img src={Pepsi} alt='a cup of Pepsi' className={classesDrinks}/>
         case 'Water':
-            image = <img src={Water} alt='a cup of Water' className='FDDrinks'/>
-            return image;
+            return <img src={Water} alt='a cup of Water' className={classesDrinks}/>
         case 'Juice':
-            image = <img src={Juice} alt='a cup of Juice' className='FDDrinks'/>
-            return image;
+            return <img src={Juice} alt='a cup of Juice' className={classesDrinks}/>
         case 'friesFrench':
-            image = <img src={frenchFries} alt='just some frenchFries' className='FDAdditionals'/>
-            return image;
+            return <img src={frenchFries} alt='just some frenchFries' className={classesAdditionals}/>
         case 'wafelsFries':
-            image = <img src={wafelFries} alt='just some wafelFries' className='FDAdditionals'/>
-            return image;
+            return <img src={wafelFries} alt='just some wafelFries' className={classesAdditionals}/>
         case 'cheeseFried':
-            image = <img src={friedCheese} alt='just some friedCheese' className='FDAdditionals'/>
-            return image;
+            return <img src={friedCheese} alt='just some friedCheese' className={classesAdditionals}/>
         case 'chocolateIceCream':
-            image = <img src={chocolateIceCream} alt='just some chocolateIceCream' className='FDAdditionals'/>
-            return image;
+            return <img src={chocolateIceCream} alt='just some chocolateIceCream' className={classesAdditionals}/>
         case 'strawberryIceCream':
-            image = <img src={strawberryIceCream} alt='just some strawberryIceCream' className='FDAdditionals'/>
-            return image;
+            return <img src={strawberryIceCream} alt='just some strawberryIceCream' className={classesAdditionals}/>
         case 'blueberryIceCream':
-            image = <img src={blueberryIceCream} alt='just some blueberryIceCream' className='FDAdditionals'/>
-            return image;
+            return <img src={blueberryIceCream} alt='just some blueberryIceCream' className={classesAdditionals}/>
         default:
-            image = null;
+            return null;
     }
 }
 
 
-export const whichDrawer = (type) => {
-    let image = null;
+export const whichDrawer = (type, place) => {
+
+    let classes = (
+        place === 'Menu Drawer' ?
+        'DrawerImage'
+        :
+        'OCPremadeMenuImages'
+    )
 
     switch(type){
+
         case 'Dubble Cheese Burger':
-            image = <img src={cheeseBurger} alt='a Dubble Cheese Burger' className='DrawerImage'/>
-            return image;
-        case 'BBQ Burger':
-            image = <img src={bbqBurger} alt='a BBQ Burger' className='DrawerImage'/>
-            return image;
+            return <img src={cheeseBurger} alt='a Dubble Cheese Burger' className={classes}/>
+        case 'Barbecue Burger':
+            return <img src={bbqBurger} alt='a Barbecue Burger' className={classes}/>
         case 'Fat Boy Burger':
-            image = <img src={fatBoyBurger} alt='a Fat Boy Burger' className='DrawerImage'/>
-            return image;
+            return <img src={fatBoyBurger} alt='a Fat Boy Burger' className={classes}/>
         case 'Vegie Bruger':
-            image = <img src={veggieBurger} alt='a Vegie Bruger' className='DrawerImage'/>
-            return image;
-        case 'Capricciosa':
-            image = <img src={capricciosa} alt='a Capricciosa' className='DrawerImage'/>
-            return image;
-        case 'Margherita':
-            image = <img src={margherita} alt='a Margherita' className='DrawerImage'/>
-            return image;
+            return <img src={veggieBurger} alt='a Vegie Bruger' className={classes}/>
+        case 'Capricosa':
+            return <img src={capricciosa} alt='a Capricosa' className={classes}/>
+        case 'Margarita':
+            return <img src={margherita} alt='a Margarita' className={classes}/>
         case 'Meat Pizza':
-            image = <img src={meatPizza} alt='just Meat Pizza' className='DrawerImage'/>
-            return image;
-        case 'Pepperoni Pizza':
-            image = <img src={pepperoni} alt='just Pepperoni Pizza' className='DrawerImage'/>
-            return image;
+            return <img src={meatPizza} alt='just Meat Pizza' className={classes}/>
+        case 'Sausage Pizza':
+            return <img src={pepperoni} alt='just Sausage Pizza' className={classes}/>
         case 'Cesar Salad':
-            image = <img src={caesarSalad} alt='just Cesar Salad' className='DrawerImage'/>
-            return image;
-        case 'Salmon and Rice':
-            image = <img src={salmonRice} alt='just Salmon and Rice' className='DrawerImage'/>
-            return image;
+            return <img src={caesarSalad} alt='just Cesar Salad' className={classes}/>
+        case 'Salmon And Rice':
+            return <img src={salmonRice} alt='just Salmon And Rice' className={classes}/>
         case 'Tuna Salad':
-            image = <img src={tuna} alt='just Tuna Salad' className='DrawerImage'/>
-            return image;
+            return <img src={tuna} alt='just Tuna Salad' className={classes}/>
         case 'Oyster Speacial':
-            image = <img src={oyster} alt='just Oyster Speacial' className='DrawerImage'/>
-            return image;
+            return <img src={oyster} alt='just Oyster Speacial' className={classes}/>
         case 'Chocolate Death':
-            image = <img src={chocolateDeath} alt='just Chocolate Death"' className='DrawerImage'/>
-            return image;
+            return <img src={chocolateDeath} alt='just Chocolate Death"' className={classes}/>
         case 'Ice Cream Madness':
-            image = <img src={iceCreamMadness} alt='just Ice Cream Madness' className='DrawerImage'/>
-            return image;
+            return <img src={iceCreamMadness} alt='just Ice Cream Madness' className={classes}/>
         case 'Fruity Wafel':
-            image = <img src={frutyWafel} alt='just Fruity Wafel' className='DrawerImage'/>
-            return image;
+            return <img src={frutyWafel} alt='just Fruity Wafel' className={classes}/>
         case 'Candy Wafel':
-            image = <img src={candyWafel} alt='just Oyster Speacial' className='DrawerImage'/>
-            return image;
+            return <img src={candyWafel} alt='just Oyster Speacial' className={classes}/>
+
         default:
-            image = null;
+            return null;
+
     }
 }
