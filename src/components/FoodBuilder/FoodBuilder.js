@@ -249,11 +249,11 @@ class FoodBuilder extends Component {
                             <div className='FBAmountButtons'>
                                 <button className='FBAddButton' onClick={this.addingHandler} disabled={!this.state.isBoolean ? null : this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Add Ingredient</button>
                                 <button className='FBRemoveButton' onClick={() => this.removingHandler(this.state.menuTypeClicked, this.state.menuItemClicked)} disabled={!this.state.isBoolean ? this.state.disabledButton : !this.state[this.props.builder][this.state.menuTypeClicked][this.state.menuItemClicked]}>Remove Ingredient</button>
-                                <button className='FBOrderBtton' onClick={this.orderClickedHanlder}>ORDER!</button>
+                                <button className='FBOrderBtton' onClick={this.orderClickedHanlder}>Add to Summary</button>
                             </div>
                             <Plate builder={this.props.builder} ingredients={this.state.ingredients} clicked={this.removingHandler} builderState={this.state[this.props.builder]}/>
                         </div>
-                        <h1>Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h1>
+                        <h1 style={{fontWeight: '200', fontSize: '40px', marginTop: '5px'}}>Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h1>
                     </div>
                 </div>
             </div>
