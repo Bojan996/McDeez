@@ -13,7 +13,11 @@ const orderSummary = (props) => {
     })
 
     const clickHandler = () => {
-        props.historyProp.push('/checkout');
+        if(props.isAuth){
+            props.historyProp.push('/checkout');
+        }else{
+            props.historyProp.push('/login');
+        }
     }
 
     let classes = props.show ? 'OSContainer OSContainerOpen' : 'OSContainer OSContainerClossed';
@@ -30,6 +34,7 @@ const orderSummary = (props) => {
 
 const mapStateToProps = state => {
     return {
+        isAuth: state.auth.isAuth,
         orders: state.orderSummary.orders
     }
 }

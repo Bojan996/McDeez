@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 import { connect } from 'react-redux';
 import { logout } from '../../../store/actions/auth';
 
 class Logout extends Component {
 
     componentDidMount(){
-        this.props.logout();
+        setTimeout(e => {
+            this.props.logout();
+            this.props.history.replace('/')
+        }, 1000);
     }
 
     render(){
-        return <Redirect to='/'/>
+        return <Spinner style={{marginTop: '340px', fontSize: '12px'}}/>
     }
 }
 

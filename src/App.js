@@ -24,7 +24,6 @@ class App extends Component {
     let routes = (
       <Switch>
           <Route path='/foodmaker' component={FoodMaker}/>
-          <Route path='/checkout' component={Checkout}/>
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
           <Route path='/' exact component={Home}/>
