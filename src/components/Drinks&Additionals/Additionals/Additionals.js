@@ -2,21 +2,13 @@ import React from 'react';
 import './Additionals.css';
 import { drinksAdditionalsSwitch } from '../../../helpers/switchStatements';
 
-// import onionRings from '../../../assets/images/Additionals/onionRings.png';
-// import vanilaShake from '../../../assets/images/Additionals/vanilaShake.png';
-// import chocolateShake from '../../../assets/images/Additionals/chocolateShake.png';
-// import strawberryShake from '../../../assets/images/Additionals/strawberryShake.png';
-// import blueberryShake from '../../../assets/images/Additionals/blueberryShake.png';
-// import caramelaShake from '../../../assets/images/Additionals/caramelaShake.png';
-// import caramelaIceCream from '../../../assets/images/Additionals/caramelaIceCream.png';
-
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 
 
 const additionals = (props) => {
 
-    let image = drinksAdditionalsSwitch(props.name);
+    let image = drinksAdditionalsSwitch(props.name, 'Food Maker');
     
     return (
         <div className='AAdditionalsContainer'>

@@ -37,7 +37,7 @@ const menuBuilder = (props) => {
                 aria-labelledby="nested-list-subheader"
                 subheader={
                     <Typography variant='h3' className={classes.header}>
-                        Items
+                        Ingredients
                     </Typography>
                 } className={classes.root}>
                 <MenuItems builder={props.builder} clicked={props.clicked} prices={props.prices}/>
