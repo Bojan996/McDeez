@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../../store/actions/auth';
 import './Login.css';
@@ -15,34 +14,37 @@ class Login extends Component {
 
     emailHandler = (event) => {
         this.setState({email: event.target.value});
-        console.log(this.state.email);
     }
 
     passwordHandler = (event) => {
         this.setState({password: event.target.value});
-        console.log(this.state.password);
     }
 
     submitHandler = (event) => {
         event.preventDefault();
         this.props.login(this.state.authType, this.state.email, this.state.password);
+        if(this.props.isAuth){
+            if(this.props.orders.length >= 1){
+                this.props.history.replace('/checkout');
+            }else{
+                this.props.history.replace('/');
+            }
+        }
     }
 
 
     render(){
 
-        let loader = this.props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;
-        let redirect = this.props.isAuth ? <Redirect to='/'/> : null;
+        let loader = this.props.loading ? <Spinner/> : null;
 
         return (
-            <div className='MainDiv'>
+            <div className='LMainDiv'>
                 <form onSubmit={this.submitHandler}>
                     <input type='email' placeholder='email' onChange={(event) => this.emailHandler(event)}/>
                     <input type='password' placeholder='password' onChange={(event) => this.passwordHandler(event)}/>
                     <button>Submit</button>
                 </form>
                 {loader}
-                {redirect}
             </div>
         )
     }
@@ -51,7 +53,8 @@ class Login extends Component {
 const mapStateToProps = state => {
     return {
         loading: state.auth.loading,
-        isAuth: state.auth.isAuth
+        isAuth: state.auth.isAuth,
+        orders: state.orderSummary.orders
     }
 }
 

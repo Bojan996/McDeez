@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import './NavBar.css';
 import { NavLink, Link } from 'react-router-dom';
 import Logo from '../../Logo/Logo';
-import './NavBar.css';
 import { connect } from 'react-redux';
 
 
