@@ -80,11 +80,11 @@ const restaurantMenu = (props) => {
                         </ListItemIcon>
                         <ListItemText primary="Dubble Cheese Burger"/>
                     </ListItem>
-                    <ListItem button  onClick={() => props.showDrawer("BBQ Burger", "Meat, Bacon, Tomato, Onion, Cheddar Cheese, Lettuce, Ketchup, Mustard, Barbeque Sauce", "4.50")}>
+                    <ListItem button  onClick={() => props.showDrawer("Barbecue Burger", "Meat, Bacon, Tomato, Onion, Cheddar Cheese, Lettuce, Ketchup, Mustard, Barbeque Sauce", "4.50")}>
                         <ListItemIcon>
                             <ArrowRightIcon />
                         </ListItemIcon>
-                        <ListItemText primary="BBQ Burger"/>
+                        <ListItemText primary="Barbecue Burger"/>
                     </ListItem>
                     <ListItem button  onClick={() => props.showDrawer("Fat Boy Burger", "Meat, Bacon, Rosemary, Cheddar Cheese, Lettuce, Ketchup, Mustard, Barbeque Sauce", "5.50")}>
                         <ListItemIcon>
@@ -106,17 +106,17 @@ const restaurantMenu = (props) => {
                     <ListItemText primary="Premade Pizza" />
                 </ListItem>
                 <List component="div" className={classes.secondList}>
-                    <ListItem button  onClick={() => props.showDrawer("Capricciosa", "Tomato Sauce, Cheese, Mozzarela, Ham, Mushrooms, Artichoke, Basil, Olive, Salt, Pepper", "7.00")}>
+                    <ListItem button  onClick={() => props.showDrawer("Capricosa", "Tomato Sauce, Cheese, Mozzarela, Ham, Mushrooms, Artichoke, Basil, Olive, Salt, Pepper", "7.00")}>
                         <ListItemIcon>
                             <ArrowRightIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Capricciosa"/>
+                        <ListItemText primary="Capricosa"/>
                     </ListItem>
-                    <ListItem button  onClick={() => props.showDrawer("Margherita", "Tomato Sacue, Cheese, Mozzarela, Basil, Parmigiano, Salt, Olive, Pepper", "6.50")}>
+                    <ListItem button  onClick={() => props.showDrawer("Margarita", "Tomato Sacue, Cheese, Mozzarela, Basil, Parmigiano, Salt, Olive, Pepper", "6.50")}>
                         <ListItemIcon>
                             <ArrowRightIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Margherita"/>
+                        <ListItemText primary="Margarita"/>
                     </ListItem>
                     <ListItem button  onClick={() => props.showDrawer("Meat Pizza", "Tomato Sacue, Cheese, Mozzarela, Parmigiano, Ham, Sausage, Bacon, Mushrooms, Basil, Olive, Salt", "8.00")}>
                         <ListItemIcon>
@@ -124,11 +124,11 @@ const restaurantMenu = (props) => {
                         </ListItemIcon>
                         <ListItemText primary="Meat Pizza"/>
                     </ListItem>
-                    <ListItem button  onClick={() => props.showDrawer("Pepperoni Pizza", "Tomato Sauce, Cheese, Parmigiano, Ham, Pepperoni, Mushrooms, Basil, Olive, Salt", "7.50")}>
+                    <ListItem button  onClick={() => props.showDrawer("Sausage Pizza", "Tomato Sauce, Sausage, Cheese, Parmigiano, Ham, Mushrooms, Basil, Olive, Salt", "7.50")}>
                         <ListItemIcon>
                             <ArrowRightIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Pepperoni Pizza"/>
+                        <ListItemText primary="Sausage Pizza"/>
                     </ListItem>
                     </List>
                 <ListItem>
@@ -144,11 +144,11 @@ const restaurantMenu = (props) => {
                         </ListItemIcon>
                         <ListItemText primary="Cesar Salad"/>
                     </ListItem>
-                    <ListItem button  onClick={() => props.showDrawer("Salmon and Rice", "Salmon, Rice, Cheese, Mayonnaise, Parmigiano, Lettuce, Onion, Parsley, Peas, Salt, Olive", "10.00")}>
+                    <ListItem button  onClick={() => props.showDrawer("Salmon And Rice", "Salmon, Rice, Cheese, Mayonnaise, Parmigiano, Lettuce, Onion, Parsley, Peas, Salt, Olive", "10.00")}>
                         <ListItemIcon>
                             <ArrowRightIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Salmon and Rice"/>
+                        <ListItemText primary="Salmon And Rice"/>
                     </ListItem>
                     <ListItem button  onClick={() => props.showDrawer("Tuna Salad", "Tuna, Mozzarela, Cheese, Onion, Basil, Mayonnaise, Lettuce, Lemon, Salt, Parsley, Olive Oil", "6.00")}>
                         <ListItemIcon>

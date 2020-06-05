@@ -8,7 +8,7 @@ import RemoveIcon from '@material-ui/icons/Remove';
 
 const drinks = (props) => {
 
-    let image = drinksAdditionalsSwitch(props.name);
+    let image = drinksAdditionalsSwitch(props.name, 'Food Maker');
 
     return (
         <div className='DDrinksContainer'>
