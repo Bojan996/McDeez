@@ -4,7 +4,16 @@ import ManThinking from '../../../assets/images/ManThinking.png';
 import SpeachBubble from '../../../assets/images/SpeakingBubble.png';
 
 class Home extends Component {
+
+    componentDidMount(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+    }
+
     render () {
+    
         return (
             <div className='HomeContainer'>
                 <div className='SliderDiv'>

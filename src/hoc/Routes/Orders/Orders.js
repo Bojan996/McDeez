@@ -16,7 +16,7 @@ class Orders extends Component {
     render() {
 
         let orders = null;
-        if(!this.props.loading){
+        if(this.props.orders.length > 0){
             orders = this.props.orders.map((firstEl, firstIndex) => {
                 return (
                     <div className='OneTimeOrder' key={firstIndex}>
@@ -32,8 +32,8 @@ class Orders extends Component {
         let loader = this.props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;
 
         return (
-            <div className='OrdersContainer'>
-                <h1>Welcome to the oreders page!</h1>
+            <div className='OrdersLayout'>
+                <h1 className='OrdersMainHeader'>Welcome to the oreders page!</h1>
                 {orders}
                 {loader}
             </div>

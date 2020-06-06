@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Checkout.css';
+import { withSnackbar } from 'notistack';
 import { purchaseOrder } from '../../../store/actions/order';
 import { withStyles } from '@material-ui/core/styles';
 import { checkValidity } from '../../../helpers/checkValidity';
+import Spinner from '../../../components/UI/Spinner/Spinner';
+import diliveryScooter from '../../../assets/images/diliveryScooter.png';
 import TextField from '@material-ui/core/TextField';
-
 import OrderCard from '../../../components/FoodBuilder/OrderSummary/OrderCards/OrderCard';
 
 const useStyles = theme => ({
@@ -130,12 +132,30 @@ class Checkout extends Component{
 
     render(){
 
+        let homeRedirect = null;
+        if(this.props.purchasedOrder){
+            setTimeout(e => {
+                window.location.reload();
+            }, 2400);
+        }
+
+        let spinner = this.props.loading ? <Spinner style={{fontSize: '4px', color: '#FFCD39', margin: '4px auto', borderColor: 'white', borderLeftColor: '#ffc400', borderWidth: '7px'}}/> : 'Order!';
+
         const orderCards = this.props.orders.map((e, index) => {
             return <OrderCard key={index} order={e} builder={e.name}/>
         });
 
         return(
             <div className='CCheckoutContent'>
+                <div className='CSuccessfulOrder' style={{
+                    zIndex: this.props.purchasedOrder ? '60' : '0',
+                    opacity: this.props.purchasedOrder ? '1' : '0',
+                    transform: this.props.purchasedOrder ? 'scale(1)' : 'scale(0.4)'
+                }}>
+                    <img className={this.props.purchasedOrder ? 'DiliveryScooterImg' : null} src={diliveryScooter} alt='dilivery scooter' style={{width: '300px'}}/>
+                    <h1 style={{fontWeight: '200', fontSize: '50px', lineHeight: '80px'}}>Thank you for your order, <br/> It is on its way!</h1>
+                </div>
+                {homeRedirect}
                 <div className='CLayout'>
                     <div className='COrderCards'>
                         <h1 style={{margin: '40px auto 70px auto', fontWeight: '200', fontSize: '50px'}}>Your Order Summary:</h1>
@@ -152,7 +172,7 @@ class Checkout extends Component{
                             <TextField id="outlined-basic" required={true} error={!this.state.userInfo.floor.valid && this.state.userInfo.floor.validation && this.state.userInfo.floor.touched} label="Floor" variant="outlined" className='CInputs' onChange={(event) => this.typingHandler(event, 'floor')}/>
                             <TextField id="outlined-basic" required={true} error={!this.state.userInfo.apartmentNumber.valid && this.state.userInfo.apartmentNumber.validation && this.state.userInfo.apartmentNumber.touched} label="Apartment" variant="outlined" className='CInputs' onChange={(event) => this.typingHandler(event, 'apartmentNumber')}/>
                             <TextField id="outlined-basic" label="Comment..." variant="outlined" className='CInputsComments' onChange={(event) => this.typingHandler(event, 'comment')}/>
-                            <button className='CSendOrderButton' disabled={!this.state.formIsValid}>Order!</button>
+                            <button className='CSendOrderButton' disabled={!this.state.formIsValid}>{spinner}</button>
                         </form>
                     </div>
                 </div>
@@ -163,6 +183,8 @@ class Checkout extends Component{
 
 const mapStateToProps = state => {
     return {
+        loading: state.orders.loading,
+        purchasedOrder: state.orders.purchased,
         orders: state.orderSummary.orders,
         userId: state.auth.localId,
         idToken: state.auth.idToken
@@ -177,4 +199,4 @@ const mapDispatchToProps = dispatch => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(useStyles, { withTheme: true })(Checkout));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(useStyles, { withTheme: true })(withSnackbar(Checkout)));

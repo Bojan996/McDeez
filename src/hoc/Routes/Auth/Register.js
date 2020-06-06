@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Register.css';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../../store/actions/auth';
 import Spinner from '../../../components/UI/Spinner/Spinner';
@@ -36,7 +37,14 @@ class Register extends Component {
 
     render(){
 
+        let checkoutRedirect = null;      
         let loader = this.props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;
+
+        if(this.props.isAuth && this.props.orders.length >= 1){
+            checkoutRedirect = <Redirect to='/checkout'/>
+        }else if(this.props.isAuth && this.props.orders.length === 0){
+            checkoutRedirect = <Redirect to='/'/>
+        }
 
         return (
             <div className='RMainDiv'>
@@ -46,6 +54,7 @@ class Register extends Component {
                     <button>Submit</button>
                 </form>
                 {loader}
+                {checkoutRedirect}
             </div>
         )
     }

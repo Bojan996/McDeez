@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../../store/actions/auth';
 import './Login.css';
@@ -23,19 +24,19 @@ class Login extends Component {
     submitHandler = (event) => {
         event.preventDefault();
         this.props.login(this.state.authType, this.state.email, this.state.password);
-        if(this.props.isAuth){
-            if(this.props.orders.length >= 1){
-                this.props.history.replace('/checkout');
-            }else{
-                this.props.history.replace('/');
-            }
-        }
     }
 
 
     render(){
 
+        let checkoutRedirect = null;        
         let loader = this.props.loading ? <Spinner/> : null;
+
+        if(this.props.isAuth && this.props.orders.length >= 1){
+            checkoutRedirect = <Redirect to='/checkout'/>
+        }else if(this.props.isAuth && this.props.orders.length === 0){
+            checkoutRedirect = <Redirect to='/'/>
+        }
 
         return (
             <div className='LMainDiv'>
@@ -45,6 +46,7 @@ class Login extends Component {
                     <button>Submit</button>
                 </form>
                 {loader}
+                {checkoutRedirect}
             </div>
         )
     }

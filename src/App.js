@@ -36,6 +36,8 @@ class App extends Component {
         <Switch>
             <Route path='/foodmaker' component={FoodMaker}/>
             <Route path='/checkout' component={Checkout}/>
+            <Route path='/login' component={Login}/>
+            <Route path='/register' component={Register}/>
             <Route path='/orders' component={Orders}/>
             <Route path='/logout' component={Logout}/>
             <Route path='/' exact component={Home}/>

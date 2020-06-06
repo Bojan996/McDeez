@@ -1,8 +1,64 @@
+.CCheckoutContent {
+    z-index: 1;
+}
+
 .CLayout {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
     margin-top: 150px;
+}
+
+.CSuccessfulOrder {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-out;
+}
+
+.DiliveryScooterImg {
+    animation: diliveryScooter 3s linear forwards;
+}
+
+@keyframes diliveryScooter{
+    0%{
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    12%{
+        transform: translateX(-300px);
+        opacity: 1;
+    }
+    25%{
+        transform: translateX(-300px);
+        transform: rotate(-20deg);
+    }
+    37%{
+        transform: translateX(-300px);
+        transform: rotate(0);
+    }
+    50%{
+        transform: translateX(-300px);
+        transform: rotate(-20deg);
+    }
+    62%{
+        transform: translateX(-300px);
+        transform: rotate(0);
+    }
+    74%{
+        transform: translateX(-300px);
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: translateX(300px);
+    }
 }
 
 .COrderCards {
@@ -49,6 +105,7 @@
     font-size: 30px;
     outline: none;
     border: none;
+    border-radius: 5px;
     letter-spacing: 5px;
     background-color: rgb(233, 80, 53);
     box-shadow: 2px 2px 2px gray;

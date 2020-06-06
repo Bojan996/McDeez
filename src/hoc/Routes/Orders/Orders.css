@@ -1,13 +1,20 @@
-.OrdersContainer{
+.OrdersLayout{
     text-align: center;
     margin-bottom: 200px;
+    margin-top: 150px;
+}
+
+.OrdersMainHeader {
+    margin: 0 0 70px 0;
+    font-weight: 200;
+    font-size: 50px;
 }
 
 .OneTimeOrder{
     width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     padding: 20px;
     margin: 20px;
     border: 1px solid lightgray;
