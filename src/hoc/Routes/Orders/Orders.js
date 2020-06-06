@@ -15,25 +15,41 @@ class Orders extends Component {
     
     render() {
 
+        console.log(this.props.order);
+
         let orders = null;
         if(this.props.orders.length > 0){
             orders = this.props.orders.map((firstEl, firstIndex) => {
                 return (
                     <div className='OneTimeOrder' key={firstIndex}>
-                        <h2 style={{width: '100%'}}>Order from: 12.10.2018 17:33</h2>
-                        {firstEl.map((secondEl, SecondIndex) => {
-                            return <OrderCard key={firstIndex + SecondIndex} order={secondEl} builder={secondEl.name}/>
+                        <div className='OrdersHeadingSection'>
+                            <h2>{firstEl.orderData.email}</h2>
+                            <h2 style={{fontSize: '40px', color: 'rgb(26, 156, 70)'}}>Successful !</h2>
+                            <h2>{firstEl.orderData.date}</h2>
+                        </div>
+                        {firstEl.orders.map((secondEl, SecondIndex) => {
+                            return (
+                                <div className='OrdersOrderCardContainer' key={firstIndex + SecondIndex}>
+                                    <OrderCard order={secondEl} builder={secondEl.name}/>
+                                </div>
+                            )
                         })}
+                        <div className='OrdersBottomSection'>
+                            <h2>Price: {firstEl.price}$</h2>
+                            <button className='OrdersSendAgain'>Order Again!</button>
+                        </div>
                     </div>
                 )
             })
+        }else {
+            orders = <h1 className='OrdersMainHeader'>Sorry, you don't have past orders...</h1>
         }
 
         let loader = this.props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;
 
         return (
             <div className='OrdersLayout'>
-                <h1 className='OrdersMainHeader'>Welcome to the oreders page!</h1>
+                <h1 className='OrdersMainHeader'>These are your past orders</h1>
                 {orders}
                 {loader}
             </div>

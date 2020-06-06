@@ -63,7 +63,7 @@ export const fetchingOrders = (idToken, userId) => {
         .then(res => {
             const fetchedOrders = [];
             for(let key in res.data){
-                fetchedOrders.push(res.data[key].orders)
+                fetchedOrders.push(res.data[key])
             }
             dispatch(fetchOrderSuccess(fetchedOrders));
             console.log(fetchedOrders);

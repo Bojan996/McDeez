@@ -5,23 +5,69 @@
 }
 
 .OrdersMainHeader {
-    margin: 0 0 70px 0;
+    margin: 0;
     font-weight: 200;
     font-size: 50px;
 }
 
 .OneTimeOrder{
     width: 90%;
+    margin: 70px auto 0 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
-    margin: 20px;
     border: 1px solid lightgray;
     border-radius: 10px;
     box-shadow: 2px 2px 2px gray;
 }
 
-.OneTimeOrder .OCCardContainer {
-    width: 29% !important;
+.OrdersHeadingSection {
+    width: 100%;
+    margin: 20px 70px 100px 70px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.OrdersHeadingSection h2 {
+    font-weight: 200;
+    font-size: 33px;
+}
+
+.OrdersOrderCardContainer {
+    width: 45%;
+}
+
+.OrdersBottomSection {
+    width: 100%;
+    margin: -10px 70px 50px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.OrdersBottomSection h2{
+    font-weight: 200;
+    font-size: 40px;
+}
+
+.OrdersSendAgain {
+    display: block;
+    width: 270px;
+    height: 65px;
+    color: white;
+    font-size: 29px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    background-color: rgb(233, 80, 53);
+    box-shadow: 2px 2px 2px gray;
+    transition: 0.2s ease-out;
+}
+
+.OrdersSendAgain:hover{
+    cursor: pointer;
+    transform: scale(1.05);
 }

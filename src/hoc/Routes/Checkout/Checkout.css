@@ -213,9 +213,10 @@
 
 .OCCardContainerLarge .OCPizza img:not(:first-child){
     position: absolute;
-    width: 146px;
+    width: 147px;
+    height: 133px;
     top: 14px;
-    left: 11px;
+    left: 10px;
 }
 
 .OCCardContainerLarge .OCSalad {
@@ -233,6 +234,7 @@
 .OCCardContainerLarge .OCSalad img:not(:first-child){
     position: absolute;
     width: 145px;
+    height: 133px;
     top: 14px;
     left: 12px;
 }
@@ -252,7 +254,8 @@
 .OCCardContainerLarge .OCWafel img:not(:first-child){
     position: absolute;
     width: 145px;
-    top: 16px;
+    height: 142px;
+    top: 15px;
     left: 11px;
 }
 

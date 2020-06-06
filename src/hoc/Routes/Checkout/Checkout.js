@@ -90,7 +90,7 @@ class Checkout extends Component{
             return totalPrice.push(Number(e.price));
         });
         const totalPriceNum = totalPrice.reduce((a, b) => a + b, 0);
-        this.setState({totalPrice: totalPriceNum});
+        this.setState({totalPrice: Number.parseFloat( totalPriceNum ).toFixed( 2 )});
     }
 
     typingHandler = (event, identifier) => {
@@ -111,6 +111,12 @@ class Checkout extends Component{
 
     submitHandler = (event) => {
         event.preventDefault();
+        const date = new Date();
+        const month = date.getUTCMonth() + 1;
+        const day = date.getUTCDate();
+        const year = date.getUTCFullYear();
+        const currentDate = year + "/" + month + "/" + day;
+        
         const fullOrder = {
             orders: [...this.props.orders],
             orderData: {
@@ -120,7 +126,8 @@ class Checkout extends Component{
                 email: this.state.userInfo.email.value,
                 floor: this.state.userInfo.floor.value,
                 name: this.state.userInfo.name.value,
-                surname: this.state.userInfo.surname.value
+                surname: this.state.userInfo.surname.value,
+                date: currentDate
             },
             price: this.state.totalPrice,
             userId: this.props.userId

@@ -30,9 +30,14 @@ const orderCard = (props) => {
         }
     }
 
-    
-
     let firstWord = props.order.name.split(/(?=[A-Z])/);
+    let priceAndAmount = (
+        props.order.type === 'Food Builder' ?
+        <h2>{Number.parseFloat(props.order.price).toFixed( 2 )}$</h2>
+        :
+        <h2 style={{display: 'flex', justifyContent: 'space-between'}}><span style={{marginLeft: '10px'}}>{Number.parseFloat( Number(props.order.price) / Number(props.order.amount) ).toFixed( 2 )}$</span> <span>X{props.order.amount}</span></h2>
+    )
+
 
     let content = (
         props.type === 'small' ?
@@ -40,7 +45,7 @@ const orderCard = (props) => {
             {orderImg}
             <div className='OCOrderContentSmall'>
                 <h2>{firstWord[0].charAt(0).toUpperCase() + firstWord[0].slice(1)}</h2>
-                <h2>{Number.parseFloat( props.order.price ).toFixed( 2 )}$</h2>
+                {priceAndAmount}
             </div>
         </div>
         : props.type !== 'small' && info.length >= 1 ?
