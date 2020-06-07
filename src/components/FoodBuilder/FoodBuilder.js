@@ -232,7 +232,7 @@ class FoodBuilder extends Component {
     }
 
     render() {
-
+        console.log(this.state.ingredients)
         return(
             <div className='FBContainer' style={{
                 transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
