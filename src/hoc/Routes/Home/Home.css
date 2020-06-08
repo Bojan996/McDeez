@@ -1,4 +1,5 @@
 .HomeContainer {
+    width: 100%;
     margin-bottom: 400px;
 }
 
@@ -80,6 +81,8 @@
 }
 
 .HomeSliderHeader div{
+    font-family: 'Quicksand', sans-serif;
+    line-height: 98px;
     opacity: 0;
     position: absolute;
     z-index: 1;
@@ -87,13 +90,12 @@
 }
 
 .HomeSliderHeader div:nth-child(1) {
-    top: 109px;
+    top: 120px;
     left: 21%;
     text-shadow: 1px 1px 2px rgb(58, 58, 58);
     border-radius: 10px;
     color: white;
     font-size: 64px;
-    font-weight: 200;
 }
 
 .HomeSliderHeader div:nth-child(2) {
@@ -103,7 +105,6 @@
     border-radius: 10px;
     color: white;
     font-size: 64px;
-    font-weight: 200;
     animation-delay: 6s; 
 }
 .HomeSliderHeader div:nth-child(3) { 
@@ -113,12 +114,10 @@
     border-radius: 10px;
     color: white;
     font-size: 64px;
-    font-weight: 200;
     animation-delay: 12s; 
 }
 .HomeSliderHeader div:nth-child(4) { 
-    margin: 0 50px;
-    width: 1440px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     top: 220px;
@@ -127,7 +126,6 @@
     border-radius: 10px;
     color: white;
     font-size: 64px;
-    font-weight: 200;
     animation-delay: 18s; 
 }
 .HomeSliderHeader div:nth-child(5) { 
@@ -137,7 +135,6 @@
     border-radius: 10px;
     color: white;
     font-size: 64px;
-    font-weight: 200;
     animation-delay: 24s; 
 }
 
@@ -165,21 +162,38 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 .HomeContent {
+    width: 100%;
     z-index: 1;
     background-color: white;
+    padding: 0 10px;
 }
 
+.HomeFirstDivLeft {
+    width: 50%;
+}
+
+.HomeFirstDivLeft h1 {
+    font-size: 45px;
+    font-weight: 200;
+    margin-bottom: 70px;
+}
+
+.HomeFirstDivLeft ul {
+    list-style: none;
+    text-align: left;
+}
+
+.HomeFirstDivLeft li {
+    font-size: 25px;
+    color: rgb(82, 82, 82);
+    font-weight: 200;
+    padding: 20px 20px 20px 60px;
+}
+
+.HomeFirstImgRight {
+    width: 520px;
+}
 
 
 

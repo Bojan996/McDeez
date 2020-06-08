@@ -6,8 +6,7 @@ import Picture4 from '../../../assets/images/Slider/picture3.jpg';
 import Picture3 from '../../../assets/images/Slider/picture1.jpg';
 import Picture5 from '../../../assets/images/Slider/picture5.jpg';
 
-// import ManThinking from '../../../assets/images/ManThinking.png';
-// import SpeachBubble from '../../../assets/images/SpeakingBubble.png';
+import ManThinking from '../../../assets/images/ManThinking.png';
 
 class Home extends Component {
 
@@ -37,13 +36,18 @@ class Home extends Component {
                     <div>You shall recieve<br/>What you deserve!</div>
                 </ul>
                 <div className='HomeContent'>
-                    <h1>Hello ther and welcome to our Home page</h1>
-                    <p>Helooo</p>
-                    <p>Helooo</p>
-                    <p>Helooo</p>
-                    <p>Helooo</p>
-                    <p>Helooo</p>
-                    <p>Helooo</p>
+                    <h1 style={{fontWeight: '200', fontSize: '52px', letterSpacing: '3px', padding: '50px 0 80px 0', margin: '0'}}>Welcome to our proud McDeez Restaurant</h1>
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                        <div className='HomeFirstDivLeft'>
+                            <h1>If you wonder, why are we special?</h1>
+                            <ul>
+                                <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i>Because our users get the fastest service out there.</li>
+                                <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i> Our food just tastes amazing if you have a try.</li>
+                                <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i> Last but not least, Make your own food! Be creative!</li>
+                            </ul>
+                        </div>
+                        <img src={ManThinking} alt='man is thinking' className='HomeFirstImgRight'/>
+                    </div>
                 </div>
             </div>
         )
