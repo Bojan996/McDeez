@@ -63,7 +63,7 @@ const plate = (props) => {
                             {
                                 props.ingredients.length === 0 ?
                                 <h1>Please Add Ingredients</h1>:
-                                props.ingredients.map((e, index) => {return <BurgerBuilder ingredient={e} key={index} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
+                                props.ingredients.map((e, index) => {return <BurgerBuilder ingredient={e} key={index} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, index)}/>})
                             }
                         <img src={BurgerBottomBread} alt='Burger bottom bread'/>
                     </div>
@@ -77,7 +77,7 @@ const plate = (props) => {
                             {
                                 props.ingredients.length === 0 ?
                                 <h1 style={{position: 'absolute', top: '38%', left: '8%'}}>Please Add Ingredients</h1>:
-                                props.ingredients.map((e, index) => {return <PizzaBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
+                                props.ingredients.map((e, index) => {return <PizzaBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, index)}/>})
                             }
                     </div>  
                 )
@@ -90,7 +90,7 @@ const plate = (props) => {
                         {
                             props.ingredients.length === 0 ?
                             <h1 style={{position: 'absolute', top: '38%', left: '8%'}}>Please Add Ingredients</h1>:
-                            props.ingredients.map((e, index) => {return <SaladBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
+                            props.ingredients.map((e, index) => {return <SaladBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, index)}/>})
                         }
                 </div>  
             )
@@ -103,7 +103,7 @@ const plate = (props) => {
                         {
                             props.ingredients.length === 0 ?
                             <h1 style={{position: 'absolute', top: '38%', left: '6%'}}>Please Add Ingredients</h1>:
-                            props.ingredients.map((e, index) => {return <WafelBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, 'plateComponent', index)}/>})
+                            props.ingredients.map((e, index) => {return <WafelBuilder ingredient={e} key={index} style={index + 1} clicked={() => props.clicked(checkingMenuTypeClickedHandler(e), e, index)}/>})
                         }
                 </div>  
             )

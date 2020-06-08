@@ -1,9 +1,5 @@
 export const foodBuilderState = () => {
     return {
-        isBoolean: false,
-        disabledButton: true,
-        menuTypeClicked: null,
-        menuItemClicked: null,
         ingredients: [],
         totalPrice: 1,
         Burger: {
@@ -18,11 +14,11 @@ export const foodBuilderState = () => {
                 tomato: 0
             },
             Sauces: {
-                ketchup: false,
-                mayo: false,
-                bbqSauce: false,
-                burgerSauce: false,
-                mcdeezSecretSauce: false
+                ketchup: 0,
+                mayo: 0,
+                bbqSauce: 0,
+                burgerSauce: 0,
+                mcdeezSecretSauce: 0
             }
         },
         Pizza: {

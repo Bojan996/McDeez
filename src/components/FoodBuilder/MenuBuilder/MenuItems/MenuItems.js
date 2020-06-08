@@ -48,7 +48,7 @@ const menuItems = (props) => {
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
-                                            <ListItemText primary={el.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}/>
+                                            <ListItemText primary={<p style={{margin: '0', display: 'flex', justifyContent: 'space-between'}}><span>{el.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</span><span style={{fontWeight: '200'}}>{props.builder[e][el]}</span></p>}/>
                                         </ListItem>
                                     </List>
                                 )

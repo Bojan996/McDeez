@@ -1,9 +1,9 @@
 .POverflowDiv {
     overflow-y: auto;
-    height: 370px;
+    height: 371px;
     width: 500px;
-    margin-right: 10%;
-    margin-bottom: 40px;
+    margin-right: 6%;
+    margin-top: 23px;
 }
 
 .PPlateFlexer {

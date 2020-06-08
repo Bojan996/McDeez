@@ -37,12 +37,8 @@
 
 .MIContainer {
     max-height: 85%;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-.MIContainer:hover{
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .MISecondListYesValue {
