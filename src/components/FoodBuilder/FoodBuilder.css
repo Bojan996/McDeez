@@ -57,64 +57,84 @@
     border-radius: 5px;
 }
 
-.FBPlateButtonsContainer {
-    height: 70%;
-    width: 100%;
+.FBContentFlexer{
+    height: 84%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-.FBAmountButtons {
+.FBInstructionsOrder {
     height: 100%;
+    width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: start;
+    margin-left: 50px;
 }
 
-.FBAmountButtons button {
-    height: 64px;
-    width: 240px;
-    outline: none;
-    border-radius: 10px;
+.FBInstructionsOrder p {
     font-weight: 200;
-    font-size: 22px;
-    transition: 0.2s ease-out;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 28px;
 }
 
-.FBAmountButtons button:disabled {
-    transform: scale(0.9);
-    cursor: not-allowed;
-    background-color: rgb(136, 136, 136);
-    border: 1px solid rgb(196, 196, 196);
-    color: #ffffff;
+.FBRemoveInstruction {
+    text-align: left;
 }
 
-.FBAmountButtons button:hover:not(:disabled) {
-    cursor: pointer;
+.FBRemoveInstruction h2 {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 200;
+    font-size: 30px;
+    color: tomato;
 }
 
-.FBRemoveButton {
-    color: rgb(233, 80, 53);
-    border: 1.5px solid rgb(233, 80, 53);
-    background-color: rgb(255, 255, 255);
+.FBAddInstruction {
+    text-align: left;
 }
 
-.FBAddButton {
-    color: rgb(29, 130, 170);
-    border: 1.5px solid rgb(22, 162, 218);
-    background-color: rgb(255, 255, 255);
+.FBAddInstruction h2 {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 200;
+    font-size: 30px;
+    color: #34aeeb;
 }
 
 .FBOrderBtton {
+    margin-top: 96px;
+    height: 64px;
+    width: 240px;
+    outline: none;
+    font-weight: 200;
+    font-size: 22px;
+    transition: 0.2s ease-out;
     color: rgb(15, 194, 83);
     border-radius: 10px;
     border: 1.5px solid rgb(14, 223, 94);
     background-color: white;
 }
 
-.FBRemoveButton:active, .FBAddButton:active, .FBOrderBtton:active {
+.FBOrderBtton:hover {
+    cursor: pointer;
+}
+
+.FBOrderBtton:active {
     transform: translateY(5px);
     background-color: rgb(230, 230, 230);
+}
+
+.FBPlatePrice {
+    margin-right: 25px;
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
