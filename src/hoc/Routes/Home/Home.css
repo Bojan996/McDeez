@@ -176,7 +176,7 @@
 .HomeFirstDivLeft h1 {
     font-size: 45px;
     font-weight: 200;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 .HomeFirstDivLeft ul {
@@ -192,9 +192,27 @@
 }
 
 .HomeFirstImgRight {
-    width: 520px;
+    width: 400px;
+    margin-right: 10%;
 }
 
+.HomeFristButton {
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: 200;
+    background-color: #EB7350;
+    border-radius: 5px;
+    transition: 0.2s ease-out;
+}
+
+.HomeFristButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
 
 
 

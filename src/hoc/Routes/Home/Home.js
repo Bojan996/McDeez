@@ -6,7 +6,7 @@ import Picture4 from '../../../assets/images/Slider/picture3.jpg';
 import Picture3 from '../../../assets/images/Slider/picture1.jpg';
 import Picture5 from '../../../assets/images/Slider/picture5.jpg';
 
-import ManThinking from '../../../assets/images/ManThinking.png';
+import ManThinking from '../../../assets/images/ManThinking.jpg';
 
 class Home extends Component {
 
@@ -45,6 +45,7 @@ class Home extends Component {
                                 <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i> Our food just tastes amazing if you have a try.</li>
                                 <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i> Last but not least, Make your own food! Be creative!</li>
                             </ul>
+                            <button className='HomeFristButton' onClick={() => this.props.history.push('/foodmaker')}>Have a try!</button>
                         </div>
                         <img src={ManThinking} alt='man is thinking' className='HomeFirstImgRight'/>
                     </div>
