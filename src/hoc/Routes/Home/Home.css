@@ -165,18 +165,46 @@
 .HomeContent {
     width: 100%;
     z-index: 1;
+    position: relative;
+    padding: 1px 1px;
     background-color: white;
-    padding: 0 10px;
+}
+
+.HomeBackground {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.HomeContentContainer {
+    width: 93%; 
+    background-color: white;
+    opacity: 0.9;
+    margin: 100px auto;
+    padding-bottom:100px;
+    border-radius: 10px;
+}
+
+
+
+/* FIRST DIV */
+
+.HomeContentContainerFirstDiv {
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
 }
 
 .HomeFirstDivLeft {
-    width: 50%;
+    width: 60%;
 }
 
 .HomeFirstDivLeft h1 {
     font-size: 45px;
     font-weight: 200;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 .HomeFirstDivLeft ul {
@@ -192,74 +220,93 @@
 }
 
 .HomeFirstImgRight {
-    width: 520px;
+    width: 400px;
+    margin-right: 5%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .SliderDiv {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-bottom: 70px;
-    border-bottom: 1px solid lightgray;
-}
-
-.ImgDiv img {
-    border-radius: 10px;
-    max-height: 300px;
-    width: 300px;
-    transition: 0.3s ease-in-out;
-}
-
-.ImgDiv img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.UlDiv {
-    border: 1px solid lightgray;
+.HomeFristButton {
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: 200;
+    background-color: #E95035;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px gray;
-    box-sizing: border-box;
-    padding: 40px 100px;
+    transition: 0.2s ease-out;
 }
 
-.FirstCard {
+.HomeFristButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+
+/* SECOND DIV */
+
+.HomeContentContainerSecondDiv {
+    margin-top: 100px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgb(14, 118, 255);
 }
 
-.SpeechBubble{
-    padding: 100px 0 30px 30px;
-    height: 100%;
-    width: 50%;
+.HomeContentContainerSecondDiv h1{
+    width: 30%;
+    margin-right: 50%;
+    margin-bottom: 100px;
+    color: white;
+    background-color: #E95035;
+    box-shadow: 100px 10px 0 #FFCD39;
+    font-size: 45px;
+    font-weight: 200;
 }
 
-.ManThinking{
-    height: 100%;
-    width: 45%;
-} */
+.HomeContentContainerSecondDiv img{
+    width: 33%;
+    margin-left: 50px;
+}
+
+.HomeContentContainerSecondDiv p{
+    width: 40%;
+    text-align: left;
+    font-size: 25px;
+    color: rgb(82, 82, 82);
+    font-weight: 200;
+    line-height: 50px;
+    margin-left: 50px;
+}
+
+.HomeSecondDivRight {
+    position: relative;
+    width: 100px;
+    height: 250px; 
+    background-color: #E95035;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    display: flex;
+    transition: 0.2s ease-out;
+}
+
+.HomeSecondDivRight:hover {
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.HomeSecondDivRight:hover::before {
+    position: absolute;
+    content: 'Careers!';
+    font-family: 'Sriracha', cursive;
+    transform: rotate(-90deg);
+    color: white;
+    top: 38%;
+    left: -25px;
+    font-size: 40px;
+}
+
+.HomeSecondDivRight:hover i{
+    transform: translateX(140px);
+}

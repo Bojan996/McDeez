@@ -6,7 +6,9 @@ import Picture4 from '../../../assets/images/Slider/picture3.jpg';
 import Picture3 from '../../../assets/images/Slider/picture1.jpg';
 import Picture5 from '../../../assets/images/Slider/picture5.jpg';
 
-import ManThinking from '../../../assets/images/ManThinking.png';
+import ManThinking from '../../../assets/images/ManThinking.jpg';
+import background from '../../../assets/images/homeBackground.png';
+import career from '../../../assets/images/career.png';
 
 class Home extends Component {
 
@@ -36,8 +38,11 @@ class Home extends Component {
                     <div>You shall recieve<br/>What you deserve!</div>
                 </ul>
                 <div className='HomeContent'>
-                    <h1 style={{fontWeight: '200', fontSize: '52px', letterSpacing: '3px', padding: '50px 0 80px 0', margin: '0'}}>Welcome to our proud McDeez Restaurant</h1>
-                    <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                    <img src={background} alt='background home' className='HomeBackground'/>
+                    <div className='HomeContentContainer'>
+                    <h1 style={{width: '100%', fontWeight: '200', fontSize: '52px', letterSpacing: '3px', padding: '100px 0 100px 0', margin: '0'}}>Welcome to our proud McDeez Restaurant</h1>
+                    
+                    <div className='HomeContentContainerFirstDiv'>
                         <div className='HomeFirstDivLeft'>
                             <h1>If you wonder, why are we special?</h1>
                             <ul>
@@ -45,8 +50,26 @@ class Home extends Component {
                                 <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i> Our food just tastes amazing if you have a try.</li>
                                 <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i> Last but not least, Make your own food! Be creative!</li>
                             </ul>
+                            <button className='HomeFristButton' onClick={() => this.props.history.push('/foodmaker')}>Have a try!</button>
                         </div>
                         <img src={ManThinking} alt='man is thinking' className='HomeFirstImgRight'/>
+                    </div>
+
+                    <div className='HomeContentContainerSecondDiv'>
+                        <h1>Careers</h1>
+                        <img src={career} alt='many people'/>
+                        <p>
+                            We would like you to join our team! <br/>
+                            They work proffesionally with no mistakes <br/>
+                            because we constantly improve our system. <br/>
+                            In order to apply for a position as a chef <br/>
+                            folow the link below and go for it! 
+                        </p>
+                        <div className='HomeSecondDivRight'>
+                            <i className="fas fa-arrow-right"  style={{fontSize: '50px', color: 'white', alignSelf: 'center', transition: '0.2s ease-out', paddingLeft: '20px'}}></i>
+                        </div>
+                    </div>
+
                     </div>
                 </div>
             </div>
