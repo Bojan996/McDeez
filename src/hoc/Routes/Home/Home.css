@@ -165,12 +165,40 @@
 .HomeContent {
     width: 100%;
     z-index: 1;
+    position: relative;
+    padding: 1px 1px;
     background-color: white;
-    padding: 0 10px;
+}
+
+.HomeBackground {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.HomeContentContainer {
+    width: 93%; 
+    background-color: white;
+    opacity: 0.9;
+    margin: 100px auto;
+    padding-bottom:100px;
+    border-radius: 10px;
+}
+
+
+
+/* FIRST DIV */
+
+.HomeContentContainerFirstDiv {
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
 }
 
 .HomeFirstDivLeft {
-    width: 50%;
+    width: 60%;
 }
 
 .HomeFirstDivLeft h1 {
@@ -193,7 +221,7 @@
 
 .HomeFirstImgRight {
     width: 400px;
-    margin-right: 10%;
+    margin-right: 5%;
 }
 
 .HomeFristButton {
@@ -204,7 +232,7 @@
     color: white;
     font-size: 30px;
     font-weight: 200;
-    background-color: #EB7350;
+    background-color: #E95035;
     border-radius: 5px;
     transition: 0.2s ease-out;
 }
@@ -216,68 +244,69 @@
 
 
 
+/* SECOND DIV */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .SliderDiv {
+.HomeContentContainerSecondDiv {
+    margin-top: 100px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
-    padding-bottom: 70px;
-    border-bottom: 1px solid lightgray;
 }
 
-.ImgDiv img {
-    border-radius: 10px;
-    max-height: 300px;
-    width: 300px;
-    transition: 0.3s ease-in-out;
+.HomeContentContainerSecondDiv h1{
+    width: 30%;
+    margin-right: 50%;
+    margin-bottom: 100px;
+    color: white;
+    background-color: #E95035;
+    box-shadow: 100px 10px 0 #FFCD39;
+    font-size: 45px;
+    font-weight: 200;
 }
 
-.ImgDiv img:hover {
-    transform: scale(1.1);
+.HomeContentContainerSecondDiv img{
+    width: 33%;
+    margin-left: 50px;
+}
+
+.HomeContentContainerSecondDiv p{
+    width: 40%;
+    text-align: left;
+    font-size: 25px;
+    color: rgb(82, 82, 82);
+    font-weight: 200;
+    line-height: 50px;
+    margin-left: 50px;
+}
+
+.HomeSecondDivRight {
+    position: relative;
+    width: 100px;
+    height: 250px; 
+    background-color: #E95035;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    display: flex;
+    transition: 0.2s ease-out;
+}
+
+.HomeSecondDivRight:hover {
     cursor: pointer;
+    border-radius: 50%;
 }
 
-.UlDiv {
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px gray;
-    box-sizing: border-box;
-    padding: 40px 100px;
+.HomeSecondDivRight:hover::before {
+    position: absolute;
+    content: 'Careers!';
+    font-family: 'Sriracha', cursive;
+    transform: rotate(-90deg);
+    color: white;
+    top: 38%;
+    left: -25px;
+    font-size: 40px;
 }
 
-.FirstCard {
-    display: flex;
-    align-items: center;
-    background-color: rgb(14, 118, 255);
+.HomeSecondDivRight:hover i{
+    transform: translateX(140px);
 }
-
-.SpeechBubble{
-    padding: 100px 0 30px 30px;
-    height: 100%;
-    width: 50%;
-}
-
-.ManThinking{
-    height: 100%;
-    width: 45%;
-} */
