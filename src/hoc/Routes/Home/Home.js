@@ -10,6 +10,15 @@ import ManThinking from '../../../assets/images/ManThinking.jpg';
 import background from '../../../assets/images/homeBackground.png';
 import career from '../../../assets/images/career.png';
 
+import cheeseBurger from '../../../assets/images/menuDrawer/cheeseBurger.jpg';
+import candyWafel from '../../../assets/images/menuDrawer/candyWafel.jpg';
+import fatBoyBurger from '../../../assets/images/menuDrawer/bbqBurger.jpg';
+import iceCreamMadness from '../../../assets/images/menuDrawer/iceCreamMadness.jpg';
+import meatPizza from '../../../assets/images/menuDrawer/meatPizza.jpg';
+import pepperoni from '../../../assets/images/menuDrawer/pepperoni.jpg';
+import salmonRice from '../../../assets/images/menuDrawer/salmonRice.jpeg';
+import tuna from '../../../assets/images/menuDrawer/tuna.jpg';
+
 class Home extends Component {
 
     componentDidMount(){
@@ -67,6 +76,43 @@ class Home extends Component {
                         </p>
                         <div className='HomeSecondDivRight'>
                             <i className="fas fa-arrow-right"  style={{fontSize: '50px', color: 'white', alignSelf: 'center', transition: '0.2s ease-out', paddingLeft: '20px'}}></i>
+                        </div>
+                    </div>
+
+                    <div className='HomeContentContainerThirdDiv'>
+                        <div className='HomeThirdDivHeading'>
+                            <h1>Preamde Menu</h1>
+                        </div>
+                        <div className='HomeThirdtDivLeft'>
+                            <h1>The menu gallery is here!</h1>
+                            <p>
+                                We offer a variety of good food, <br/>
+                                our menu contains the most likeable food  <br/>
+                                which is of course junk food in its finest. <br/>
+                                Like what you see?  <span className='HomeGalleryLink' onClick={() => this.props.history.push('/foodmaker')}>Click here<i class="fas fa-external-link-alt"></i></span> <br/>
+                            </p>
+                        </div>
+                        <div className='HomeThirdDivRight'>
+                            <div className='GalleryDiv'>
+                                <img src={cheeseBurger} alt='this is for the gallary'/>
+                                <img src={candyWafel} alt='this is for the gallary'/>
+                                <img src={fatBoyBurger} alt='this is for the gallary'/>
+                                <img src={iceCreamMadness} alt='this is for the gallary'/>
+                                <img src={meatPizza} alt='this is for the gallary'/>
+                                <img src={pepperoni} alt='this is for the gallary'/>
+                                <img src={salmonRice} alt='this is for the gallary'/>
+                                <img src={tuna} alt='this is for the gallary'/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='HomeContentContainerForthDiv'>
+                        <h1>Summarize</h1>
+                        <div className='HomeFourthDivMain'>
+                            <div style={{width: '45%', height: '100px', backgroundColor: 'red', marginBottom: '20px'}}></div>
+                            <div style={{width: '45%', height: '100px', backgroundColor: 'red', marginBottom: '20px'}}></div>
+                            <div style={{width: '45%', height: '100px', backgroundColor: 'red'}}></div>
+                            <div style={{width: '45%', height: '100px', backgroundColor: 'red'}}></div>
                         </div>
                     </div>
 
