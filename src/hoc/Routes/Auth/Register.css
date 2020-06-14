@@ -1,3 +1,62 @@
-.RMainDiv {
-    margin-top: 200px;
+.RegisterMainDiv {
+    margin: 150px auto 0 auto;
+    width: 600px;
+}
+
+.RegisterForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.RegisterSubmitButton {
+    display: block;
+    width: 70%;
+    margin: 30px auto 40px auto;
+    text-decoration: none;
+    outline: none;
+    font-weight: 200;
+    font-size: 25px;
+    color: rgb(0, 140, 255);
+    border: 1.5px solid rgb(0, 140, 255);
+    border-radius: 5px;
+    padding: 15px 0;
+    background-color: white;
+    transition: 0.2s ease-out;
+}
+
+.RegisterSubmitButton:hover {
+    cursor: pointer;
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+
+.RegisterSubmitButton:active {
+    transform: translateY(10px);
+}
+
+.RegisterFormUserPassDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.RegisterTextFieldsUserPass {
+    width: 45% !important;
+}
+
+.RegisterTextFieldsAdresses {
+    margin-bottom: 50px !important;
+}
+
+.RegisterFormCountryDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.RegisterTextFieldZip {
+    width: 100px !important;
 }

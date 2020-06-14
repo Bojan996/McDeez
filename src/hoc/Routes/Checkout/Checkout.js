@@ -17,7 +17,7 @@ const useStyles = theme => ({
         width: '25ch',
       },
     }
-  });
+});
 
 class Checkout extends Component{
 
