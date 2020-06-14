@@ -1,3 +1,58 @@
-.LMainDiv {
-    margin-top: 200px;
+.LoginMainDiv {
+    margin: 150px auto 0 auto;
+    width: 460px;
+}
+
+.LoginMainDiv p {
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.LoginForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.LoginTextFields {
+    margin-bottom: 30px !important;
+}
+
+.LoginSubmitButton {
+    display: block;
+    width: 100%;
+    margin: 30px auto 40px auto;
+    text-decoration: none;
+    outline: none;
+    font-weight: 200;
+    font-size: 25px;
+    color: rgb(233, 80, 53);
+    border: 1.5px solid rgb(233, 80, 53);
+    border-radius: 5px;
+    padding: 15px 0;
+    background-color: white;
+    transition: 0.2s ease-out;
+}
+
+.LoginSubmitButton:hover {
+    cursor: pointer;
+    background-color: rgb(233, 80, 53);
+    color: white;
+}
+
+.LoginSubmitButton:active {
+    transform: translateY(10px);
+}
+
+.LoginRegisterSpan {
+    color: rgb(0, 140, 255);
+    transition: 0.2s ease-out;
+}
+
+.LoginRegisterSpan:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }

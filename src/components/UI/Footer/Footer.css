@@ -1,0 +1,65 @@
+.FooterMainContainer {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.FooterHeadingDiv {
+    width: 100%;
+    background-color: #E95035;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.FooterHeadingDiv p {
+    font-size: 25px;
+    color: white;
+}
+
+.FooterContentDiv {
+    text-align: left;
+    width: 100%;
+    padding-top: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.FooterContentDivFirst h1, .FooterContentDivSecond h1, .FooterContentDivThird h1, .FooterContentDivFourth h1 {
+    font-weight: 200;
+    width: fit-content;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #E95035;
+    border-radius: 3px;
+}
+
+.FooterContentDivFirst p {
+    font-size: 20px;
+    color: black;
+    font-weight: 200;
+    line-height: 40px;
+}
+
+.FooterContentDivSecond p, .FooterContentDivThird p {
+    font-size: 20px;
+    width: fit-content;
+    color: rgb(0, 140, 255);
+    font-weight: 200;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+    transition: 0.4s ease-out;
+}
+
+.FooterContentDivSecond p:hover, .FooterContentDivThird p:hover {
+    border-bottom: 1px solid rgb(0, 140, 255);
+    cursor: pointer;
+}
+
+.FooterContentDivFourth p{
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: 200;
+}

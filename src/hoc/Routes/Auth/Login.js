@@ -2,8 +2,21 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../../store/actions/auth';
+import { withStyles } from '@material-ui/core/styles';
 import './Login.css';
 import Spinner from '../../../components/UI/Spinner/Spinner';
+import TextField from '@material-ui/core/TextField';
+
+
+const useStyles = theme => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: '25ch',
+      },
+    }
+});
+
 
 class Login extends Component {
 
@@ -39,12 +52,14 @@ class Login extends Component {
         }
 
         return (
-            <div className='LMainDiv'>
-                <form onSubmit={this.submitHandler}>
-                    <input type='email' placeholder='email' onChange={(event) => this.emailHandler(event)}/>
-                    <input type='password' placeholder='password' onChange={(event) => this.passwordHandler(event)}/>
-                    <button>Submit</button>
+            <div className='LoginMainDiv'>
+                <h1 style={{fontSize: '70px', fontWeight: '200', marginBottom: '80px'}}><i className="fas fa-user" style={{marginRight: '50px'}}></i>Login</h1>
+                <form onSubmit={this.submitHandler} className='LoginForm'>
+                    <TextField className='LoginTextFields' id="outlined-basic" required={true} label="Email" variant="outlined" onChange={(event) => this.emailHandler(event)}/>
+                    <TextField className='LoginTextFields' id="outlined-basic" type='password' required={true} label="Password" variant="outlined" onChange={(event) => this.passwordHandler(event)}/>
+                    <button className='LoginSubmitButton'>Submit</button>
                 </form>
+                <p><span>Don't have an account?</span> <span className='LoginRegisterSpan' onClick={() => this.props.history.push('/register')}>Sign Up <i className="fas fa-user-plus" style={{marginLeft: '10px'}}></i></span></p>
                 {loader}
                 {checkoutRedirect}
             </div>
@@ -67,4 +82,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(useStyles, { withTheme: true })(Login));

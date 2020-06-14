@@ -1,6 +1,5 @@
 .HomeContainer {
     width: 100%;
-    margin-bottom: 400px;
 }
 
 .HomeSlideShow {
@@ -182,7 +181,7 @@
     width: 93%; 
     background-color: white;
     opacity: 0.9;
-    margin: 100px auto;
+    margin: 100px auto 0 auto;
     padding-bottom:100px;
     border-radius: 10px;
 }
@@ -248,7 +247,7 @@
 /* SECOND DIV */
 
 .HomeContentContainerSecondDiv {
-    margin-top: 100px;
+    margin-top: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -258,7 +257,7 @@
 .HomeContentContainerSecondDiv h1{
     width: 30%;
     margin-right: 50%;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
     color: white;
     background-color: #E95035;
     box-shadow: 100px 10px 0 #FFCD39;
@@ -317,11 +316,11 @@
 /* THIRD DIV */
 
 .HomeContentContainerThirdDiv {
-    margin-top: 91.5px;
+    margin-top: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .HomeThirdDivHeading {
@@ -332,7 +331,7 @@
 
 .HomeThirdDivHeading h1{
     width: 30%;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
     color: white;
     background-color: #FFCD39;
     box-shadow: -100px 10px 0 #E95035;
@@ -385,7 +384,7 @@
 .HomeThirdDivRight {
     margin-right: 50px;
     width: 50%;
-    height: 320px;
+    height: 360px;
     overflow: auto;
 }
 
@@ -409,17 +408,17 @@
 /* FOURTH DIV */
 
 .HomeContentContainerForthDiv {
-    margin-top: 100px;
+    margin-top: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
 
-.HomeContentContainerForthDiv h1{
+.HomeForthDivHeading{
     width: 30%;
     margin-right: 50%;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
     color: white;
     background-color: #E95035;
     box-shadow: 100px 10px 0 #FFCD39;
@@ -434,4 +433,26 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.HomeFourthDivMain div {
+    width: 45%;
+    height: 100px;
+    background-color: #ff3030;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HomeFourthDivMain div a {
+    text-decoration: none;
+    color: white;
+    font-size: 45px;
+    font-weight: 200;
+    transition: 0.2s ease-out;
+}
+
+.HomeFourthDivMain div a:hover {
+    transform: scale(1.1);
 }

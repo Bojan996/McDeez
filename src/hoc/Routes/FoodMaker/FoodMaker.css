@@ -1,6 +1,5 @@
 .FDContainer {
     max-width: 100%;
-    margin-bottom: 200px;
     overflow-x: hidden;
     animation: componentsrGettingIn 0.5s ease-out;
 }
@@ -133,7 +132,7 @@
 
 .FDLayout {
     margin-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     width: 100%;
     display: flex;
     justify-content: space-between;

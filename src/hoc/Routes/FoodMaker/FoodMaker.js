@@ -13,6 +13,7 @@ import FoodBuilder from '../../../components/FoodBuilder/FoodBuilder';
 import OrderSummary from '../../../components/FoodBuilder/OrderSummary/OrderSummary';
 import Drinks from '../../../components/Drinks&Additionals/Drinks/Drinks';
 import Additionals from '../../../components/Drinks&Additionals/Additionals/Additionals';
+import Footer from '../../../components/UI/Footer/Footer';
 
 import OrderSummaryButton from '../../../assets/images/orderSummaryButton.svg';
 import Background from '../../../assets/images/backgrounds/burgerNo2.jpg';
@@ -306,6 +307,7 @@ class FoodMaker extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer/>
             </div>
         )
     }
