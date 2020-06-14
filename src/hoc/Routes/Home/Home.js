@@ -51,10 +51,20 @@ class Home extends Component {
                 <div className='HomeContent'>
                     <img src={background} alt='background home' className='HomeBackground'/>
                     <div className='HomeContentContainer'>
-                        <h1 style={{width: '100%', fontWeight: '200', fontSize: '52px', letterSpacing: '3px', padding: '100px 0 100px 0', margin: '0'}}>Welcome to our proud McDeez Restaurant</h1>
+                        <h1 style={{width: '100%', fontWeight: '200', fontSize: '70px', padding: '70px 0 40px 0', margin: '0'}}>Official McDeez restaurant</h1>
+                        <p style={{fontFamily: 'Montserrat, sans-serif', fontSize: '20px', letterSpacing: '1px', fontWeight: '300', color: 'black', lineHeight: '30px'}}>
+                            Our McDeez restoraunt provides all its users with proffesional service. <br/>
+                            We have branches in: USA, Germany, Spain, Italy, Russia etc...
+                        </p>
+                        <div className='HomeHrDiv'></div>
+                        <p style={{fontFamily: 'Montserrat, sans-serif', fontSize: '20px', letterSpacing: '1px', fontWeight: '300', color: 'black', lineHeight: '30px'}}>
+                            If you are interested in us, and our history? Click the button!
+                        </p>
+                        <button className='HomeHistoryButton'>History</button>
+                        
                         <div className='HomeContentContainerFirstDiv'>
                             <div className='HomeFirstDivLeft'>
-                                <h1>If you wonder, why are we special?</h1>
+                                <h1 style={{marginTop: '0'}}>If you wonder, why are we special?</h1>
                                 <ul>
                                     <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i>Because our users get the fastest service out there.</li>
                                     <li><i className="fas fa-minus" style={{color: '#F44336', marginRight: '25px'}}></i> Our food just tastes amazing if you have a try.</li>
@@ -108,7 +118,7 @@ class Home extends Component {
                         </div>
 
                         <div className='HomeContentContainerForthDiv'>
-                            <h1 className='HomeForthDivHeading'>Summarize</h1>
+                            <h1 className='HomeForthDivHeading'>Social Media</h1>
                             <div className='HomeFourthDivMain'>
                                 <div style={{marginBottom: '40px'}}>
                                     <a href='https://twitter.com/explore'>We are on <i className="fab fa-twitter" style={{marginLeft: '20px'}}></i></a>
