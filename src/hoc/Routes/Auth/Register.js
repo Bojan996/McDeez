@@ -86,17 +86,19 @@ class Register extends Component {
                         <option>Italy</option>
                         <option>China</option>
                         <option>Russia</option>
+                        <option>Tokyo</option>
                     </Select>
                 </FormControl>
                 <FormControl variant="outlined" className={classes.formControl}>
                     <Select native>
                         <option>Belgrade</option>
                         <option>Washington DC</option>
-                        <option>Munchen</option>
+                        <option>Munich</option>
                         <option>Madrid</option>
                         <option>Rome</option>
                         <option>Beijing</option>
                         <option>Moscow</option>
+                        <option>Japan</option>
                     </Select>
                 </FormControl>
                     <TextField className='RegisterTextFieldZip' id="outlined-basic" required={true} label="Zip" variant="outlined"/>

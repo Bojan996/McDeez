@@ -121,21 +121,21 @@ class Home extends Component {
                             <h1 className='HomeForthDivHeading'>Social Media</h1>
                             <div className='HomeFourthDivMain'>
                                 <div style={{marginBottom: '40px'}}>
-                                    <a href='https://twitter.com/explore'>We are on <i className="fab fa-twitter" style={{marginLeft: '20px'}}></i></a>
+                                    <a href='https://twitter.com/explore' target="_blank" rel="noopener noreferrer">We are on <i className="fab fa-twitter" style={{marginLeft: '20px'}}></i></a>
                                 </div>
                                 <div style={{marginBottom: '40px'}}>
-                                    <a href='https://www.instagram.com/'>Folow us on <i className="fab fa-instagram" style={{marginLeft: '20px'}}></i></a>
+                                    <a href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer">Folow us on <i className="fab fa-instagram" style={{marginLeft: '20px'}}></i></a>
                                 </div>
                                 <div>
-                                    <a href='https://mail.google.com/'>Send us an <i className="fas fa-envelope" style={{marginLeft: '20px'}}></i></a>
+                                    <a href='https://mail.google.com/' target="_blank" rel="noopener noreferrer">Send us an <i className="fas fa-envelope" style={{marginLeft: '20px'}}></i></a>
                                 </div>
                                 <div>
-                                    <a href='https://www.youtube.com/'>Watch us on <i className="fab fa-youtube" style={{marginLeft: '20px'}}></i></a>
+                                    <a href='https://www.youtube.com/' target="_blank" rel="noopener noreferrer">Watch us on <i className="fab fa-youtube" style={{marginLeft: '20px'}}></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <Footer/>
+                    <Footer history={this.props.history}/>
                 </div>
             </div>
         )

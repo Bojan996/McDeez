@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-const footer = () => {
+const footer = (props) => {
     return (
         <div className='FooterMainContainer'>
             <div className='FooterHeadingDiv'>
@@ -26,17 +26,17 @@ const footer = () => {
                 </div>
                 <div className='FooterContentDivSecond'>
                     <h1>Services</h1>
-                    <p>Premade Menu</p>
-                    <p>Builder Menu</p>
-                    <p>Careers</p>
-                    <p>History</p>
+                    <p onClick={() => props.history.push('/foodmaker')}>Premade Menu</p>
+                    <p onClick={() => props.history.push('/foodmaker')}>Builder Menu</p>
+                    <p onClick={() => props.history.push('/')}>Careers</p>
+                    <p onClick={() => props.history.push('/')}>History</p>
                 </div>
                 <div className='FooterContentDivThird'>
                     <h1>Social Media</h1>
-                    <p>Facebook</p>
-                    <p>Instagram</p>
-                    <p>Twitter</p>
-                    <p>Linkedin</p>
+                    <a href='https://www.facebook.com/' target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href='https://twitter.com/explore' target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a href='https://www.linkedin.com/' target="_blank" rel="noopener noreferrer">Linkedin</a>
                 </div>
                 <div className='FooterContentDivFourth'>
                     <h1>Contact</h1>

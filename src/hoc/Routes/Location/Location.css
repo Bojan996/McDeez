@@ -1,0 +1,46 @@
+.LocationContainer {
+    width: 100%;
+    margin-top: 170px;
+}
+
+.LocationPictureHeading {
+    width: 100%;
+}
+
+.LocationPictureHeading img {
+    width: 100%;
+}
+
+.LocationHeading {
+    font-weight: 200;
+    font-size: 55px;
+    margin: 70px auto;
+}
+
+.LocationContent {
+    width: 93%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LocationRestaurantCard {
+    width: 47%;
+    height: 230px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.LocationRestaurantCardImage {
+    width: 50%;
+    height: 100%;
+}
+
+.LocationRestaurantCardContent {
+    width: 50%;
+}

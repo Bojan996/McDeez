@@ -10,6 +10,7 @@ import Orders from './hoc/Routes/Orders/Orders';
 import Login from './hoc/Routes/Auth/Login';
 import Register from './hoc/Routes/Auth/Register';
 import Logout from './hoc/Routes/Auth/Logout';
+import Location from './hoc/Routes/Location/Location';
 import { connect } from 'react-redux';
 import { authCheckState } from './store/actions/auth';
 
@@ -24,6 +25,7 @@ class App extends Component {
     let routes = (
       <Switch>
           <Route path='/foodmaker' component={FoodMaker}/>
+          <Route path='/location' component={Location}/>
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
           <Route path='/' exact component={Home}/>
@@ -36,6 +38,7 @@ class App extends Component {
         <Switch>
             <Route path='/foodmaker' component={FoodMaker}/>
             <Route path='/checkout' component={Checkout}/>
+            <Route path='/location' component={Location}/>
             <Route path='/login' component={Login}/>
             <Route path='/register' component={Register}/>
             <Route path='/orders' component={Orders}/>
