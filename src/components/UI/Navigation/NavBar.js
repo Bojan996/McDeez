@@ -31,9 +31,9 @@ class NavBar extends Component {
                     <div className='NavLeftDiv'>
                         <NavLink to='/' className='NavLi' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #FFDF82'}}>Home</NavLink>
                         <div className='NavDropDownDiv'>
-                            <h2>About <i style={{paddingLeft: '10px'}} className="fas fa-sort-down"></i></h2>
+                            <h2 style={{fontWeight: '400'}}>About <i style={{paddingLeft: '10px'}} className="fas fa-sort-down"></i></h2>
                             <div className='NavDropDownContent'>
-                                <Link to='/home' className='DropDownLinks'>Why us?</Link>
+                                <Link to='/locations' className='DropDownLinks'>Locations</Link>
                                 <Link to='/home' className='DropDownLinks'>History</Link>
                                 <Link to='/home' className='DropDownLinks'>Careers</Link>
                             </div>

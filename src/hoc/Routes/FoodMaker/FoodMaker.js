@@ -307,7 +307,7 @@ class FoodMaker extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer/>
+                <Footer history={this.props.history}/>
             </div>
         )
     }

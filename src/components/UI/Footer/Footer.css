@@ -43,7 +43,7 @@
     line-height: 40px;
 }
 
-.FooterContentDivSecond p, .FooterContentDivThird p {
+.FooterContentDivSecond p {
     font-size: 20px;
     width: fit-content;
     color: rgb(0, 140, 255);
@@ -53,7 +53,20 @@
     transition: 0.4s ease-out;
 }
 
-.FooterContentDivSecond p:hover, .FooterContentDivThird p:hover {
+.FooterContentDivThird a {
+    text-decoration: none;
+    display: block;
+    margin: 20px 0;
+    font-size: 20px;
+    width: fit-content;
+    color: rgb(0, 140, 255);
+    font-weight: 200;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+    transition: 0.4s ease-out;
+}
+
+.FooterContentDivSecond p:hover, .FooterContentDivThird a:hover {
     border-bottom: 1px solid rgb(0, 140, 255);
     cursor: pointer;
 }
