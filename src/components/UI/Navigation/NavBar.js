@@ -33,7 +33,7 @@ class NavBar extends Component {
                         <div className='NavDropDownDiv'>
                             <h2 style={{fontWeight: '400'}}>About <i style={{paddingLeft: '10px'}} className="fas fa-sort-down"></i></h2>
                             <div className='NavDropDownContent'>
-                                <Link to='/location' className='DropDownLinks'>Locations</Link>
+                                <Link to='/locations' className='DropDownLinks'>Locations</Link>
                                 <Link to='/home' className='DropDownLinks'>History</Link>
                                 <Link to='/home' className='DropDownLinks'>Careers</Link>
                             </div>

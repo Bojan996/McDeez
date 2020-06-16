@@ -29,7 +29,7 @@ const footer = (props) => {
                     <p onClick={() => props.history.push('/foodmaker')}>Premade Menu</p>
                     <p onClick={() => props.history.push('/foodmaker')}>Builder Menu</p>
                     <p onClick={() => props.history.push('/')}>Careers</p>
-                    <p onClick={() => props.history.push('/')}>History</p>
+                    <p onClick={() => props.history.push('/locations')}>Locations</p>
                 </div>
                 <div className='FooterContentDivThird'>
                     <h1>Social Media</h1>

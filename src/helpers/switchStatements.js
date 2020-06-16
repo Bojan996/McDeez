@@ -47,6 +47,43 @@ import PizzaCrust from '../assets/images/ingredients/Pizza/PizzaCrust.svg';
 import SaladBowl from '../assets/images/ingredients/Salad/bowlSalad.svg';
 import WafelCrust from '../assets/images/ingredients/Wafel/wafelCrust.svg';
 
+import belgradeRestaurant from '../assets/images/Restaurants/belgradeRestaurant.jpg';
+import washingtonRestaurant from '../assets/images/Restaurants/washingtonRestaurant.jpg';
+import tokyoRestaurant from '../assets/images/Restaurants/tokyoRestaurant.jpg';
+import madridRestaurant from '../assets/images/Restaurants/madridRestaurant.jpg';
+import romeRestaurant from '../assets/images/Restaurants/romeRestaurant.jpg';
+import beijingRestaurant from '../assets/images/Restaurants/beijingRestaurant.jpg';
+import moscowRestaurant from '../assets/images/Restaurants/moscowRestaurant.jpg';
+import munichRestaurant from '../assets/images/Restaurants/munichRestaurant.jpg';
+
+
+export const restaurantImages = (name) => {
+
+    switch(name){
+
+        case 'Belgrade':
+            return <img src={belgradeRestaurant} alt='Belgrade' className='SingleLocationRestaurantImage'/>
+        case 'Washington':
+            return <img src={washingtonRestaurant} alt='Washington' className='SingleLocationRestaurantImage'/>
+        case 'Munich':
+            return <img src={munichRestaurant} alt='Munich' className='SingleLocationRestaurantImage'/>
+        case 'Madrid':
+            return <img src={madridRestaurant} alt='Madrid' className='SingleLocationRestaurantImage'/>
+        case 'Rome':
+            return <img src={romeRestaurant} alt='Rome' className='SingleLocationRestaurantImage'/>
+        case 'Beijing':
+            return <img src={beijingRestaurant} alt='Beijing' className='SingleLocationRestaurantImage'/>
+        case 'Moscow':
+            return <img src={moscowRestaurant} alt='Moscow' className='SingleLocationRestaurantImage'/>
+        case 'Tokyo':
+            return <img src={tokyoRestaurant} alt='Tokyo' className='SingleLocationRestaurantImage'/>
+        default:
+            return null;
+
+    }
+
+}
+
 
 export const foodBuilder = (type, order) => {
 

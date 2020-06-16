@@ -58,9 +58,9 @@ class Home extends Component {
                         </p>
                         <div className='HomeHrDiv'></div>
                         <p style={{fontFamily: 'Montserrat, sans-serif', fontSize: '20px', letterSpacing: '1px', fontWeight: '300', color: 'black', lineHeight: '30px'}}>
-                            If you are interested in us, and our history? Click the button!
+                            If you are interested in all of the locatons? Click the button!
                         </p>
-                        <button className='HomeHistoryButton'>History</button>
+                        <button className='HomeHistoryButton' onClick={() => this.props.history.push('/locations')}>Locations</button>
                         
                         <div className='HomeContentContainerFirstDiv'>
                             <div className='HomeFirstDivLeft'>
