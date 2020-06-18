@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import './Location.css';
 import Footer from '../../../components/UI/Footer/Footer';
 
-import locationHeading from '../../../assets/images/locationHeading.png';
+import locationHeading from '../../../assets/images/LocationHeading.png';
 
 import belgradeRestaurant from '../../../assets/images/Restaurants/belgradeRestaurant.jpg';
 import washingtonRestaurant from '../../../assets/images/Restaurants/washingtonRestaurant.jpg';
 import tokyoRestaurant from '../../../assets/images/Restaurants/tokyoRestaurant.jpg';
 import madridRestaurant from '../../../assets/images/Restaurants/madridRestaurant.jpg';
 import romeRestaurant from '../../../assets/images/Restaurants/romeRestaurant.jpg';
-import beijingRestaurant from '../../../assets/images/Restaurants/beijingRestaurant.jpg';
+import beijingRestaurant from '../../../assets/images/Restaurants/beijingRestaurant.webp';
 import moscowRestaurant from '../../../assets/images/Restaurants/moscowRestaurant.jpg';
 import munichRestaurant from '../../../assets/images/Restaurants/munichRestaurant.jpg';
 

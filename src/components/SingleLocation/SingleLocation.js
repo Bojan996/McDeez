@@ -1,22 +1,118 @@
 import React, { Component } from 'react';
 import './SingleLocation.css';
+import axios from 'axios';
+import Loader from '../UI/Spinner/Spinner';
 
+import TextField from '@material-ui/core/TextField';
+
+import { withSnackbar } from 'notistack';
 import { restaurantImages } from '../../helpers/switchStatements';
+import { restaurantLocations } from '../../helpers/switchStatements';
 
 
 class SingleLocation extends Component {
 
+    state = {
+        loading: false,
+        inputInfo: {
+            name: '',
+            surname: '',
+            comment: ''
+        },
+        comments: null
+    }
+
+    componentDidMount(){
+        axios.get(`https://mcdeez-b6b14.firebaseio.com/restaruantComments/${this.props.match.params.id}.json`)
+        .then(res => {
+            this.setState({comments: res.data});
+        })
+    }
+
+    inputHandler = (event, type) => {
+        const updatedInputInfo = {...this.state.inputInfo};
+        updatedInputInfo[type] = event.target.value;
+        this.setState({inputInfo: updatedInputInfo});
+    }
+
+    formSubmitHandler = (event) => {
+        event.preventDefault();
+        this.setState({loading: true});
+        const restaurantName = this.props.match.params.id,
+            date = new Date(),
+            month = date.getUTCMonth() + 1,
+            day = date.getUTCDate(),
+            year = date.getUTCFullYear(),
+            currentDate = year + "/" + month + "/" + day;
+        
+        const fullComment = {
+            name: this.state.inputInfo.name,
+            surname: this.state.inputInfo.surname,
+            date: currentDate,
+            comment: this.state.inputInfo.comment
+        }
+
+        axios.post(`https://mcdeez-b6b14.firebaseio.com/restaruantComments/${restaurantName}.json`, fullComment);
+        
+        setTimeout(e => {
+            this.setState({loading: false});
+            this.props.enqueueSnackbar('Added to Order Summary!',  {variant: 'success'} );
+            setTimeout(e => {
+                window.location.reload();
+            }, 2000);
+        }, 700);
+
+    }
+
     render(){
 
         const image = restaurantImages(this.props.match.params.id);
-        
+        const location = restaurantLocations(this.props.match.params.id);
+
+        let comments = null;
+
+        if(this.state.comments !== null){
+            comments = Object.keys(this.state.comments).map((e, index) => {
+                return (
+                    <div className='SLDataBaseComment' key={index}>
+                        <h1><span>{this.state.comments[e].name} {this.state.comments[e].surname}</span> <span style={{fontSize: '18px', color: 'rgb(99, 99, 99)'}}>{this.state.comments[e].date}</span></h1>
+                        <p>{this.state.comments[e].comment}</p>
+                    </div>
+                )
+            })
+        }
 
         return (
-            <div className='SingleLocationContainer'>
-                <h1>Welcome to the single locaton!</h1>
-                <h1>{this.props.match.params.id}</h1>
-                {image}
-                <iframe title='just a map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.39056878075!2d20.45867831549847!3d44.81360727909873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aae086eb971%3A0x4e105d18dffd9fb7!2sTerazije%2023%2C%20Beograd%2011000!5e0!3m2!1sen!2srs!4v1592348098596!5m2!1sen!2srs" width="600" height="450" frameborder="0" style={{border: '0'}} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <div className='SLContainer'>
+                <div className='SLPictureMap'>
+                    <div className='SLHeadingPicture'>
+                        <h1>McDeez in {this.props.match.params.id}</h1>
+                        {image}
+                    </div>
+                    <div className='SLMap'>
+                        <h1>Location</h1>
+                        {location}
+                    </div>
+                </div>
+                <div className='SLComments'>
+                    <h1 className='SLCommentsMainHeader'>Comments</h1>
+                    <div className='SLCommentsContent'>
+                        <div className='SLCommentsSection'>
+                            {comments}
+                        </div>
+                        <div className='SLFormSection'>
+                            <h1>Add Comment</h1>
+                            <form className='SLForm'>
+                                <div className='SLFormNameSurname'>
+                                    <TextField id="outlined-basic" required={true}  label="Name" variant="outlined" className='CommentFormNameSurname' onChange={(event) => this.inputHandler(event, 'name')}/>
+                                    <TextField id="outlined-basic" required={true}  label="Surname" variant="outlined" className='CommentFormNameSurname' onChange={(event) => this.inputHandler(event, 'surname')}/>
+                                </div>
+                                <TextField id="outlined-basic" label="Comment..." variant="outlined" className='CommentFormComment' multiline={true} rows='5' onChange={(event) => this.inputHandler(event, 'comment')}/>
+                                <button className='CommentSubmitButton' onClick={this.formSubmitHandler}>{this.state.loading ? <Loader style={{fontSize: '2px', color: '#FFCD39', margin: '0 auto', borderColor: 'white', borderLeftColor: 'rgb(0, 140, 255)', borderWidth: '4px'}}/> : 'Submit'}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
 
@@ -25,4 +121,4 @@ class SingleLocation extends Component {
 }
 
 
-export default SingleLocation;
+export default withSnackbar(SingleLocation);

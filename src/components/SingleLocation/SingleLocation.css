@@ -1,8 +1,165 @@
-.SingleLocationContainer {
-    margin-top: 200px;
+.SLContainer {
+    margin: 130px auto 100px auto;
+    width: 95%;
 }
 
-.SingleLocationRestaurantImage {
-    width: 500px;
-    height: 400px;
+.SLPictureMap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 70px;
+}
+
+.SLHeadingPicture {
+    width: 55%;
+}
+
+.SLHeadingPicture h1 {
+    font-size: 60px;
+    font-weight: 200;
+    margin: 0 0 30px 0;
+    padding-top: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    border-bottom: none;
+}
+
+.SLRestaurantImage {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px lightgrey;
+}
+
+.SLMap {
+    width: 40%;
+}
+
+.SLMap h1 {
+    font-size: 60px;
+    font-weight: 200;
+    margin: 0 0 30px 0;
+    padding-top: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    border-bottom: none;
+}
+
+.SLComments {
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.SLCommentsMainHeader{
+    text-align: left;
+    font-size: 55px;
+    font-weight: 200;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+    margin: 0 0 10px 0;
+}
+
+.SLCommentsContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SLCommentsSection {
+    width: 50%;
+    padding-right: 10px;
+    max-height: 550px;
+    overflow-y: auto;
+
+    margin-left: 20px;
+}
+
+.SLDataBaseComment {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.SLDataBaseComment h1 {
+    box-sizing: border-box; 
+    width: 100%;
+    padding-right: 20px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 200;
+    margin: 5px 0 20px 0;
+}
+
+.SLDataBaseComment p {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgb(99, 99, 99);
+    margin: 10px 0 20px 10px;
+}
+
+.SLFormSection {
+    width: 40%;
+    margin: 40px 20px 55px 0;
+}
+
+.SLFormSection h1{
+    text-align: left;
+    margin: 0 0 27px 0;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.SLForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.SLFormNameSurname {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.CommentFormNameSurname {
+    width: 45% !important;
+}
+
+.CommentSubmitButton {
+    width: 50%;
+    margin: 60px auto 0 auto;
+    text-decoration: none;
+    outline: none;
+    font-weight: 200;
+    font-size: 25px;
+    color: rgb(0, 140, 255);
+    border: 1.5px solid rgb(0, 140, 255);
+    border-radius: 5px;
+    padding: 15px 0;
+    background-color: white;
+    transition: 0.2s ease-out;
+}
+
+.CommentSubmitButton:hover {
+    cursor: pointer;
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+
+.CommentSubmitButton:active {
+    transform: translateY(10px);
 }
