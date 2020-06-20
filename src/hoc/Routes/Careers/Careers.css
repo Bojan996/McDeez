@@ -1,0 +1,245 @@
+.CareersContainer {
+    width: 100%;
+    margin: 160px auto 0 auto;
+}
+
+.CareersMainHeader {
+    width: 90%;
+    height: 100px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+.CareersMainHeader h1 {
+    margin: 0;
+    width: fit-content;
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.CareersMainHeader div {
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(103, 109, 104);
+}
+
+.CareersMainHeader div span{
+    width: fit-content;
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.CareersMainHeaderParagraph {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    font-size: 22px;
+    line-height: 40px;
+    color: rgb(82, 82, 82);
+    font-weight: 200;
+}
+
+.CareersMainHeaderImages {
+    width: 97%; 
+    height: 650px;
+    margin: 100px auto 80px auto; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CareersMainHeaderFirstImage {
+    width: 60%;
+    height: 100%;
+}
+
+.CareersMainHeaderSecondImageDiv {
+    width: 35%; 
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.CareersMainHeaderSecondImageDiv img{
+    height: 48%;
+}
+
+.CareersFirstMissionDiv {
+    width: 50%;
+    margin: 0 auto 80px auto;
+    text-align: left;
+}
+
+.CareersFirstMissionDiv p:nth-child(1) {
+    color: rgb(116, 116, 116);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.CareersFirstMissionDiv h1 {
+    font-size: 40px;
+}
+
+.CareersFirstMissionDiv p:not(:nth-child(1)) {
+    font-family: 'Montserrat';
+    letter-spacing: -0.5px;
+    color: rgb(82, 82, 82);
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.CareersCuttingImage {
+    width: 97%;
+    height: 650px;
+    margin: 0 auto 80px auto;
+}
+
+.CareersSecondMissionDiv {
+    width: 50%;
+    margin: 0 auto 130px auto;
+    text-align: left;
+}
+
+.CareersSecondMissionDiv p:nth-child(1) {
+    color: rgb(116, 116, 116);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.CareersSecondMissionDiv h1 {
+    font-size: 40px;
+}
+
+.CareersSecondMissionDiv p:not(:nth-child(1)) {
+    font-family: 'Montserrat';
+    letter-spacing: -0.5px;
+    color: rgb(82, 82, 82);
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.CareersIconDiv {
+    width: 55%;
+    margin: 0 auto 120px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.CareersFirstSecondIconDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CareersFirstSecondIconDiv div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CareersFirstSecondIconDiv div img{
+    height: 60px;
+    width: 60px;
+}
+
+.CareersFirstSecondIconDiv div p{
+    font-family: 'Montserrat';
+    letter-spacing: -0.5px;
+    color: rgb(54, 54, 54);
+    font-size: 15px;
+}
+
+.CareersFormDiv {
+    width: 80%;
+    margin: 0 auto 100px auto;
+}
+
+.CareersFormHeader {
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.CareersFormDivContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+.CareersFormDivContentLeft {
+    width: 40%;
+    text-align: left;
+}
+
+.CareersFormDivContentLeft h1 {
+    font-size: 50px;
+    margin: 0 0 80px 0;
+}
+
+.CareersFormDivContentLeft p {
+    font-family: 'Montserrat';
+    letter-spacing: -0.5px;
+    color: rgb(82, 82, 82);
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.CareersFormDivContentForm {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+}
+
+.CareersFormNameSurname {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.CareersFormEmailAge {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.CareersFormInput {
+    width: 45% !important;
+}
+
+.CareersSubmitButton {
+    width: 50%;
+    margin: 60px auto 0 auto;
+    text-decoration: none;
+    outline: none;
+    font-weight: 200;
+    font-size: 25px;
+    color: rgb(0, 140, 255);
+    border: 1.5px solid rgb(0, 140, 255);
+    border-radius: 5px;
+    padding: 15px 0;
+    background-color: white;
+    transition: 0.2s ease-out;
+}
+
+.CareersSubmitButton:hover {
+    cursor: pointer;
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+
+.CareersSubmitButton:active {
+    transform: translateY(10px);
+}

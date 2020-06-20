@@ -10,7 +10,11 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 class Orders extends Component {
 
     componentDidMount() {
-        this.props.onFetchOrders(this.props.idToken, this.props.userId);
+        if(this.props.isAuth){
+            this.props.onFetchOrders(this.props.idToken, this.props.userId);
+        }else{
+            this.props.history.replace('/login');
+        }
     }
     
     render() {
@@ -42,7 +46,7 @@ class Orders extends Component {
                 )
             })
         }else {
-            orders = <h1 className='OrdersMainHeader'>Sorry, you don't have past orders...</h1>
+            orders = <h1 className='OrdersMainHeader' style={{marginTop: '200px'}}>Sorry, you don't have past orders...</h1>
         }
 
         let loader = this.props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;

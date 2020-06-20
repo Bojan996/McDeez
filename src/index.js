@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import ScrollToTop from './components/UI/ScrollToTop/ScrollToTop';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
@@ -28,7 +29,9 @@ const app = (
     <Provider store={store}>
         <BrowserRouter>
             <SnackbarProvider maxSnack={3} autoHideDuration={2000}>
-                <App />
+                <ScrollToTop>
+                    <App/>
+                </ScrollToTop>
             </SnackbarProvider>
         </BrowserRouter>
     </Provider>

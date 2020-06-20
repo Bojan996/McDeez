@@ -28,7 +28,7 @@ const history = (props) => {
 
                 <div className='HistoryFirstDiv'>
                     <div className='FirstDivText'>
-                        <h1>McDeez was formed long ago!</h1>
+                        <h1>McDeez was formed long time ago!</h1>
                         <p>- This was the classiest restaruant that you could find at the year 1926, and gues what? McDeez got it! We nailed it with this one, it was a success.</p>
                     </div>
                     <img src={firstDivImage} alt='restaurant'/>
@@ -68,7 +68,7 @@ const history = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer history={props.history}/>
         </div>
     )
 }
