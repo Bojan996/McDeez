@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './SingleLocation.css';
 import axios from 'axios';
 import Loader from '../UI/Spinner/Spinner';
+import Footer from '../UI/Footer/Footer';
 
 import TextField from '@material-ui/core/TextField';
 
@@ -83,36 +84,39 @@ class SingleLocation extends Component {
         }
 
         return (
-            <div className='SLContainer'>
-                <div className='SLPictureMap'>
-                    <div className='SLHeadingPicture'>
-                        <h1>McDeez in {this.props.match.params.id}</h1>
-                        {image}
-                    </div>
-                    <div className='SLMap'>
-                        <h1>Location</h1>
-                        {location}
-                    </div>
-                </div>
-                <div className='SLComments'>
-                    <h1 className='SLCommentsMainHeader'>Comments</h1>
-                    <div className='SLCommentsContent'>
-                        <div className='SLCommentsSection'>
-                            {comments}
+            <div>
+                <div className='SLContainer'>
+                    <div className='SLPictureMap'>
+                        <div className='SLHeadingPicture'>
+                            <h1>McDeez in {this.props.match.params.id}</h1>
+                            {image}
                         </div>
-                        <div className='SLFormSection'>
-                            <h1>Add Comment</h1>
-                            <form className='SLForm'>
-                                <div className='SLFormNameSurname'>
-                                    <TextField id="outlined-basic" required={true}  label="Name" variant="outlined" className='CommentFormNameSurname' onChange={(event) => this.inputHandler(event, 'name')}/>
-                                    <TextField id="outlined-basic" required={true}  label="Surname" variant="outlined" className='CommentFormNameSurname' onChange={(event) => this.inputHandler(event, 'surname')}/>
-                                </div>
-                                <TextField id="outlined-basic" label="Comment..." variant="outlined" className='CommentFormComment' multiline={true} rows='5' onChange={(event) => this.inputHandler(event, 'comment')}/>
-                                <button className='CommentSubmitButton' onClick={this.formSubmitHandler}>{this.state.loading ? <Loader style={{fontSize: '2px', color: '#FFCD39', margin: '0 auto', borderColor: 'white', borderLeftColor: 'rgb(0, 140, 255)', borderWidth: '4px'}}/> : 'Submit'}</button>
-                            </form>
+                        <div className='SLMap'>
+                            <h1>Location</h1>
+                            {location}
                         </div>
                     </div>
+                    <div className='SLComments'>
+                        <h1 className='SLCommentsMainHeader'>Comments</h1>
+                        <div className='SLCommentsContent'>
+                            <div className='SLCommentsSection'>
+                                {comments}
+                            </div>
+                            <div className='SLFormSection'>
+                                <h1>Add Comment</h1>
+                                <form className='SLForm'>
+                                    <div className='SLFormNameSurname'>
+                                        <TextField id="outlined-basic" required={true}  label="Name" variant="outlined" className='CommentFormNameSurname' onChange={(event) => this.inputHandler(event, 'name')}/>
+                                        <TextField id="outlined-basic" required={true}  label="Surname" variant="outlined" className='CommentFormNameSurname' onChange={(event) => this.inputHandler(event, 'surname')}/>
+                                    </div>
+                                    <TextField id="outlined-basic" label="Comment..." variant="outlined" className='CommentFormComment' multiline={true} rows='5' onChange={(event) => this.inputHandler(event, 'comment')}/>
+                                    <button className='CommentSubmitButton' onClick={this.formSubmitHandler}>{this.state.loading ? <Loader style={{fontSize: '2px', color: '#FFCD39', margin: '0 auto', borderColor: 'white', borderLeftColor: 'rgb(0, 140, 255)', borderWidth: '4px'}}/> : 'Submit'}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <Footer/>
             </div>
         )
 
