@@ -35,7 +35,7 @@ class NavBar extends Component {
                             <div className='NavDropDownContent'>
                                 <Link to='/locations' className='DropDownLinks'>Locations</Link>
                                 <Link to='/history' className='DropDownLinks'>History</Link>
-                                <Link to='/home' className='DropDownLinks'>Careers</Link>
+                                <Link to='/careers' className='DropDownLinks'>Careers</Link>
                             </div>
                         </div>
                         <NavLink to='/orders' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #FFDF82'}} className='NavLi'>Orders</NavLink>

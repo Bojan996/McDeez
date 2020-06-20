@@ -68,7 +68,7 @@
     padding: 15px 0;
     background-color: rgba(43, 34, 34, 0.849);
     color: white;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 .HistoryContentSection {
@@ -90,7 +90,7 @@
 
 .FirstDivText h1 {
     width: 100%;
-    font-size: 80px;
+    font-size: 70px;
     text-align: left;
 }
 
@@ -130,7 +130,7 @@
 
 .SecondDivText h1 {
     width: 100%;
-    font-size: 80px;
+    font-size: 70px;
     text-align: left;
     margin-top: 30px;
 }
@@ -161,7 +161,7 @@
 
 .ThirdDivText h1 {
     width: 100%;
-    font-size: 80px;
+    font-size: 70px;
     text-align: left;
 }
 
@@ -193,7 +193,7 @@
 
 .HistoryLinkSection h1 {
     margin-top: 0;
-    font-size: 80px;
+    font-size: 70px;
     padding-top: 50px;
     color: white;
 }
@@ -216,7 +216,7 @@
     margin: 0;
     padding: 30px 0;
     color: white;
-    font-size: 40px;
+    font-size: 35px;
     text-align: center;
     transition: 0.2s ease-out;
 }

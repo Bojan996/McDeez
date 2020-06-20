@@ -1,18 +1,6 @@
 .FDContainer {
     max-width: 100%;
     overflow-x: hidden;
-    animation: componentsrGettingIn 0.5s ease-out;
-}
-
-@keyframes componentsrGettingIn {
-    0%{
-        transform: translateX(100vh);
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 .FDFloatingButton {

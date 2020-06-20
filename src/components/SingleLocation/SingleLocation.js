@@ -57,7 +57,7 @@ class SingleLocation extends Component {
         
         setTimeout(e => {
             this.setState({loading: false});
-            this.props.enqueueSnackbar('Added to Order Summary!',  {variant: 'success'} );
+            this.props.enqueueSnackbar('Your comment was added!',  {variant: 'success'} );
             setTimeout(e => {
                 window.location.reload();
             }, 2000);
@@ -82,6 +82,8 @@ class SingleLocation extends Component {
                 )
             })
         }
+
+        console.log(this.props);
 
         return (
             <div>
@@ -109,14 +111,14 @@ class SingleLocation extends Component {
                                         <TextField id="outlined-basic" required={true}  label="Name" variant="outlined" className='CommentFormNameSurname' onChange={(event) => this.inputHandler(event, 'name')}/>
                                         <TextField id="outlined-basic" required={true}  label="Surname" variant="outlined" className='CommentFormNameSurname' onChange={(event) => this.inputHandler(event, 'surname')}/>
                                     </div>
-                                    <TextField id="outlined-basic" label="Comment..." variant="outlined" className='CommentFormComment' multiline={true} rows='5' onChange={(event) => this.inputHandler(event, 'comment')}/>
+                                    <TextField id="outlined-basic" label="Comment..." variant="outlined" multiline={true} rows='5' onChange={(event) => this.inputHandler(event, 'comment')}/>
                                     <button className='CommentSubmitButton' onClick={this.formSubmitHandler}>{this.state.loading ? <Loader style={{fontSize: '2px', color: '#FFCD39', margin: '0 auto', borderColor: 'white', borderLeftColor: 'rgb(0, 140, 255)', borderWidth: '4px'}}/> : 'Submit'}</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Footer/>
+                <Footer history={this.props.history}/>
             </div>
         )
 

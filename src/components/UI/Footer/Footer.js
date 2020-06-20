@@ -26,10 +26,10 @@ const footer = (props) => {
                 </div>
                 <div className='FooterContentDivSecond'>
                     <h1>Services</h1>
-                    <p onClick={() => props.history.push('/foodmaker')}>Premade Menu</p>
                     <p onClick={() => props.history.push('/foodmaker')}>Builder Menu</p>
-                    <p onClick={() => props.history.push('/')}>Careers</p>
                     <p onClick={() => props.history.push('/locations')}>Locations</p>
+                    <p onClick={() => props.history.push('/careers')}>Careers</p>
+                    <p onClick={() => props.history.push('/history')}>History</p>
                 </div>
                 <div className='FooterContentDivThird'>
                     <h1>Social Media</h1>
@@ -40,7 +40,7 @@ const footer = (props) => {
                 </div>
                 <div className='FooterContentDivFourth'>
                     <h1>Contact</h1>
-                    <p><i className="fas fa-home" style={{marginRight: '20px'}}></i> New Belgrade, A Block</p>
+                    <p><i className="fas fa-home" style={{marginRight: '20px'}}></i> Belgrade, Terazije 23</p>
                     <p><i className="fas fa-envelope" style={{marginRight: '20px'}}></i> mcdeez@gmail.com</p>
                     <p><i className="fas fa-phone" style={{marginRight: '20px'}}></i> 011 2051-321</p>
                     <p><i className="fas fa-fax" style={{marginRight: '20px'}}></i> +381 63 201-3345</p>
