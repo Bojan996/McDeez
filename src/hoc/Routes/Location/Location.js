@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { lazyLoad } from '../../../helpers/intersectionObserver';
 import './Location.css';
 import Footer from '../../../components/UI/Footer/Footer';
 
@@ -15,6 +16,11 @@ import moscowRestaurant from '../../../assets/images/Restaurants/moscowRestauran
 import munichRestaurant from '../../../assets/images/Restaurants/munichRestaurant.jpg';
 
 class Location extends Component {
+
+    componentDidMount(){
+        const targets = [...document.querySelectorAll('.lazyLoadLocation')];
+        targets.forEach(e => lazyLoad(e, 'LocationFade'));
+    }
 
     state = {
         locations: {
@@ -65,7 +71,7 @@ class Location extends Component {
 
         const restaurantCards = Object.keys(this.state.locations).map(e => {
             return (
-                <div className='LocationRestaurantCard' key={e}>
+                <div className='LocationRestaurantCard lazyLoadLocation' key={e}>
                     <img src={this.state.locations[e].image} alt='restaruant beautiful' className='LocationRestaurantCardImage'/>
                     <div className='LocationRestaurantCardContent'>
                         <h1>{e}</h1>

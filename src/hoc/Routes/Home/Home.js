@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
+import { lazyLoad } from '../../../helpers/intersectionObserver';
 import Footer from '../../../components/UI/Footer/Footer';
 
 import Picture1 from '../../../assets/images/Slider/picture4.jpg';
@@ -22,6 +23,11 @@ import salmonRice from '../../../assets/images/menuDrawer/salmonRice.jpeg';
 import tuna from '../../../assets/images/menuDrawer/tuna.jpg';
 
 class Home extends Component {
+
+    componentDidMount(){
+        const targets = [...document.querySelectorAll('.lazyLoadHome')];
+        targets.forEach(e => lazyLoad(e, 'HomeFade'));
+    }
 
     render () {
     
@@ -55,7 +61,7 @@ class Home extends Component {
                         </p>
                         <button className='HomeHistoryButton' onClick={() => this.props.history.push('/locations')}>Locations</button>
                         
-                        <div className='HomeContentContainerFirstDiv'>
+                        <div className='HomeContentContainerFirstDiv lazyLoadHome'>
                             <div className='HomeFirstDivLeft'>
                                 <h1 style={{marginTop: '0'}}>If you wonder, why are we special?</h1>
                                 <ul>
@@ -68,7 +74,7 @@ class Home extends Component {
                             <img src={ManThinking} alt='man is thinking' className='HomeFirstImgRight'/>
                         </div>
 
-                        <div className='HomeContentContainerSecondDiv'>
+                        <div className='HomeContentContainerSecondDiv lazyLoadHome'>
                             <h1>Careers</h1>
                             <img src={career} alt='many people'/>
                             <p>
@@ -78,12 +84,12 @@ class Home extends Component {
                                 In order to apply for a position as a chef <br/>
                                 folow the link below and go for it! 
                             </p>
-                            <div className='HomeSecondDivRight'>
+                            <div className='HomeSecondDivRight' onClick={() => this.props.history.push('/careers')}>
                                 <i className="fas fa-arrow-right"  style={{fontSize: '50px', color: 'white', alignSelf: 'center', transition: '0.2s ease-out', paddingLeft: '20px'}}></i>
                             </div>
                         </div>
 
-                        <div className='HomeContentContainerThirdDiv'>
+                        <div className='HomeContentContainerThirdDiv lazyLoadHome'>
                             <div className='HomeThirdDivHeading'>
                                 <h1>Preamde Menu</h1>
                             </div>
@@ -110,7 +116,7 @@ class Home extends Component {
                             </div>
                         </div>
 
-                        <div className='HomeContentContainerForthDiv'>
+                        <div className='HomeContentContainerForthDiv lazyLoadHome'>
                             <h1 className='HomeForthDivHeading'>Social Media</h1>
                             <div className='HomeFourthDivMain'>
                                 <div style={{marginBottom: '40px'}}>

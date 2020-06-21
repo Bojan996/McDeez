@@ -3,6 +3,18 @@
     margin: 160px auto 0 auto;
 }
 
+.lazyLoadCareers {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 0.4s ease-out;
+}
+
+.CareersFade {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.4s ease-out;
+}
+
 .CareersMainHeader {
     width: 90%;
     height: 100px;

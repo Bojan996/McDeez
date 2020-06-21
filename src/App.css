@@ -44,11 +44,3 @@
   background: transparent;
 }
 
-@keyframes componentsrGettingIn {
-  0%{
-      opacity: 0.7;
-  }
-  100%{
-      opacity: 1;
-  }
-}
