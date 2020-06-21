@@ -3,6 +3,18 @@
     overflow-x: hidden;
 }
 
+.lazyLoadFoodMaker {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 0.4s ease-out;
+}
+
+.FoodMakerFade {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.4s ease-out;
+}
+
 .FDFloatingButton {
     top: 57px;
     right: 27px;

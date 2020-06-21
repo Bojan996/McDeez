@@ -42,8 +42,7 @@ class Login extends Component {
 
     render(){
 
-        let checkoutRedirect = null;        
-        let loader = this.props.loading ? <Spinner/> : null;
+        let checkoutRedirect = null;
 
         if(this.props.isAuth && this.props.orders.length >= 1){
             checkoutRedirect = <Redirect to='/checkout'/>
@@ -57,10 +56,9 @@ class Login extends Component {
                 <form onSubmit={this.submitHandler} className='LoginForm'>
                     <TextField className='LoginTextFields' id="outlined-basic" required={true} label="Email" variant="outlined" onChange={(event) => this.emailHandler(event)}/>
                     <TextField className='LoginTextFields' id="outlined-basic" type='password' required={true} label="Password" variant="outlined" onChange={(event) => this.passwordHandler(event)}/>
-                    <button className='LoginSubmitButton'>Submit</button>
+                    <button className='LoginSubmitButton'>{this.props.loading ? <Spinner style={{fontSize: '2px', color: '#FFCD39', margin: '0 auto', borderColor: 'white', borderLeftColor: 'rgb(233, 80, 53)', borderWidth: '4px'}}/> : 'Submit'}</button>
                 </form>
                 <p><span>Don't have an account?</span> <span className='LoginRegisterSpan' onClick={() => this.props.history.push('/register')}>Sign Up <i className="fas fa-user-plus" style={{marginLeft: '10px'}}></i></span></p>
-                {loader}
                 {checkoutRedirect}
             </div>
         )

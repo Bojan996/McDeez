@@ -57,8 +57,7 @@ class Register extends Component {
 
         const { classes } = this.props;
 
-        let checkoutRedirect = null;      
-        let loader = this.props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;
+        let checkoutRedirect = null;
 
         if(this.props.isAuth && this.props.orders.length >= 1){
             checkoutRedirect = <Redirect to='/checkout'/>
@@ -103,9 +102,8 @@ class Register extends Component {
                 </FormControl>
                     <TextField className='RegisterTextFieldZip' id="outlined-basic" required={true} label="Zip" variant="outlined"/>
                 </div>
-                <button className='RegisterSubmitButton'>Submit</button>
+                <button className='RegisterSubmitButton'>{this.props.loading ? <Spinner style={{fontSize: '2px', color: '#FFCD39', margin: '0 auto', borderColor: 'white', borderLeftColor: 'rgb(0, 140, 255)', borderWidth: '4px'}}/> : 'Submit'}</button>
                 </form>
-                {loader}
                 {checkoutRedirect}
             </div>
         )

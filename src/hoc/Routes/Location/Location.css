@@ -3,6 +3,18 @@
     margin-top: 170px;
 }
 
+.lazyLoadLocation {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 0.4s ease-out;
+}
+
+.LocationFade {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.4s ease-out;
+}
+
 .LocationPictureHeading {
     width: 100%;
 }

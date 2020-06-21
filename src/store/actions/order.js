@@ -66,7 +66,6 @@ export const fetchingOrders = (idToken, userId) => {
                 fetchedOrders.push(res.data[key])
             }
             dispatch(fetchOrderSuccess(fetchedOrders));
-            console.log(fetchedOrders);
         })
         .catch(err => {
             alert('something went wrong, try to go to the homepage and get in orders page again, sorry...');

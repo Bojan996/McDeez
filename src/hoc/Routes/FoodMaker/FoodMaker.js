@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { addOrderSummary } from '../../../store/actions/orderSummary';
 import { foodMakerState } from '../../../assets/FoodBuilderInitialState/FoodBuilderInitialState';
 import { withSnackbar } from 'notistack';
+import { lazyLoad } from '../../../helpers/intersectionObserver';
 
 import RestaurantMenu from '../../../components/RestaurantMenu/RestaurantMenu';
 import MenuDrawer from '../../../components/RestaurantMenu/MenuDrawer/MenuDrawer';
@@ -119,6 +120,11 @@ class FoodMaker extends Component {
                 amount: 0
             }
         }
+    }
+
+    componentDidMount(){
+        const targets = [...document.querySelectorAll('.lazyLoadFoodMaker')];
+        targets.forEach(e => lazyLoad(e, 'FoodMakerFade'));
     }
 
     addRemoveDrinksAdditionalsHandler = (name, type, from) => {
@@ -239,10 +245,10 @@ class FoodMaker extends Component {
                 <FoodBuilder show={this.state.showBuilder} close={this.closeHandler} builder={this.state.whichBuidler}/>
 
                 <div className='FDLayout'>
-                    <div className='FDMenu'>
+                    <div className='FDMenu lazyLoadFoodMaker'>
                         <RestaurantMenu showDrawer={this.showDrawerHandler}/>
                     </div> 
-                    <div className='FDMakeDiv'>
+                    <div className='FDMakeDiv lazyLoadFoodMaker'>
                         <List
                             component="nav" 
                             aria-labelledby="nested-list-subheader"
@@ -275,7 +281,7 @@ class FoodMaker extends Component {
                                 </ListItem>
                             </div>
                         </List>
-                        <div className='FDDrinksAndAdditionals'>
+                        <div className='FDDrinksAndAdditionals lazyLoadFoodMaker'>
                             <div className='FDDrinks'>
                                 <Typography variant='h2' className={classes.header}> Drinks </Typography>
                                 {Object.keys(this.state.drinks).map(e => <Drinks key={e} name={e} clicked={this.addRemoveDrinksAdditionalsHandler} amount={this.state.drinks[e].amount} price={this.state.drinks[e].price}/>)}

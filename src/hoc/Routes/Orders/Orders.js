@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import './Orders.css';
 import { connect } from 'react-redux';
 import { fetchingOrders } from '../../../store/actions/order';
+import { addOrderSummary } from '../../../store/actions/orderSummary';
 
 import OrderCard from '../../../components/FoodBuilder/OrderSummary/OrderCards/OrderCard';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 
 
 class Orders extends Component {
+
+    state= {
+        loading: false
+    }
 
     componentDidMount() {
         if(this.props.isAuth){
@@ -16,10 +21,21 @@ class Orders extends Component {
             this.props.history.replace('/login');
         }
     }
+
+    orderAgainHandler = (index) => {
+        this.setState({loading: true});
+        setTimeout(e => {
+            this.setState({loading: false});
+            this.props.orders[index].orders.map(e => {
+                return this.props.addOrder(e);
+            });
+            this.props.history.push('/checkout');
+        }, 1000);
+    }
     
     render() {
 
-        console.log(this.props.order);
+        console.log(this.props.orders);
 
         let orders = null;
         if(this.props.orders.length > 0){
@@ -40,7 +56,7 @@ class Orders extends Component {
                         })}
                         <div className='OrdersBottomSection'>
                             <h2>Price: {firstEl.price}$</h2>
-                            <button className='OrdersSendAgain'>Order Again!</button>
+                            <button className='OrdersSendAgain' onClick={() => this.orderAgainHandler(firstIndex)}>{this.state.loading ? <Spinner style={{fontSize: '4px', color: '#FFCD39', margin: '4px auto', borderColor: 'white', borderLeftColor: '#ffc400', borderWidth: '7px'}}/> : 'Order Again!'}</button>
                         </div>
                     </div>
                 )
@@ -73,7 +89,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFetchOrders: (idToken, userId) => dispatch(fetchingOrders(idToken, userId))
+        onFetchOrders: (idToken, userId) => dispatch(fetchingOrders(idToken, userId)),
+        addOrder: (order) => dispatch(addOrderSummary(order))
     }
 }
 
