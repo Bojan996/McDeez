@@ -101,7 +101,6 @@ class Careers extends Component {
           <h1>employees worldwide</h1>
         </div>
         <p className="CareersMainHeaderParagraph">
-          {" "}
           We are a global society, therefore we are continuously growing and
           searching for new and experienced chefs! <br />
           Our restaurants are all over the world, so we probably have a nice
