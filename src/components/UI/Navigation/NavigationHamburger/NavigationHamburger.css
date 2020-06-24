@@ -1,0 +1,42 @@
+.NavigationHamburgerContainer {
+    position: absolute;
+    left: 5%;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+  }
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.HamburgerChange {
+    left: 23%;
+    z-index: 15;
+}
+
+.HamburgerChange .bar1 {
+    background-color: #E95035;
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+  
+.HamburgerChange .bar2 {
+    opacity: 0;
+}
+  
+.HamburgerChange .bar3 {
+    background-color: #E95035;
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media (min-width: 915px) {
+    .NavigationHamburgerContainer {
+        display: none;
+    }
+}

@@ -15,11 +15,27 @@
     transition: 0.3s ease-out;
 }
 
-.OSContainerOpen {
+/* .OSContainerOpen {
     animation: OSGettingIn 0.4s ease-out forwards;
 }
 
 .OSContainerClossed {
+    animation: OSGettingOut 0.4s ease-out forwards;
+}
+
+.OSContainerTransition-enter {
+
+} */
+
+.OSContainerTransition-enter-active {
+    animation: OSGettingIn 0.4s ease-out forwards;
+}
+
+/* .OSContainerTransition-exit {
+
+} */
+
+.OSContainerTransition-exit-active {
     animation: OSGettingOut 0.4s ease-out forwards;
 }
 

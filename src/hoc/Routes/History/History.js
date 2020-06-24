@@ -54,7 +54,7 @@ class History extends Component {
                     <div className='HistoryThirdDiv lazyLoadHistory'>
                         <div className='ThirdDivText'>
                             <h1>This was how we served people</h1>
-                            <p>- In the past, it was very different. You had to obay the rules of service which were set in this restaurant in 1927 by the law. See houw classy this is. We bet that we did it right!</p>
+                            <p>- In the past, it was very different. You had to obay the rules of service which were set in this restaurant in 1927 by the law. See how classy this is. We bet that we did it right!</p>
                         </div>
                         <img src={thirdDivImage} alt='restaurant'/>
                     </div>

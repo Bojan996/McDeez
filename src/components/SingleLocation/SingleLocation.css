@@ -108,8 +108,14 @@
     text-align: left;
     font-size: 20px;
     font-weight: 200;
-    color: rgb(99, 99, 99);
+    padding-right: 10px;
+    color: rgb(46, 46, 46);
     margin: 10px 0 20px 10px;
+}
+
+.SLUserIcon {
+    color: rgb(97, 97, 97) !important;
+    margin-right: 10px !important;
 }
 
 .SLFormSection {

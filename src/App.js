@@ -76,13 +76,17 @@ class App extends Component {
           document.querySelector('.LogoDiv').style.height = '41px';
           document.querySelector('.FDFloatingButton').style.top = '57px';
           document.querySelector('.divInFloatingButton').style.top = '53px';
-          document.querySelector('.OSContainer').style.top = '131px';
+          if(document.querySelector('#OSContainerScroll') !== null){
+            document.querySelector('#OSContainerScroll').style.top = '131px';
+          }
         } else {
           document.querySelector('.NavContainer').style.padding = '15px 0';
           document.querySelector('.LogoDiv').style.height = '53px';
           document.querySelector('.FDFloatingButton').style.top = '90px';
           document.querySelector('.divInFloatingButton').style.top = '84px';
-          document.querySelector('.OSContainer').style.top = '166px';
+          if(document.querySelector('#OSContainerScroll') !== null){
+            document.querySelector('#OSContainerScroll').style.top = '166px';
+          }
         }
       }
   }

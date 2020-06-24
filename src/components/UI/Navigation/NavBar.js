@@ -3,12 +3,19 @@ import './NavBar.css';
 import { NavLink, Link } from 'react-router-dom';
 import Logo from '../../Logo/Logo';
 import { connect } from 'react-redux';
+import NavHamburger from './NavigationHamburger/NavigationHamburger';
+import NavDrawer from './NavDrawer/NavDrawer';
 
 
 class NavBar extends Component {
 
     state = {
-        dropDownOpen: null
+        dropDownOpen: null,
+        navDrawer: false
+    }
+
+    NavDrawerHandler = () => {
+        this.setState({navDrawer: !this.state.navDrawer});
     }
 
     clickHandler = (event) => {
@@ -24,8 +31,10 @@ class NavBar extends Component {
 
         return (
             <div className='NavContainer'>
+                <NavDrawer show={this.state.navDrawer}/>
                 <div className='LogoDiv'>
-                    <Logo/>
+                    <NavHamburger className='NavBarMenuIcon' show={this.NavDrawerHandler}/>
+                    <Logo className='NavBarLogo'/>
                 </div>
                 <div className='NavItemDiv'>
                     <div className='NavLeftDiv'>

@@ -2,8 +2,15 @@ import React from 'react';
 import './OrderSummary.css';
 import { connect } from 'react-redux';
 import { deleteOrderSummary } from '../../../store/actions/orderSummary';
+import CSSTransition from 'react-transition-group/CSSTransition';
 
 import OrderCard from './OrderCards/OrderCard';
+
+
+const animationTiming = {
+    enter: 400,
+    exit: 400
+}
 
 
 const orderSummary = (props) => {
@@ -25,16 +32,23 @@ const orderSummary = (props) => {
         }
     }
 
-    let classes = props.show ? 'OSContainer OSContainerOpen' : 'OSContainer OSContainerClossed';
+    // let classes = props.show ? 'OSContainer OSContainerOpen' : 'OSContainer OSContainerClossed';
 
     return (
-        <div className={classes}>
-            <h2 style={{margin: '10px', fontWeight: '200', color: 'black', fontSize: '30px'}}>Total Price: {Number.parseFloat( totalPriceNum ).toFixed( 2 )}$</h2>
-            <div className='OSCardContainer'>
-                {orderCards}
+        <CSSTransition
+            mountOnEnter
+            unmountOnExit
+            in={props.show}
+            timeout={animationTiming}
+            classNames='OSContainerTransition'>
+            <div className='OSContainer' id='OSContainerScroll'>
+                <h2 style={{margin: '10px', fontWeight: '200', color: 'black', fontSize: '30px'}}>Total Price: {Number.parseFloat( totalPriceNum ).toFixed( 2 )}$</h2>
+                <div className='OSCardContainer'>
+                    {orderCards}
+                </div>
+                <button className='OSCheckoutButton' onClick={clickHandler} disabled={props.orders.length === 0 ? true : false}>Continue To Checkout!</button>
             </div>
-            <button className='OSCheckoutButton' onClick={clickHandler} disabled={props.orders.length === 0 ? true : false}>Continue To Checkout!</button>
-        </div>
+        </CSSTransition>
     )
 }
 
