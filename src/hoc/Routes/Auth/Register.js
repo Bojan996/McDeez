@@ -74,7 +74,7 @@ class Register extends Component {
                     <TextField className='RegisterTextFieldsUserPass' id="outlined-basic" required={true} label="Password" type='password' variant="outlined" onChange={(event) => this.passwordHandler(event)}/> 
                 </div>  
                 <TextField className='RegisterTextFieldsAdresses' id="outlined-basic" required={true} label="Address" variant="outlined"/>
-                <TextField className='RegisterTextFieldsAdresses' id="outlined-basic" required={true} label="Address Details" helperText="Apartment, studio, or floor" variant="outlined"/>
+                <TextField className='RegisterTextFieldsAdresses' id="outlined-basic" required={true} label="Address Details" helperText="Floor and Apartment Number" variant="outlined"/>
                 <div className='RegisterFormCountryDiv'>
                 <FormControl variant="outlined" className={classes.formControl}>
                     <Select native>
@@ -85,7 +85,7 @@ class Register extends Component {
                         <option>Italy</option>
                         <option>China</option>
                         <option>Russia</option>
-                        <option>Tokyo</option>
+                        <option>Japan</option>
                     </Select>
                 </FormControl>
                 <FormControl variant="outlined" className={classes.formControl}>
@@ -97,7 +97,7 @@ class Register extends Component {
                         <option>Rome</option>
                         <option>Beijing</option>
                         <option>Moscow</option>
-                        <option>Japan</option>
+                        <option>Tokyo</option>
                     </Select>
                 </FormControl>
                     <TextField className='RegisterTextFieldZip' id="outlined-basic" required={true} label="Zip" variant="outlined"/>

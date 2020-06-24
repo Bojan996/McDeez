@@ -3,6 +3,8 @@
 }
 
 .HomeSlideShow {
+    position: relative;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
     top: 0;
@@ -21,9 +23,6 @@
     top: 0;
     left: 0;
     right: 0;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
     opacity: 0;
     z-index: -1;
     animation: imageAnimation 30s linear infinite; 
@@ -176,7 +175,7 @@
     width: 100%;
     z-index: 1;
     position: relative;
-    padding: 1px 1px;
+    padding: 1px 0;
     background-color: white;
 }
 

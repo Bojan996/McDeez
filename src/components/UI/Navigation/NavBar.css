@@ -22,6 +22,10 @@
     transition: 0.3s ease-out;
 }
 
+.NavBarMenuIcon {
+    display: none;
+}
+
 .LogoDiv a{
     width: 150px;
     height: 100%;
@@ -151,4 +155,34 @@
 
 .NavDropDownDiv:hover .NavDropDownDiv h2{
     background-color: #3e8e41;
+}
+
+@media (max-width: 915px) {
+    .NavBarMenuIcon {
+        display: block;
+        font-size: 50px;
+    }
+
+    .NavBarMenuIcon:hover {
+        cursor: pointer;
+    }
+
+    .NavItemDiv {
+        display: none;
+    }
+
+    .NavBarLogo {
+        position: absolute;
+        right: 2%;
+        transition: 0.2s ease-out;
+        margin-right: 20px;
+    }
+    
+    .LogoDiv {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
 }

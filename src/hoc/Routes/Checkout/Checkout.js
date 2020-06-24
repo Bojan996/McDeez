@@ -194,7 +194,8 @@ const mapStateToProps = state => {
         purchasedOrder: state.orders.purchased,
         orders: state.orderSummary.orders,
         userId: state.auth.localId,
-        idToken: state.auth.idToken
+        idToken: state.auth.idToken,
+        userEmail: state.auth.email
     }
 }
 

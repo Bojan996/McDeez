@@ -5,6 +5,7 @@ import Loader from '../UI/Spinner/Spinner';
 import Footer from '../UI/Footer/Footer';
 
 import TextField from '@material-ui/core/TextField';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import { withSnackbar } from 'notistack';
 import { restaurantImages } from '../../helpers/switchStatements';
@@ -76,7 +77,7 @@ class SingleLocation extends Component {
             comments = Object.keys(this.state.comments).map((e, index) => {
                 return (
                     <div className='SLDataBaseComment' key={index}>
-                        <h1><span>{this.state.comments[e].name} {this.state.comments[e].surname}</span> <span style={{fontSize: '18px', color: 'rgb(99, 99, 99)'}}>{this.state.comments[e].date}</span></h1>
+                        <h1><span style={{display: 'flex', alignItems: 'center'}}><AccountCircleIcon fontSize='large' className='SLUserIcon'/>{this.state.comments[e].name} {this.state.comments[e].surname}</span> <span style={{fontSize: '18px', color: 'rgb(99, 99, 99)'}}>{this.state.comments[e].date}</span></h1>
                         <p>{this.state.comments[e].comment}</p>
                     </div>
                 )

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Logo = props => {
     return (
-        <Link to='/'> 
+        <Link to='/'  className={props.className}> 
                 <img src={McDeezLogo} alt='The official McDeez logo'/>
         </Link>
     );
