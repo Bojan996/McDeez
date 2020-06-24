@@ -34,3 +34,9 @@
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
+
+@media (min-width: 915px) {
+    .NavigationHamburgerContainer {
+        display: none;
+    }
+}
