@@ -16,7 +16,7 @@ class NavDrawer extends Component {
         let activeStyle = {
             transform: 'scale(1.1)', 
             borderBottom: '2px solid #E95035',
-            margin: '20px 10px',
+            margin: '20px 0 20px 20px',
             width: '50%'
         }
 

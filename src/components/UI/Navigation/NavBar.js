@@ -5,6 +5,7 @@ import Logo from '../../Logo/Logo';
 import { connect } from 'react-redux';
 import NavHamburger from './NavigationHamburger/NavigationHamburger';
 import NavDrawer from './NavDrawer/NavDrawer';
+import Backdrop from '../Backdrop/Backdrop';
 
 
 class NavBar extends Component {
@@ -31,9 +32,10 @@ class NavBar extends Component {
 
         return (
             <div className='NavContainer'>
-                <NavDrawer show={this.state.navDrawer}/>
+                <Backdrop showDrawer={this.state.navDrawer} close={this.NavDrawerHandler}/>
+                <NavDrawer show={this.state.navDrawer} close={this.NavDrawerHandler}/>
                 <div className='LogoDiv'>
-                    <NavHamburger className='NavBarMenuIcon' show={this.NavDrawerHandler}/>
+                    <NavHamburger className='NavBarMenuIcon' show={this.NavDrawerHandler} change={this.state.navDrawer}/>
                     <Logo className='NavBarLogo'/>
                 </div>
                 <div className='NavItemDiv'>
