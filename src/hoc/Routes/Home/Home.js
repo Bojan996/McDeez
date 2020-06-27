@@ -81,8 +81,8 @@ class Home extends Component {
                                 We would like you to join our team! <br/>
                                 They work proffesionally with no mistakes <br/>
                                 because we constantly improve our system. <br/>
-                                In order to apply for a position as a chef <br/>
-                                folow the link below and go for it! 
+                                <span className='HomeContentContainerSecondDivCareersSpan'>In order to apply for a position as a chef <br/>
+                                folow the link below and go for it!</span> 
                             </p>
                             <div className='HomeSecondDivRight' onClick={() => this.props.history.push('/careers')}>
                                 <i className="fas fa-arrow-right"  style={{fontSize: '50px', color: 'white', alignSelf: 'center', transition: '0.2s ease-out', paddingLeft: '20px'}}></i>
@@ -96,10 +96,10 @@ class Home extends Component {
                             <div className='HomeThirdtDivLeft'>
                                 <h1>The menu gallery is here!</h1>
                                 <p>
-                                    We offer a variety of good food, <br/>
-                                    our menu contains the most likeable food  <br/>
-                                    which is of course junk food in its finest. <br/>
-                                    Like what you see?  <span className='HomeGalleryLink' onClick={() => this.props.history.push('/foodmaker')}>Click here<i className="fas fa-external-link-alt"></i></span> <br/>
+                                    We offer a variety of good food,
+                                    our menu contains the most likeable food
+                                    which is of course junk food in its finest.
+                                    Like what you see?  <span className='HomeGalleryLink' onClick={() => this.props.history.push('/foodmaker')}>Click here<i className="fas fa-external-link-alt"></i></span>
                                 </p>
                             </div>
                             <div className='HomeThirdDivRight'>
@@ -120,16 +120,16 @@ class Home extends Component {
                             <h1 className='HomeForthDivHeading'>Social Media</h1>
                             <div className='HomeFourthDivMain'>
                                 <div style={{marginBottom: '40px'}}>
-                                    <a href='https://twitter.com/explore' target="_blank" rel="noopener noreferrer">We are on <i className="fab fa-twitter" style={{marginLeft: '20px'}}></i></a>
+                                    <a href='https://twitter.com/explore' target="_blank" rel="noopener noreferrer"><span>We are on</span> <i className="fab fa-twitter" style={{marginLeft: '20px'}}></i></a>
                                 </div>
                                 <div style={{marginBottom: '40px'}}>
-                                    <a href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer">Folow us on <i className="fab fa-instagram" style={{marginLeft: '20px'}}></i></a>
+                                    <a href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer"><span>Folow us on</span> <i className="fab fa-instagram" style={{marginLeft: '20px'}}></i></a>
                                 </div>
                                 <div>
-                                    <a href='https://mail.google.com/' target="_blank" rel="noopener noreferrer">Send us an <i className="fas fa-envelope" style={{marginLeft: '20px'}}></i></a>
+                                    <a href='https://mail.google.com/' target="_blank" rel="noopener noreferrer"><span>Send us an</span> <i className="fas fa-envelope" style={{marginLeft: '20px'}}></i></a>
                                 </div>
                                 <div>
-                                    <a href='https://www.youtube.com/' target="_blank" rel="noopener noreferrer">Watch us on <i className="fab fa-youtube" style={{marginLeft: '20px'}}></i></a>
+                                    <a href='https://www.youtube.com/' target="_blank" rel="noopener noreferrer"><span>Watch us on</span> <i className="fab fa-youtube" style={{marginLeft: '20px'}}></i></a>
                                 </div>
                             </div>
                         </div>

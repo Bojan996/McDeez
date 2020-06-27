@@ -6,8 +6,8 @@ const footer = (props) => {
         <div className='FooterMainContainer'>
             <div className='FooterHeadingDiv'>
                 <p>Find us on Social Media</p>
-                <div style={{width: '200px', backgroundColor: '#E95035'}}></div>
-                <div>
+                <div className='FooterHeadingDivDivider' style={{width: '200px', backgroundColor: '#E95035'}}></div>
+                <div className='FooterHeadingDivIcons'>
                     <i className="fab fa-facebook-f" style={{fontSize: '25px'}}></i>
                     <i className="fab fa-twitter" style={{marginLeft: '30px', fontSize: '25px'}}></i>
                     <i className="fab fa-linkedin-in" style={{marginLeft: '30px', fontSize: '25px'}}></i>
