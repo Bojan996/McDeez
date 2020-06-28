@@ -75,7 +75,6 @@
     padding-right: 10px;
     max-height: 550px;
     overflow-y: auto;
-
     margin-left: 20px;
 }
 
@@ -169,4 +168,89 @@
 
 .CommentSubmitButton:active {
     transform: translateY(10px);
+}
+
+
+@media (max-width: 1000px) {
+
+    .SLHeadingPictureInSpan{
+        display: none;
+    }
+
+}
+
+@media (max-width: 915px) {
+    .SLPictureMap {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 70px;
+    }
+
+    .SLHeadingPicture {
+        width: 90%;
+        margin-bottom: 70px;
+    }
+
+    .SLMap {
+        width: 90%;
+    }
+
+    .SLCommentsContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .SLCommentsSection {
+        width: 90%;
+        overflow: hidden;
+        padding: 0;
+        max-height: none;
+        margin: 0 0 40px 0;
+    }
+
+    .SLFormSection {
+        width: 90%;
+        margin: 0;
+    }
+    
+}
+
+@media (max-width: 636px) {
+
+    .SLHeadingPictureMcDeezSpan {
+        display: none;
+    }
+
+    .SLRestaurantImage {
+        height: 350px;
+    }
+
+    .SLFormNameSurname {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .CommentFormNameSurname {
+        width: 100% !important;
+    }
+
+    .CommentFormNameSurname:nth-child(1) {
+        margin-bottom: 50px;
+    }
+
+    .SLCommentsSection {
+        width: 100%;
+    }
+
+    .SLHeadingPicture {
+        width: 100%;
+    }
+
+    .SLMap {
+        width: 100%;
+    }
+
 }

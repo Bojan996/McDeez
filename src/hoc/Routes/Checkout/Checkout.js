@@ -165,7 +165,7 @@ class Checkout extends Component{
                 {homeRedirect}
                 <div className='CLayout'>
                     <div className='COrderCards'>
-                        <h1 style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '20px 20px 60px 20px', fontWeight: '200', fontSize: '50px', borderBottom: '1px solid lightgrey', paddingBottom: '20px'}}><span>Your Order:</span><span>{this.props.orders.length} Items</span></h1>
+                        <h1 className='COrderCardsMainHeading'><span className='COrderCardsMainHeadingYourOrder'>Your Order:</span><span>{this.props.orders.length} Items</span></h1>
                         {orderCards}
                         <h2 style={{margin: '25px auto 39px aut', fontWeight: '200', fontSize: '40px'}}>Total Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h2>
                     </div>

@@ -76,8 +76,8 @@ class Location extends Component {
                     <div className='LocationRestaurantCardContent'>
                         <h1>{e}</h1>
                         <p>- {this.state.locations[e].description}</p>
-                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                            <span style={{fontSize: '15px', fontWeight: '200', color: 'gray', paddingLeft: '10px'}}>Since: {this.state.locations[e].founded}</span>
+                        <div className='LocationTimeSinceAndButton'>
+                            <span className='LocationTimeSince'><span className='LocationSinceSpan'>Since:</span> {this.state.locations[e].founded}</span>
                             <Link to={{
                                         pathname:'/locations/' + e,
                                         search: '?q=' + e

@@ -24,7 +24,7 @@ class History extends Component {
         return (
             <div className='HistoryContainer'>
                 <div className='HHeadingSection'>
-                    <h1 className='HMainHeader'>McDeez in 1920's, USA</h1>
+                    <h1 className='HMainHeader'>McDeez <span> in </span>1920's<span>, USA</span></h1>
                     <img className='HHeadingImage' src={mainImage} alt='restaurant'/>
                     <div className='HThreeLittleImages'>
                             <img src={firstLittleImage} alt='restaurant'/>
@@ -37,8 +37,8 @@ class History extends Component {
     
                     <div className='HistoryFirstDiv lazyLoadHistory'>
                         <div className='FirstDivText'>
-                            <h1>McDeez was formed long time ago!</h1>
-                            <p>- This was the classiest restaruant that you could find at the year 1926, and gues what? McDeez got it! We nailed it with this one, it was a success.</p>
+                            <h1>McDeez was <span>formed</span> long time ago!</h1>
+                            <p>- This was the classiest restaruant that you could find at the year 1926, and gues what? McDeez got it!<span> We nailed it with this one, it was a success.</span></p>
                         </div>
                         <img src={firstDivImage} alt='restaurant'/>
                     </div>
@@ -46,34 +46,34 @@ class History extends Component {
                     <div className='HistorySecondDiv lazyLoadHistory'>
                         <img src={secondDivImage} alt='restaurant'/>
                         <div className='SecondDivText'>
-                            <h1>It's not all borring, meet our hostess</h1>
-                            <p>- We were thinking, okay we got good food, we got good locations, something is missing... Oh, of course! Beautiful girls! This was a little tricky because of the law back then, but then again, we are McDeez</p>
+                            <h1>It's not all borring<span> meet our hostess</span></h1>
+                            <p>- We were thinking, okay we got good food, we got good locations, something is missing... Oh, of course! Beautiful girls! <span>This was a little tricky because of the law back then, but then again, we are McDeez</span></p>
                         </div>
                     </div>
     
                     <div className='HistoryThirdDiv lazyLoadHistory'>
                         <div className='ThirdDivText'>
                             <h1>This was how we served people</h1>
-                            <p>- In the past, it was very different. You had to obay the rules of service which were set in this restaurant in 1927 by the law. See how classy this is. We bet that we did it right!</p>
+                            <p>- In the past, it was very different. You had to obay the rules of service which were set in this restaurant in 1927 by the law. <span>See how classy this is. We bet that we did it right!</span></p>
                         </div>
                         <img src={thirdDivImage} alt='restaurant'/>
                     </div>
     
                 </div>
                 <div className='HistoryLinkSection lazyLoadHistory'>
-                    <h1>Let's go and enjoy McDeez services</h1>
+                    <h1>Let's <span>go and</span> enjoy McDeez <span>services</span></h1>
                     <div className='HistoryLinkContent'>
                         <div>
-                            <p onClick={() => this.props.history.push('/foodmaker')}>Try our Menu</p>
+                            <p onClick={() => this.props.history.push('/foodmaker')}><span>Try our </span>Menu</p>
                         </div>
                         <div>
-                            <p onClick={() => this.props.history.push('/locations')}>See our Locations</p>
+                            <p onClick={() => this.props.history.push('/locations')}><span>See our </span>Locations</p>
                         </div>
                         <div>
-                            <p onClick={() => this.props.history.push('/careers')}>Go to Careers</p>
+                            <p onClick={() => this.props.history.push('/careers')}><span>Go to </span>Careers</p>
                         </div>
                         <div>
-                            <p onClick={() => this.props.history.push('/')}>Checkout Home</p>
+                            <p onClick={() => this.props.history.push('/')}><span>Checkout </span>Home</p>
                         </div>
                     </div>
                 </div>

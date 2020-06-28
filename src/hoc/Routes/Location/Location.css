@@ -85,6 +85,19 @@
     font-size: 19px;
 }
 
+.LocationTimeSinceAndButton {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.LocationTimeSince {
+    font-size: 15px; 
+    font-weight: 200; 
+    color: gray; 
+    padding-left: 10px;
+}
+
 .LocationRestaurantCardContent button{
     outline: none;
     font-size: 20px;
@@ -105,4 +118,123 @@
 
 .LocationRestaurantCardContent button:active{
     transform: scale(0.9);
+}
+
+
+@media (max-width: 1327px) {
+    .LocationSinceSpan {
+        display: none;
+    }
+}
+
+@media (max-width: 1138px) {
+
+    .LocationRestaurantCard {
+        width: 80%;
+    }
+
+    .LocationContent {
+        justify-content: center;
+    }
+
+    .LocationSinceSpan {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 791px) {
+
+    .LocationRestaurantCard {
+        width: 95%;
+    }
+
+    .LocationContainer {
+        margin-top: 130px;
+    }
+
+    .LocationHeading {
+        font-weight: 200;
+        font-size: 40px;
+        margin: 40px auto 60px auto;
+    }
+
+}
+
+@media (max-width: 660px) {
+
+    .LocationTimeSince {
+        display: none;
+    }
+
+    .LocationRestaurantCard {
+        width: 80%;
+        height: 500px;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+    
+    .LocationRestaurantCardImage {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        width: 100%;
+        height: 250px;
+    }
+    
+    .LocationRestaurantCardContent {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 20px 5px 10px 5px;
+    }
+    
+    .LocationTimeSinceAndButton {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+    
+    .LocationTimeSince {
+        display: inline-block;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .LocationHeading {
+        display: none;
+    }
+
+    .LocationTimeSince {
+        display: none;
+    }
+
+    .LocationTimeSinceAndButton {
+        justify-content: center;
+    }
+
+    .LocationRestaurantCard {
+        width: 95%;
+    }
+
+    .LocationContainer {
+        margin-top: 110px;
+    }
+
+    .LocationPictureHeading {
+        height: 20vh;
+    }
+
+    .LocationPictureHeading img {
+        height: 100%;
+    }
 }

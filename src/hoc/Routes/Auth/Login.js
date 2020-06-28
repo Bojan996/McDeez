@@ -52,7 +52,7 @@ class Login extends Component {
 
         return (
             <div className='LoginMainDiv'>
-                <h1 style={{fontSize: '70px', fontWeight: '200', marginBottom: '80px'}}><i className="fas fa-user" style={{marginRight: '50px'}}></i>Login</h1>
+                <h1 className='LoginMainHeader'><i className="fas fa-user" style={{marginRight: '50px'}}></i>Login</h1>
                 <form onSubmit={this.submitHandler} className='LoginForm'>
                     <TextField className='LoginTextFields' id="outlined-basic" required={true} label="Email" variant="outlined" onChange={(event) => this.emailHandler(event)}/>
                     <TextField className='LoginTextFields' id="outlined-basic" type='password' required={true} label="Password" variant="outlined" onChange={(event) => this.passwordHandler(event)}/>

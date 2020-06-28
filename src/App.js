@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Redirect, Switch } from 'react-router-dom';
+import 'intersection-observer';
 
 import NavBar from './components/UI/Navigation/NavBar';
 import Home from './hoc/Routes/Home/Home';
@@ -61,35 +62,38 @@ class App extends Component {
       )
     }
 
-    window.onscroll = () => {
-      if(this.props.orders.length === 0 || document.querySelector('.FDFloatingButton') === null){
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-          document.querySelector('.NavContainer').style.padding = '0';
-          document.querySelector('.LogoDiv').style.height = '41px';
-        } else {
-          document.querySelector('.NavContainer').style.padding = '15px 0';
-          document.querySelector('.LogoDiv').style.height = '53px';
-        }
-      }else{
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-          document.querySelector('.NavContainer').style.padding = '0';
-          document.querySelector('.LogoDiv').style.height = '41px';
-          document.querySelector('.FDFloatingButton').style.top = '57px';
-          document.querySelector('.divInFloatingButton').style.top = '53px';
-          if(document.querySelector('#OSContainerScroll') !== null){
-            document.querySelector('#OSContainerScroll').style.top = '131px';
-          }
-        } else {
-          document.querySelector('.NavContainer').style.padding = '15px 0';
-          document.querySelector('.LogoDiv').style.height = '53px';
-          document.querySelector('.FDFloatingButton').style.top = '90px';
-          document.querySelector('.divInFloatingButton').style.top = '84px';
-          if(document.querySelector('#OSContainerScroll') !== null){
-            document.querySelector('#OSContainerScroll').style.top = '166px';
+
+      window.onscroll = () => {
+        if(window.screen.width > 915){
+          if(this.props.orders.length === 0 || document.querySelector('.FDFloatingButton') === null){
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+              document.querySelector('.NavContainer').style.padding = '0';
+              document.querySelector('.LogoDiv').style.height = '41px';
+            } else {
+              document.querySelector('.NavContainer').style.padding = '15px 0';
+              document.querySelector('.LogoDiv').style.height = '53px';
+            }
+          }else{
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+              document.querySelector('.NavContainer').style.padding = '0';
+              document.querySelector('.LogoDiv').style.height = '41px';
+              document.querySelector('.FDFloatingButton').style.top = '57px';
+              document.querySelector('.divInFloatingButton').style.top = '53px';
+              if(document.querySelector('#OSContainerScroll') !== null){
+                document.querySelector('#OSContainerScroll').style.top = '131px';
+              }
+            } else {
+              document.querySelector('.NavContainer').style.padding = '15px 0';
+              document.querySelector('.LogoDiv').style.height = '53px';
+              document.querySelector('.FDFloatingButton').style.top = '90px';
+              document.querySelector('.divInFloatingButton').style.top = '84px';
+              if(document.querySelector('#OSContainerScroll') !== null){
+                document.querySelector('#OSContainerScroll').style.top = '166px';
+              }
+            }
           }
         }
       }
-  }
 
     return (
       <div className="App">

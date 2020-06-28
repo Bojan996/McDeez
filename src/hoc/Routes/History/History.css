@@ -237,3 +237,206 @@
     cursor: pointer;
     transform: scale(1.1);
 }
+
+
+@media (max-width: 1255px) { 
+
+    .HistoryContentMainHeader {
+        font-size: 60px;
+    }
+
+    .HistoryLinkSection h1 {
+        font-size: 55px;
+    }
+
+    .FirstDivText h1 {
+        font-size: 50px;
+    }
+    
+    .FirstDivText p {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .SecondDivText h1 {
+        font-size: 50px;
+    }
+    
+    .SecondDivText p {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .ThirdDivText h1 {
+        font-size: 50px;
+    }
+    
+    .ThirdDivText p {
+        padding-top: 0;
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+}
+
+@media (max-width: 1069px) { 
+
+    .HThreeLittleImages img {
+        width: 230px;
+    }
+
+    .FirstDivText span {
+        display: none;
+    }
+    
+    .SecondDivText span {
+        display: none;
+    }
+
+    .ThirdDivText span {
+        display: none;
+    }
+
+}
+
+@media (max-width: 915px) { 
+
+    .HHeadingSection {
+        height: 75vh;
+    }
+
+    .HHeadingImage {
+        height: 100%;
+    }
+
+    .HMainHeader {
+        top: 15%;
+        left: 3%;
+        letter-spacing: 2px;
+        font-size: 45px;
+    }
+
+    .HThreeLittleImages {
+        display: none;
+    }
+
+    .HistoryContentMainHeader {
+        padding: 0;
+        background-color: white;
+        color: black;
+        font-size: 60px;
+        font-weight: 200;
+        margin-top: 50px;
+    }
+
+    .HistoryFirstDiv, .HistoryThirdDiv {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .HistorySecondDiv {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .FirstDivText, .SecondDivText, .ThirdDivText {
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
+    .FirstDivText h1 span, .FirstDivText p span, .SecondDivText h1 span, .SecondDivText p span, .ThirdDivText h1 span, .ThirdDivText p span{
+        display: inline-block;
+    }
+
+    .HistoryFirstDiv img, .HistorySecondDiv img, .HistoryThirdDiv img{
+        width: 80%;
+        margin: 0 auto 100px auto;
+    }
+
+    .HistoryLinkSection {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 100px;
+        background-color: rgba(255, 255, 255, 0.849);
+        padding-bottom: 0px;
+    }
+
+    .HistoryLinkSection h1 span{
+        display: none;
+    }
+
+    .HistoryLinkSection h1{
+        color: rgb(0, 0, 0);
+        font-weight: 200;
+    }
+
+    .HistoryLinkContent div {
+        border: 1px solid rgb(0, 0, 0);
+        margin-bottom: 50px;
+    }
+
+    .HistoryLinkContent div p {
+        padding: 20px 0;
+        color: black;
+        font-size: 30px;
+        font-weight: 200;
+        -webkit-transition: 0.2s ease-out;
+        -o-transition: 0.2s ease-out;
+        transition: 0.2s ease-out;
+    }
+
+}
+
+@media (max-width: 685px) { 
+
+    .HHeadingSection {
+        height: 65vh;
+    }
+
+    .HMainHeader {
+        top: 17%;
+        letter-spacing: 1px;
+        font-size: 40px;
+    }
+
+    .HistoryContentMainHeader {
+        font-size: 55px;
+        margin-top: 60px;
+        margin-bottom: 0;
+    }
+
+    .FirstDivText h1 {
+        margin-top: 0;
+    }
+
+    .FirstDivText, .SecondDivText, .ThirdDivText {
+        width: 100%;
+    }
+
+    .HistoryFirstDiv img, .HistorySecondDiv img, .HistoryThirdDiv img{
+        width: 100%;
+    }
+
+    .HistoryLinkContent div p span {
+        display: none;
+    }
+
+}
+
+@media (max-width: 468px) { 
+
+    .HMainHeader span {
+        display: none;
+    }
+
+    .SecondDivText h1 span {
+        display: none;
+    }
+
+}

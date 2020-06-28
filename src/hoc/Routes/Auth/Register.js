@@ -67,7 +67,7 @@ class Register extends Component {
 
         return (
             <div className='RegisterMainDiv'>
-                <h1 style={{fontSize: '70px', fontWeight: '200', marginBottom: '80px'}}><i className="fas fa-user-plus" style={{marginRight: '50px'}}></i>Sign Up</h1>
+                <h1 className='RegisterMainHeader'><i className="fas fa-user-plus" style={{marginRight: '50px'}}></i>Sign Up</h1>
                 <form onSubmit={this.submitHandler} className='RegisterForm'>
                 <div className='RegisterFormUserPassDiv'>
                     <TextField className='RegisterTextFieldsUserPass' id="outlined-basic" required={true} label="Email" variant="outlined" onChange={(event) => this.emailHandler(event)}/>
@@ -79,7 +79,7 @@ class Register extends Component {
                 <FormControl variant="outlined" className={classes.formControl}>
                     <Select native>
                         <option>Serbia</option>
-                        <option>United States of America</option>
+                        <option>USA</option>
                         <option>Germany</option>
                         <option>Spain</option>
                         <option>Italy</option>
@@ -91,7 +91,7 @@ class Register extends Component {
                 <FormControl variant="outlined" className={classes.formControl}>
                     <Select native>
                         <option>Belgrade</option>
-                        <option>Washington DC</option>
+                        <option>Washington</option>
                         <option>Munich</option>
                         <option>Madrid</option>
                         <option>Rome</option>

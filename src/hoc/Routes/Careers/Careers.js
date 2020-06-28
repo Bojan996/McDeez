@@ -94,17 +94,17 @@ class Careers extends Component {
     return (
       <div className="CareersContainer">
         <div className="CareersMainHeader">
-          <h1>We are counting</h1>
+          <h1 className='CareersMainHeaderFirstPart'>Counting<span> up to</span></h1>
           <div>
             <span>{this.state.counter}</span>
           </div>
-          <h1>employees worldwide</h1>
+          <h1>employees<span> worldwide</span></h1>
         </div>
         <p className="CareersMainHeaderParagraph">
           We are a global society, therefore we are continuously growing and
-          searching for new and experienced chefs! <br />
-          Our restaurants are all over the world, so we probably have a nice
-          location for you also!
+          searching for new and experienced chefs!
+          <span> Our restaurants are all over the world, so we probably have a nice
+          location for you also!</span>
         </p>
         <div className="CareersMainHeaderImages">
           <img

@@ -3,6 +3,12 @@
     width: 460px;
 }
 
+.LoginMainHeader {
+    font-size: 70px; 
+    font-weight: 200; 
+    margin-bottom: 80px;
+}
+
 .LoginMainDiv p {
     width: 100%; 
     display: flex; 
@@ -55,4 +61,34 @@
 .LoginRegisterSpan:hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+
+@media (max-width: 769px) { 
+
+    .LoginMainDiv {
+        margin: 120px auto 0 auto;
+        width: 400px;
+    }
+    
+    .LoginMainHeader {
+        font-size: 60px; 
+        font-weight: 200; 
+        margin-bottom: 70px;
+    }
+
+}
+
+@media (max-width: 490px) { 
+
+    .LoginMainDiv {
+        width: 350px;
+    }
+    
+    .LoginMainHeader {
+        font-size: 50px; 
+        font-weight: 200; 
+        margin-bottom: 60px;
+    }
+
 }
