@@ -12,7 +12,7 @@
 
 .OneTimeOrder{
     width: 90%;
-    margin: 70px auto 0 70px;
+    margin: 70px auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -74,4 +74,123 @@
 
 .OrdersSendAgain:active{
     transform: translateY(10px);
+}
+
+
+@media (max-width: 1390px) { 
+
+    .OneTimeOrder {
+        justify-content: space-around;
+    }
+
+    .OrdersOrderCardContainer {
+        width: 450px;
+    }
+
+    .OrdersOrderCardContainer .OCCardContainerMedioum {
+        margin: 0 0 55px 0;
+        width: 100%;
+    }
+
+    .OrdersOrderCardContainer .OCCardContainerLarge {
+        margin: 0 0 70px 0;
+        width: 100%;
+    }
+
+    .OCCardContainerMedioum {
+        margin: 0 0 55px 0;
+        width: 100%;
+    }
+
+    .OrdersOrderCardContainer .OCCardContainerLarge .OCSalad {
+        width: 185px;
+        position: relative;
+    }
+
+    .OrdersOrderCardContainer .OCCardContainerLarge .OCWafel {
+        width: 190px;
+        position: relative;
+    }
+
+    .OrdersOrderCardContainer .OCCardContainerLarge .OCPizza {
+        width: 200px;
+        position: relative;
+    }
+
+}
+
+@media (max-width: 1100px) { 
+
+    .OrdersHeadingSectionOrderDate {
+        display: none;
+    }
+
+    .OneTimeOrder {
+        justify-content: space-around;
+    }
+
+    .OrdersOrderCardContainer {
+        width: 70%;
+    }
+
+}
+
+@media (max-width: 915px) {
+
+    .OrdersHeadingSection {
+        margin: 20px 30px 100px 30px;
+    }
+
+}
+
+@media (max-width: 738px) {
+
+    .OrdersHeadingSectionSuccessful {
+        display: none;
+    }
+
+    .OrdersHeadingSection {
+        margin: 20px 0 100px 0;
+    }
+
+    .OrdersHeadingSectionEmail {
+        margin-left: auto;
+        margin-right: auto; 
+    }
+
+    .OrdersOrderCardContainer {
+        width: 90%;
+    }
+
+    .OrdersBottomSection {
+        flex-direction: column;
+    }
+
+    .OneTimeOrder {
+        width: 98%;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .OrdersOrderCardContainer {
+        width: 98%;
+    }
+
+    .OrdersOrderCardContainer .OCCardContainerMedioum .OCOrderContentMedioum {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .OrdersOrderCardContainer .OCPremadeMenuImages {
+        width: 150px;
+    }
+
 }

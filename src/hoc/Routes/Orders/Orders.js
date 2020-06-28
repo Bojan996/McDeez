@@ -43,9 +43,9 @@ class Orders extends Component {
                 return (
                     <div className='OneTimeOrder' key={firstIndex}>
                         <div className='OrdersHeadingSection'>
-                            <h2>{firstEl.orderData.email}</h2>
-                            <h2 style={{fontSize: '40px', color: 'rgb(26, 156, 70)'}}>Successful !</h2>
-                            <h2>{firstEl.orderData.date}</h2>
+                            <h2 className='OrdersHeadingSectionEmail'>{firstEl.orderData.email}</h2>
+                            <h2 className='OrdersHeadingSectionSuccessful' style={{fontSize: '40px', color: 'rgb(26, 156, 70)'}}>Successful !</h2>
+                            <h2 className='OrdersHeadingSectionOrderDate'>{firstEl.orderData.date}</h2>
                         </div>
                         {firstEl.orders.map((secondEl, SecondIndex) => {
                             return (

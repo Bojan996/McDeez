@@ -3,6 +3,12 @@
     width: 600px;
 }
 
+.RegisterMainHeader {
+    font-size: 70px; 
+    font-weight: 200; 
+    margin-bottom: 80px;
+}
+
 .RegisterForm {
     width: 100%;
     display: flex;
@@ -59,4 +65,34 @@
 
 .RegisterTextFieldZip {
     width: 100px !important;
+}
+
+
+@media (max-width: 769px) { 
+
+    .RegisterMainDiv {
+        margin: 120px auto 0 auto;
+        width: 400px;
+    }
+    
+    .RegisterMainHeader {
+        font-size: 60px; 
+        font-weight: 200; 
+        margin-bottom: 70px;
+    }
+
+}
+
+@media (max-width: 490px) { 
+
+    .RegisterMainDiv {
+        width: 350px;
+    }
+    
+    .RegisterMainHeader {
+        font-size: 50px; 
+        font-weight: 200; 
+        margin-bottom: 60px;
+    }
+
 }

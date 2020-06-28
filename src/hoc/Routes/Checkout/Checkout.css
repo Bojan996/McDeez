@@ -61,6 +61,17 @@
     }
 }
 
+.COrderCardsMainHeading {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 20px 20px 60px 20px; 
+    font-weight: 200; 
+    font-size: 50px; 
+    border-bottom: 1px solid lightgrey; 
+    padding-bottom: 20px;
+}
+
 .COrderCards {
     width: 45%;
     border: 1px solid lightgray;
@@ -295,4 +306,118 @@
     border-radius: 10px;
     width: 190px;
     box-shadow: 2px 2px 2px rgb(161, 161, 161);
+}
+
+
+@media (max-width: 1254px) { 
+
+    .OCCardContainerMedioum .OCOrderContentMedioum {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .OCCardContainerLarge {
+        padding-bottom: 25px;
+        margin: 0 0 70px 0;
+        width: 100%;
+    }
+
+    .COrderCardsMainHeading {
+        margin: 20px 10px 60px 10px; 
+        font-size: 45px; 
+    }
+
+    .OCCardContainerLarge .OCSalad {
+        width: 185px;
+    }
+
+    .OCCardContainerLarge .OCWafel {
+        width: 190px;
+    }
+
+    .OCCardContainerLarge .OCPizza {
+        width: 200px;
+    }
+
+}
+
+@media (max-width: 981px) { 
+
+    .CLayout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .COrderCards {
+        width: 90%;
+        margin: 0 auto 30px auto;
+    }
+
+    .CForm {
+        position: relative;
+        width: 491px;
+        margin: 0 auto;
+        height: fit-content;
+        text-align: center;
+    }
+
+    .CForm form {
+        width: 100%;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 541px) { 
+
+    .COrderCardsMainHeadingYourOrder {
+        display: none;
+    }
+
+    .COrderCardsMainHeading {
+        display: flex;
+        justify-content: center;
+    }
+
+    .CForm {
+        position: relative;
+        width: 98%;
+        margin: 0 auto;
+        height: fit-content;
+        text-align: center;
+    }
+
+    .CForm h1{
+        margin-bottom: 40px !important;
+    }
+
+    .CInputs {
+        width: 90% !important;
+        margin: 10px auto !important;
+    }
+
+    .CInputsComments {
+        width: 90% !important;
+        margin: 10px auto !important;
+    }
+
+    .COrderCards {
+        width: 98%;
+    }
+
+    .CSendOrderButton {
+        width: 170px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .OCCardContainerMedioum .OCPremadeMenuImages {
+        width: 150px;
+    }
+
 }

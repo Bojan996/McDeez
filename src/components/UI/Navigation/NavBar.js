@@ -11,21 +11,11 @@ import Backdrop from '../Backdrop/Backdrop';
 class NavBar extends Component {
 
     state = {
-        dropDownOpen: null,
         navDrawer: false
     }
 
     NavDrawerHandler = () => {
         this.setState({navDrawer: !this.state.navDrawer});
-    }
-
-    clickHandler = (event) => {
-        let selected = event.currentTarget;
-        this.setState({dropDownOpen: selected});
-    }
-
-    closseHandler = () => {
-        this.setState({dropDownOpen: null});
     }
 
     render() {

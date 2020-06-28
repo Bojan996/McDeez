@@ -84,14 +84,12 @@ class SingleLocation extends Component {
             })
         }
 
-        console.log(this.props);
-
         return (
             <div>
                 <div className='SLContainer'>
                     <div className='SLPictureMap'>
                         <div className='SLHeadingPicture'>
-                            <h1>McDeez in {this.props.match.params.id}</h1>
+                            <h1><span className='SLHeadingPictureMcDeezSpan'>McDeez</span> <span className='SLHeadingPictureInSpan'>in</span> {this.props.match.params.id}</h1>
                             {image}
                         </div>
                         <div className='SLMap'>
