@@ -9,6 +9,12 @@ import Picture4 from '../../../assets/images/Slider/picture3.jpg';
 import Picture3 from '../../../assets/images/Slider/picture1.jpg';
 import Picture5 from '../../../assets/images/Slider/picture5.jpg';
 
+import Picture1Mini from '../../../assets/images/Slider/picture1Mini.jpg';
+import Picture2Mini from '../../../assets/images/Slider/picture2Mini.jpg';
+import Picture4Mini from '../../../assets/images/Slider/picture3Mini.jpg';
+import Picture3Mini from '../../../assets/images/Slider/picture4Mini.jpg';
+import Picture5Mini from '../../../assets/images/Slider/picture5Mini.jpg';
+
 import ManThinking from '../../../assets/images/ManThinking.jpg';
 import background from '../../../assets/images/homeBackground.png';
 import career from '../../../assets/images/career.png';
@@ -33,6 +39,13 @@ class Home extends Component {
     
         return (
             <div className='HomeContainer'>
+                <ul className='HomeSlideShowMini'>
+                    <img src={Picture1Mini} alt='burger very good'/>
+                    <img src={Picture2Mini} alt='burger very good'/>
+                    <img src={Picture3Mini} alt='burger very good'/>
+                    <img src={Picture4Mini} alt='burger very good'/>
+                    <img src={Picture5Mini} alt='burger very good'/>
+                </ul>
                 <ul className='HomeSlideShow'>
                     <img src={Picture1} alt='burger very good'/>
                     <img src={Picture2} alt='burger very good'/>

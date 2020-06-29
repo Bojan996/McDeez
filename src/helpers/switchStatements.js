@@ -174,14 +174,14 @@ export const drinksAdditionalsSwitch = (type, place) => {
 
     let classesDrinks = (
         place === 'Food Maker' ?
-        'FDDrinks'
+        'FDDrinksImage'
         :
         'OCDrinksAdditionalsImages'
     )
 
     let classesAdditionals = (
         place === 'Food Maker' ?
-        'FDAdditionals'
+        'FDAdditionalsImage'
         :
         'OCDrinksAdditionalsImages'
     )
