@@ -15,6 +15,8 @@ import OrderSummary from '../../../components/FoodBuilder/OrderSummary/OrderSumm
 import Drinks from '../../../components/Drinks&Additionals/Drinks/Drinks';
 import Additionals from '../../../components/Drinks&Additionals/Additionals/Additionals';
 import Footer from '../../../components/UI/Footer/Footer';
+import BackgroundForPhone from '../../../assets/images/backgrounds/FoodMakerBackgroundForPhone.jpg';
+import BackgroundForPhoneMin from '../../../assets/images/backgrounds/FoodMakerBackgroundForPhoneMin.jpg';
 
 import OrderSummaryButton from '../../../assets/images/orderSummaryButton.svg';
 import Background from '../../../assets/images/backgrounds/burgerNo2.jpg';
@@ -232,6 +234,8 @@ class FoodMaker extends Component {
 
         return(
             <div className='FDContainer'>
+                <img className='FDHeadingImgPhone' src={BackgroundForPhone} alt='It is a burger'/>
+                <img className='FDHeadingImgPhoneMin' src={BackgroundForPhoneMin} alt='It is a burger'/>
                 <img className='FDHeadingImg' src={Background} alt='heading of the site'/>
                 <div className='FDHeaderContainer'>
                     <h1> McDeez offers speacial service </h1>
@@ -286,7 +290,7 @@ class FoodMaker extends Component {
                                 <Typography variant='h2' className={classes.header}> Drinks </Typography>
                                 {Object.keys(this.state.drinks).map(e => <Drinks key={e} name={e} clicked={this.addRemoveDrinksAdditionalsHandler} amount={this.state.drinks[e].amount} price={this.state.drinks[e].price}/>)}
                             </div>
-                            <div style={{width: '0.5px', height: '800px', backgroundColor: 'lightgray'}}></div>
+                            <div className='FDDrinksAndAdditionalsBorderDiv' style={{width: '0.5px', height: '800px', backgroundColor: 'lightgray'}}></div>
                             <div className='FDAdditionals'>
                                 <Typography variant='h2' className={classes.header}> Additionals </Typography>
                                 {Object.keys(this.state.additionals).map(e => <Additionals key={e} name={e} clicked={this.addRemoveDrinksAdditionalsHandler} amount={this.state.additionals[e].amount} price={this.state.additionals[e].price}/>)}

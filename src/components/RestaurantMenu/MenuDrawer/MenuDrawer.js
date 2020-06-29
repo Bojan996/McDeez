@@ -11,11 +11,11 @@ const menuDrawer = (props) => {
     let image = whichDrawer(props.type, 'Menu Drawer');
     return (
         <div className='MDContainer' style={{
-            transform: props.show ? 'translateX(0)' : 'translateX(160vh)',
-            opacity: props.show ? '1' : '0'
+            transform: props.show && window.screen.width > 550 ? 'translateX(0)' : props.show && window.screen.width <= 550 ? 'translateX(-10vw)' : 'translateX(75vw)',
+            opacity: props.show ? '1' : '1'
         }}>
             <div className='MDPictureSide'>
-                <Typography variant='h2' className='MDHeader'> <span>{props.type}</span><span>{props.price}$</span></Typography>
+                <Typography variant='h2' className='MDHeader'> <span>{props.type}</span><span className='MDPictureSidePriceSpan'>{props.price}$</span></Typography>
                 {image}
                 <h2 className='MDIngredients'>Ingredients: </h2>
                 <p>{props.ingredients}</p>

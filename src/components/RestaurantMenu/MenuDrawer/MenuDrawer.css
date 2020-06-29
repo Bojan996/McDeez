@@ -1,5 +1,5 @@
 .MDContainer {
-    width: 70%;
+    width: 70vw;
     position: fixed;
     z-index: 100;
     top: 0;
@@ -19,6 +19,7 @@
     width: 66%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -78,4 +79,81 @@
     border-radius: 10px;
 }
 
+@media (max-width: 1300px) { 
 
+    .MDNutritionImg {
+        display: none;
+    }
+
+    .MDPictureSide {
+        margin: 20px auto 20px auto;
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 786px) { 
+
+    .MDPictureSide .DrawerImage {
+        width: 350px;
+        height: 210px;
+    }
+
+    .MDPictureSide p {
+        margin: 0 0 90px 0;
+        width: 90%;
+    }
+
+    .MDIngredients {
+        font-size: 35px;
+        margin-top: 100px;
+        margin-bottom: 0;
+        width: 90%;
+    }
+
+    .MDHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .MDPictureSidePriceSpan {
+        margin-top: 15px;
+    }
+
+}
+
+@media (max-width: 650px) { 
+
+    .MDIngredients {
+        margin-top: 75px;
+    }
+
+}
+
+@media (max-width: 550px) { 
+
+    .MDIngredients {
+        margin-top: 50px;
+    }
+
+    .MDPictureSide p {
+        margin: 0 0 50px 0;
+    }
+
+    .MDContainer {
+        width: 85vw;
+    }
+
+}
+
+@media (max-width: 500px) { 
+
+    .MDPictureSide .DrawerImage {
+        align-self: flex-start;
+        width: 300px;
+        height: 180px;
+    }
+
+}
