@@ -111,3 +111,66 @@
         transform: scale(1);
     }
 }
+
+
+@media (max-width: 560px) { 
+
+    .PlatePleaseAddIngredients {
+        font-size: 18px;
+        left: 9% !important;
+    }
+
+    .PPlateBurger img{
+        width: 230px;
+    }
+
+    .PPlatePizza img:first-child{
+        width: 230px;
+    }
+    
+    .PPlatePizza img:not(:first-child){
+        position: absolute;
+        top: 11px;
+        left: 13px;
+        width: 205px;
+        height: 189px;
+        border-radius: 47%;
+        animation: gettingIn 0.3s ease-out;
+        transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+    }
+    
+    .PPlateSalad img:first-child{
+        width: 230px;
+    }
+    
+    .PPlateSalad img:not(:first-child){
+        position: absolute;
+        top: 11px;
+        left: 13px;
+        width: 205px;
+        height: 189px;
+        border-radius: 30%;
+        animation: gettingIn 0.3s ease-out;
+        transition: transform 0.3s ease-out, border-right 1.2s ease-out;
+    }
+    
+    .PPlateWafel img:first-child{
+        width: 230px;
+    }
+    
+    .PPlateWafel img:not(:first-child){
+        position: absolute;
+        top: 11px;
+        left: 12px;
+        width: 206px;
+        height: 200px;
+        border-radius: 30%;
+        animation: gettingIn 0.3s ease-out;
+        transition: transform 0.3s ease-out;
+    }
+    
+    .FBPlatePriceH1 {
+        margin: 0;
+    }
+
+}

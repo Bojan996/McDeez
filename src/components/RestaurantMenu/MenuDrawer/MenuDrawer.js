@@ -12,7 +12,7 @@ const menuDrawer = (props) => {
     return (
         <div className='MDContainer' style={{
             transform: props.show && window.screen.width > 550 ? 'translateX(0)' : props.show && window.screen.width <= 550 ? 'translateX(-10vw)' : 'translateX(75vw)',
-            opacity: props.show ? '1' : '1'
+            opacity: props.show ? '1' : '0'
         }}>
             <div className='MDPictureSide'>
                 <Typography variant='h2' className='MDHeader'> <span>{props.type}</span><span className='MDPictureSidePriceSpan'>{props.price}$</span></Typography>

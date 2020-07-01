@@ -32,8 +32,6 @@ const orderSummary = (props) => {
         }
     }
 
-    // let classes = props.show ? 'OSContainer OSContainerOpen' : 'OSContainer OSContainerClossed';
-
     return (
         <CSSTransition
             mountOnEnter

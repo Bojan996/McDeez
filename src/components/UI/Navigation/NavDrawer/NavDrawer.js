@@ -37,7 +37,7 @@ class NavDrawer extends Component {
                             this.props.isAuth ?
                                 <NavLink to='/logout' exact activeStyle={activeStyle} className='NavDrawerIsAuth' style={{paddingRight: '10px'}} onClick={this.props.close}><i className="fas fa-sign-out-alt"></i> Logout</NavLink>
                             :
-                            <div className='NavDrawerIsNotAuth'>
+                            <div className='NavDrawerIsNotAuth' onClick={this.props.close}>
                                 <NavLink to='/login' exact activeStyle={activeStyle} className='NavDrawerLi'><i className="fas fa-sign-in-alt" style={{paddingRight: '10px'}} onClick={this.props.close}></i> Login</NavLink>
                                 <NavLink to='/register' exact activeStyle={activeStyle} className='NavDrawerLi'><i className="fas fa-user-plus" style={{paddingRight: '10px'}} onClick={this.props.close}></i> Sign Up</NavLink>
                             </div>

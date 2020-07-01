@@ -221,7 +221,7 @@ class FoodBuilder extends Component {
         return(
             <div className='FBContainer' style={{
                 transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
-                opacity: this.props.show ? '1' : '1'
+                opacity: this.props.show ? '1' : '0'
             }}>
                 <CloseIcon fontSize='large' className='FBCloseIcon' onClick={this.resetState}/>
                 <div className='FBLayout'>
@@ -229,7 +229,7 @@ class FoodBuilder extends Component {
                         <MenuBuilder builder={this.state[this.props.builder]} clicked={this.addingHandler} prices={prices}/>
                     </div>
                     <div className='FBContent'>
-                        <h1 className='FBHeader'>Make your {this.props.builder}</h1>
+                        <h1 className='FBHeader'><span className='FBHeaderMakeYourSpan'>Make your </span>{this.props.builder}</h1>
                         <div className='FBContentFlexer'>
                             <div className='FBInstructionsOrder'>
                                 <h1 style={{fontWeight: '200', fontSize: '45px', margin: '15px 0 15px 0'}}>Instructions</h1>
@@ -245,7 +245,8 @@ class FoodBuilder extends Component {
                             </div>
                             <div className='FBPlatePrice'>
                                 <Plate builder={this.props.builder} ingredients={this.state.ingredients} clicked={this.removingHandler} builderState={this.state[this.props.builder]}/>
-                                <h1 style={{fontWeight: '200', fontSize: '40px', marginRight: '25px'}}>Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h1>
+                                <h1 className='FBPlatePriceH1' style={{fontWeight: '200', fontSize: '40px', marginRight: '25px'}}>Price: {Number.parseFloat( this.state.totalPrice ).toFixed( 2 )}$</h1>
+                                <button className='FBOrderBttonPlateSide' onClick={this.orderClickedHanlder}>Add to Summary</button>
                             </div>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ class Home extends Component {
                 <div className='HomeContent'>
                     <img src={background} alt='background home' className='HomeBackground'/>
                     <div className='HomeContentContainer'>
-                        <h1 style={{width: '100%', fontWeight: '200', fontSize: '70px', padding: '70px 0 40px 0', margin: '0'}}>Official McDeez restaurant</h1>
+                        <h1 className='HomeContentContainerFirstH1' style={{width: '100%', fontWeight: '200', fontSize: '70px', padding: '70px 0 40px 0', margin: '0'}}><span>Official </span>McDeez restaurant</h1>
                         <p style={{fontFamily: 'Montserrat, sans-serif', fontSize: '20px', letterSpacing: '1px', fontWeight: '300', color: 'black', lineHeight: '30px'}}>
                             Our McDeez restoraunt provides all its users with proffesional service. <br/>
                             We have branches in: USA, Germany, Spain, Italy, Russia etc...

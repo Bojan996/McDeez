@@ -19,6 +19,7 @@
     top: 17px;
     right: 20px;
     position: fixed;
+    z-index: 110;
     color: rgb(41, 41, 41);
     transition: all 0.2s ease-out !important;
 }
@@ -129,6 +130,29 @@
     background-color: rgb(230, 230, 230);
 }
 
+.FBOrderBttonPlateSide {
+    display: none;
+    height: 64px;
+    width: 240px;
+    outline: none;
+    font-weight: 200;
+    font-size: 22px;
+    transition: 0.2s ease-out;
+    color: rgb(15, 194, 83);
+    border-radius: 10px;
+    border: 1.5px solid rgb(14, 223, 94);
+    background-color: white;
+}
+
+.FBOrderBttonPlateSide:hover {
+    cursor: pointer;
+}
+
+.FBOrderBttonPlateSide:active {
+    transform: translateY(5px);
+    background-color: rgb(230, 230, 230);
+}
+
 .FBPlatePrice {
     margin-right: 25px;
     width: 500px;
@@ -137,4 +161,130 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+
+@media (max-width: 1264px) { 
+
+    .POverflowDiv {
+        margin-right: 0 !important;
+    }
+
+    .FBOrderBtton {
+        margin-top: 40px;
+    }
+
+}
+
+@media (max-width: 1149px) { 
+
+    .FBInstructionsOrder {
+        display: none;
+    }
+
+    .FBOrderBttonPlateSide {
+        display: block;
+        margin-bottom: 20px;
+    }
+  
+    .FBPlatePrice {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .POverflowDiv {
+        margin: 0 !important;
+    }
+
+    .FBPlatePriceH1 {
+        margin: 0 !important;
+    }
+
+}
+
+@media (max-width: 981px) { 
+
+    .FBLayout {
+        justify-content: space-between;
+    }
+
+    .FBMenu {
+        margin-left: 10px;
+        width: 226px;
+    }
+  
+  }
+
+@media (max-width: 789px) { 
+
+    .FBContainer {
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+    }
+
+}
+
+@media (max-width: 731px) { 
+
+    .FBMenu {
+        height: 100%;
+        text-align: left;
+        width: 135px !important;
+        margin: 0;
+    }
+    
+    .FBContent {
+        height: 100%;
+        max-height: unset;
+        text-align: center;
+        width: 80%;
+        margin: 0;
+    }
+
+    .FBPlatePrice {
+        box-sizing: border-box;
+        padding: 100px 0 50px 0;
+    }
+
+    .FBHeader {
+        display: none;
+    }
+
+    .MBIngredientHeader {
+        display: none !important;
+    }
+
+    .POverflowDiv {
+        width: 410px !important;
+    }
+
+    .FBContentFlexer {
+        height: 100%;
+    }
+
+}
+
+@media (max-width: 560px) { 
+
+    .FBPlatePriceH1 {
+        font-size: 30px !important;
+    }
+
+    .FBOrderBttonPlateSide {
+        width: 200px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .POverflowDiv {
+        width: 240px !important;
+    }
+
 }
