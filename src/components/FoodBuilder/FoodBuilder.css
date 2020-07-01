@@ -236,7 +236,7 @@
     .FBMenu {
         height: 100%;
         text-align: left;
-        width: 135px !important;
+        width: 200px !important;
         margin: 0;
     }
     
@@ -271,6 +271,7 @@
 
 }
 
+
 @media (max-width: 560px) { 
 
     .FBPlatePriceH1 {
@@ -285,6 +286,14 @@
 
     .POverflowDiv {
         width: 240px !important;
+    }
+
+}
+
+@media (max-width: 375px) { 
+
+    .FBMenu {
+        width: 130px !important;
     }
 
 }
