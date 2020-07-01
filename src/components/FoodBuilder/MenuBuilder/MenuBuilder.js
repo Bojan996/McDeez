@@ -36,7 +36,7 @@ const menuBuilder = (props) => {
                 component="nav"
                 aria-labelledby="nested-list-subheader"
                 subheader={
-                    <Typography variant='h3' className={classes.header}>
+                    <Typography variant='h3' className={[classes.header, 'MBIngredientHeader'].join(' ')}>
                         Ingredients
                     </Typography>
                 } className={classes.root}>

@@ -772,7 +772,19 @@
     
 }
 
+@media (max-width: 703px) { 
+
+    .HomeFirstDivLeft ul li {
+        line-height: 45px;
+    }
+    
+}
+
 @media (max-width: 644px) { 
+
+    .HomeThirdtDivLeft p {
+        font-size: 18px;
+    }
 
     .HomeSliderHeader div:nth-child(2){
         padding-right: 5%;
@@ -826,6 +838,7 @@
         font-size: 45px;
     }
     .HomeSliderHeader div:nth-child(4) { 
+        top: 20%;
         font-size: 45px;
     }
     .HomeSliderHeader div:nth-child(5) { 
@@ -837,27 +850,36 @@
 
 @media (max-width: 548px) { 
 
+    .HomeContentContainer {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 2px 100px 2px;
+    }
+
     .HomeSlideShowMini {
         height: 100vh;
     }
 
     .HomeSliderHeader div:nth-child(1) {
-        font-size: 40px;
+        font-size: 55px;
+        top: 12%;
     }
     
     .HomeSliderHeader div:nth-child(2) {
         font-size: 40px;
     }
     .HomeSliderHeader div:nth-child(3) { 
-        line-height: 60px;
-        font-size: 40px;
+        line-height: 90px;
+        padding-left: 1%;
+        top: 14%;
+        font-size: 45px;
     }
     .HomeSliderHeader div:nth-child(4) { 
         font-size: 40px;
     }
     .HomeSliderHeader div:nth-child(5) { 
-        line-height: 60px;
-        font-size: 40px;
+        line-height: 90px;
+        font-size: 42px;
     }
     
 }
@@ -875,6 +897,14 @@
     .HomeFourthDivMain div a i {
         margin-left: 0 !important;
         font-size: 60px;
+    }
+
+}
+
+@media (max-width: 480px) { 
+
+    .HomeContentContainerFirstH1 span {
+        display: none;
     }
 
 }

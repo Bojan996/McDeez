@@ -239,7 +239,7 @@ class FoodMaker extends Component {
                 <img className='FDHeadingImg' src={Background} alt='heading of the site'/>
                 <div className='FDHeaderContainer'>
                     <h1> McDeez offers speacial service </h1>
-                    <h2> - Make your own food! </h2>
+                    <h2> Make your own food! </h2>
                 </div>
                 {orderSummaryButton}
                 {openSummaryBackdrop}

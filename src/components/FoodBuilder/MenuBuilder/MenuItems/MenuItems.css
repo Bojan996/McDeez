@@ -57,3 +57,53 @@
     background-color: #9bff94;
   }
 }
+
+
+@media (max-width: 1264px) { 
+
+  .MISecondListItem {
+      padding-left: 0 !important;
+  }
+
+  .MISecondListYesValue {
+      padding-left: 0 !important;
+  }
+
+}
+
+@media (max-width: 731px) { 
+
+  .makeStyles-root-77 {
+    padding: 0 !important;
+  }
+
+  .MIContainer {
+    max-height: 100%;
+  }
+
+  .MISecondListItem {
+    padding: 0 !important;
+  }
+
+  .MIReallySecondListItem {
+    padding-left: 10px !important;
+  }
+
+  .MIListIcon {
+    display: none !important;
+  }
+
+  .MIFirstListItem {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .MIFirstListItemIcon {
+    min-width: 40px !important;
+  }
+
+  .MIDollarAPiece {
+    display: none;
+  }
+
+}

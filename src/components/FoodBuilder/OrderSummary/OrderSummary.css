@@ -205,10 +205,10 @@
 
 .OCCardContainerSmall .OCPizza img:not(:first-child){
     position: absolute;
-    top: 4px;
+    top: 3px;
     left: 6px;
-    width: 92%;
-    height: 92%;
+    width: 93%;
+    height: 98%;
 }
 
 .OCCardContainerSmall .OCSalad {

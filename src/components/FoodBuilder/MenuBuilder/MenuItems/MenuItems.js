@@ -1,6 +1,5 @@
 import React from 'react';
 import './MenuItems.css';
-import Aux from '../../../../hoc/Auxilary/Auxilary';
 import Icons from '../../../../assets/icons/icons';
 
 import { makeStyles  } from '@material-ui/core/styles';
@@ -33,28 +32,30 @@ const menuItems = (props) => {
     if(typeof props.builder === 'object'){
         array = Object.keys(props.builder).map(e => {
             return (
-                <Aux key={e}>
-                    <ListItem>
-                        <ListItemIcon>
+                <div key={e} className='MIContainerLists'>
+                    <ListItem className='MIFirstListItem'>
+                        <ListItemIcon className='MIFirstListItemIcon'>
                             <Icons icon={e}/>
                         </ListItemIcon>
-                        <ListItemText primary={e} secondary={props.prices[e] + '$ a piece'}/>
+                        <ListItemText primary={e} secondary={<span>{props.prices[e] + '$'} <span className='MIDollarAPiece'>a piece</span></span>}/>
                     </ListItem>
-                    {
-                        Object.keys(props.builder[e]).map((el, index) => {
-                            return (
-                                    <List component="div" className={props.builder[e][el] > 0 || props.builder[e][el] === true ? 'MISecondListYesValue' : classes.secondListNoValue} key={el + index}>
-                                        <ListItem button onClick={() => props.clicked(e, el)}>
-                                            <ListItemIcon>
-                                                <ArrowRightIcon />
-                                            </ListItemIcon>
-                                            <ListItemText primary={<p style={{margin: '0', display: 'flex', justifyContent: 'space-between'}}><span>{el.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</span><span style={{fontWeight: '200'}}>{props.builder[e][el]}</span></p>}/>
-                                        </ListItem>
-                                    </List>
-                                )
-                        })
-                    }
-                </Aux>
+                    <div className='MISecondListItemDivContainer'>
+                        {
+                            Object.keys(props.builder[e]).map((el, index) => {
+                                return (
+                                        <List component="div" className={props.builder[e][el] > 0 || props.builder[e][el] === true ? 'MISecondListYesValue MISecondListItem' : [classes.secondListNoValue, 'MISecondListItem'].join(' ')} key={el + index}>
+                                            <ListItem button onClick={() => props.clicked(e, el)} className='MIReallySecondListItem'>
+                                                <ListItemIcon className='MIListIcon'>
+                                                    <ArrowRightIcon />
+                                                </ListItemIcon>
+                                                <ListItemText primary={<p style={{margin: '0', display: 'flex', justifyContent: 'space-between'}}><span>{el.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</span><span style={{fontWeight: '200'}}>{props.builder[e][el]}</span></p>}/>
+                                            </ListItem>
+                                        </List>
+                                    )
+                            })
+                        }
+                    </div>
+                </div>
             )
         })      
     }

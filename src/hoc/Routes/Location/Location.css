@@ -19,8 +19,12 @@
     width: 100%;
 }
 
-.LocationPictureHeading img {
+.LocationHeadingImage {
     width: 100%;
+}
+
+.LocationHeadingImageMini {
+    display: none;
 }
 
 .LocationHeading {
@@ -160,6 +164,20 @@
 
 }
 
+@media (max-width: 700px) {
+
+    .LocationHeadingImage {
+        display: none;
+    }
+    
+    .LocationHeadingImageMini {
+        display: inline-block;
+        width: 100%;
+        height: 70vh;
+    }
+
+}
+
 @media (max-width: 660px) {
 
     .LocationTimeSince {
@@ -207,6 +225,13 @@
 
 }
 
+@media (max-width: 564px) {
+    
+    .LocationHeadingImageMini {
+        height: 50vh;
+    }
+
+}
 
 @media (max-width: 520px) {
 
@@ -230,11 +255,12 @@
         margin-top: 110px;
     }
 
-    .LocationPictureHeading {
-        height: 20vh;
+}
+
+@media (max-width: 480px) {
+    
+    .LocationHeadingImageMini {
+        height: 30vh;
     }
 
-    .LocationPictureHeading img {
-        height: 100%;
-    }
 }

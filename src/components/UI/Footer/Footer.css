@@ -87,6 +87,12 @@
     .FooterContentDivFirst {
         display: none;
     }
+
+    .FooterContentDivFourth h1 {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (max-width: 679px) { 

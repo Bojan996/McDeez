@@ -5,6 +5,7 @@ import './Location.css';
 import Footer from '../../../components/UI/Footer/Footer';
 
 import locationHeading from '../../../assets/images/LocationHeading.png';
+import locationHeadingMini from '../../../assets/images/worldMap.png';
 
 import belgradeRestaurant from '../../../assets/images/Restaurants/belgradeRestaurant.jpg';
 import washingtonRestaurant from '../../../assets/images/Restaurants/washingtonRestaurant.jpg';
@@ -92,7 +93,8 @@ class Location extends Component {
         return (
             <div className='LocationContainer'>
                 <div className='LocationPictureHeading'>
-                    <img src={locationHeading} alt='location heading'/>
+                    <img className='LocationHeadingImageMini' src={locationHeadingMini} alt='location Heading'/>
+                    <img className='LocationHeadingImage' src={locationHeading} alt='location heading'/>
                 </div>
                 <h1 className='LocationHeading'>Take a look at our restaurants</h1>
                 <div className='LocationContent'>

@@ -4,6 +4,7 @@ import { lazyLoad } from '../../../helpers/intersectionObserver';
 import Footer from '../../../components/UI/Footer/Footer';
 
 import mainImage from '../../../assets/images/History/mainImage.jpg';
+import mainImageMini from '../../../assets/images/History/mainImageMini.jpg'
 import firstLittleImage from '../../../assets/images/History/firstLittleImage.jpg';
 import thirdLittleImage from '../../../assets/images/History/thirdLittleImage.jpg';
 import secondLittleImage from '../../../assets/images/History/secondLittleImage.jpg';
@@ -25,6 +26,7 @@ class History extends Component {
             <div className='HistoryContainer'>
                 <div className='HHeadingSection'>
                     <h1 className='HMainHeader'>McDeez <span> in </span>1920's<span>, USA</span></h1>
+                    <img className='HHeadingImageMini' src={mainImageMini} alt='The restaurant'/>
                     <img className='HHeadingImage' src={mainImage} alt='restaurant'/>
                     <div className='HThreeLittleImages'>
                             <img src={firstLittleImage} alt='restaurant'/>
