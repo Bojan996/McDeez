@@ -218,7 +218,15 @@
         width: 226px;
     }
   
-  }
+}
+
+@media (min-height: 800px) { 
+
+    .FBInstructionsOrder {
+        justify-content: space-around;
+    }
+
+}
 
 @media (max-width: 789px) { 
 

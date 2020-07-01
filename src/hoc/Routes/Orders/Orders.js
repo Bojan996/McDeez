@@ -35,8 +35,6 @@ class Orders extends Component {
     
     render() {
 
-        console.log(this.props.orders);
-
         let orders = null;
         if(this.props.orders.length > 0){
             orders = this.props.orders.map((firstEl, firstIndex) => {
