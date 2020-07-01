@@ -31,6 +31,7 @@
 }
 
 .NavDrawerContentPages {
+    margin-top: 20px;
     height: 65%;
     width: 100%;
     display: flex;

@@ -27,7 +27,7 @@
 }
 
 .LogoDiv a{
-    width: 150px;
+    width: 170px;
     height: 100%;
     margin-left: 30px;
 }
@@ -158,6 +158,10 @@
 }
 
 @media (max-width: 915px) {
+
+    .LogoDiv a{
+        height: 80%;
+    }
 
     .NavContainer {
         padding: 0 !important;
