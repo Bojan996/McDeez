@@ -662,7 +662,7 @@
     }
 }
 
-@media (max-width: 1041px) { 
+@media (max-width: 1060px) { 
     .HomeSliderHeader div:nth-child(2) {
         padding-right: 0;
         font-size: 55px;
@@ -786,6 +786,10 @@
         font-size: 18px;
     }
 
+    .HomeSliderHeader div:nth-child(1) {
+        font-size: 45px;
+    }
+
     .HomeSliderHeader div:nth-child(2){
         padding-right: 5%;
     }
@@ -825,10 +829,6 @@
     .HomeSlideShowMini {
         height: 110vh;
     }
-
-    .HomeSliderHeader div:nth-child(1) {
-        font-size: 45px;
-    }
     
     .HomeSliderHeader div:nth-child(2) {
         font-size: 45px;
@@ -848,6 +848,19 @@
     
 }
 
+@media (max-width: 574px) { 
+
+    .HomeSliderHeader div:nth-child(1) {
+        font-size: 55px;
+        top: 12%;
+    }
+
+    .HomeSliderHeader div:nth-child(1) span{
+        display: none;
+    }
+    
+}
+
 @media (max-width: 548px) { 
 
     .HomeContentContainer {
@@ -860,14 +873,6 @@
         height: 100vh;
     }
 
-    .HomeSliderHeader div:nth-child(1) {
-        font-size: 55px;
-        top: 12%;
-    }
-    
-    .HomeSliderHeader div:nth-child(2) {
-        font-size: 40px;
-    }
     .HomeSliderHeader div:nth-child(3) { 
         line-height: 90px;
         padding-left: 1%;
@@ -885,10 +890,6 @@
 }
 
 @media (max-width: 508px) { 
-
-    .HomeSliderHeader div:nth-child(1) span{
-        display: none;
-    }
 
     .HomeFourthDivMain div a span {
         display: none;
@@ -917,6 +918,14 @@
     
     .GalleryDiv img {
         height: 200px;
+    }
+
+}
+
+@media (max-width: 430px) { 
+
+    .HomeSliderHeader div:nth-child(2) {
+        font-size: 40px;
     }
 
 }

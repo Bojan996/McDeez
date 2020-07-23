@@ -54,8 +54,8 @@ class Home extends Component {
                     <img src={Picture5} alt='burger very good'/>
                 </ul>
                 <ul className='HomeSliderHeader'>
-                    <div>McDeez <span>has a</span> special offer!</div>
-                    <div>All of these burgers <span>that you see...</span></div>
+                    <div>McDeez <span style={{padding: '0 15px'}}>has a</span> special offer!</div>
+                    <div>All of these burgers <span style={{padding: '0 15px'}}>that you see...</span></div>
                     <div>They were custom made <br/> By our own users! </div>
                     <div><span>If you try to</span><span> Be creative</span></div>
                     <div>You shall recieve<br/>What you deserve!</div>
