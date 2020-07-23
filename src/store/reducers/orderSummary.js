@@ -32,6 +32,12 @@ const orderSummaryReducer = (state = initialState, action) => {
                 success: true,
                 fail: false
             };
+        case actionTypes.CLEAR_ORDER_SUMMARY:
+            return {
+                orders: [],
+                success: false,
+                fail: false
+            };
         default: 
             return state;
     }

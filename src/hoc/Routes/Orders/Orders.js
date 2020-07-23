@@ -1,78 +1,75 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Orders.css';
 import { connect } from 'react-redux';
 import { fetchingOrders } from '../../../store/actions/order';
 import { addOrderSummary } from '../../../store/actions/orderSummary';
+import { clearOrderSummary } from '../../../store/actions/orderSummary';
 
 import OrderCard from '../../../components/FoodBuilder/OrderSummary/OrderCards/OrderCard';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 
 
-class Orders extends Component {
+const orders = (props) => {
 
-    state= {
-        loading: false
-    }
+    const [loading, setLoading] = useState(false);
 
-    componentDidMount() {
-        if(this.props.isAuth){
-            this.props.onFetchOrders(this.props.idToken, this.props.userId);
+    useEffect(() => {
+        if(props.isAuth){
+            props.onFetchOrders(props.idToken, props.userId);
         }else{
-            this.props.history.replace('/login');
+            props.history.replace('/login');
         }
-    }
+    }, []);
 
-    orderAgainHandler = (index) => {
-        this.setState({loading: true});
+    const orderAgainHandler = (index) => {
+        setLoading(true);
+        props.clearSummary();
         setTimeout(e => {
-            this.setState({loading: false});
-            this.props.orders[index].orders.map(e => {
-                return this.props.addOrder(e);
+            setLoading(false);
+            props.orders[index].orders.map(e => {
+                return props.addOrder(e);
             });
-            this.props.history.push('/checkout');
+            props.history.push('/checkout');
         }, 1000);
     }
-    
-    render() {
 
-        let orders = null;
-        if(this.props.orders.length > 0){
-            orders = this.props.orders.map((firstEl, firstIndex) => {
-                return (
-                    <div className='OneTimeOrder' key={firstIndex}>
-                        <div className='OrdersHeadingSection'>
-                            <h2 className='OrdersHeadingSectionEmail'>{firstEl.orderData.email}</h2>
-                            <h2 className='OrdersHeadingSectionSuccessful' style={{fontSize: '40px', color: 'rgb(26, 156, 70)'}}>Successful !</h2>
-                            <h2 className='OrdersHeadingSectionOrderDate'>{firstEl.orderData.date}</h2>
-                        </div>
-                        {firstEl.orders.map((secondEl, SecondIndex) => {
-                            return (
-                                <div className='OrdersOrderCardContainer' key={firstIndex + SecondIndex}>
-                                    <OrderCard order={secondEl} builder={secondEl.name}/>
-                                </div>
-                            )
-                        })}
-                        <div className='OrdersBottomSection'>
-                            <h2>Price: {firstEl.price}$</h2>
-                            <button className='OrdersSendAgain' onClick={() => this.orderAgainHandler(firstIndex)}>{this.state.loading ? <Spinner style={{fontSize: '4px', color: '#FFCD39', margin: '4px auto', borderColor: 'white', borderLeftColor: '#ffc400', borderWidth: '7px'}}/> : 'Order Again!'}</button>
-                        </div>
+    let orders = null;
+    if(props.orders.length > 0){
+        orders = props.orders.map((firstEl, firstIndex) => {
+            return (
+                <div className='OneTimeOrder' key={firstIndex}>
+                    <div className='OrdersHeadingSection'>
+                        <h2 className='OrdersHeadingSectionEmail'>{firstEl.orderData.email}</h2>
+                        <h2 className='OrdersHeadingSectionSuccessful' style={{fontSize: '40px', color: 'rgb(26, 156, 70)'}}>Successful !</h2>
+                        <h2 className='OrdersHeadingSectionOrderDate'>{firstEl.orderData.date}</h2>
                     </div>
-                )
-            })
-        }else {
-            orders = <h1 className='OrdersMainHeader' style={{marginTop: '200px'}}>Sorry, you don't have past orders...</h1>
-        }
-
-        let loader = this.props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;
-
-        return (
-            <div className='OrdersLayout'>
-                <h1 className='OrdersMainHeader'>These are your past orders</h1>
-                {orders}
-                {loader}
-            </div>
-        )
+                    {firstEl.orders.map((secondEl, SecondIndex) => {
+                        return (
+                            <div className='OrdersOrderCardContainer' key={firstIndex + SecondIndex}>
+                                <OrderCard order={secondEl} builder={secondEl.name}/>
+                            </div>
+                        )
+                    })}
+                    <div className='OrdersBottomSection'>
+                        <h2>Price: {firstEl.price}$</h2>
+                        <button className='OrdersSendAgain' onClick={() => orderAgainHandler(firstIndex)}>{loading ? <Spinner style={{fontSize: '4px', color: '#FFCD39', margin: '4px auto', borderColor: 'white', borderLeftColor: '#ffc400', borderWidth: '7px'}}/> : 'Order Again!'}</button>
+                    </div>
+                </div>
+            )
+        })
+    }else {
+        orders = <h1 className='OrdersMainHeader' style={{marginTop: '200px'}}>Sorry, you don't have past orders...</h1>
     }
+
+    let loader = props.loading ? <Spinner style={{backgroundColor: 'white'}}/> : null;
+
+    return (
+        <div className='OrdersLayout'>
+            <h1 className='OrdersMainHeader'>These are your past orders</h1>
+            {orders}
+            {loader}
+        </div>
+    );
 }
 
 const mapStateToProps = state => {
@@ -88,8 +85,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onFetchOrders: (idToken, userId) => dispatch(fetchingOrders(idToken, userId)),
-        addOrder: (order) => dispatch(addOrderSummary(order))
+        addOrder: (order) => dispatch(addOrderSummary(order)),
+        clearSummary: () => dispatch(clearOrderSummary())
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Orders);
+export default connect(mapStateToProps, mapDispatchToProps)(orders);

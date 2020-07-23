@@ -17,37 +17,10 @@ const plate = (props) => {
 
     let plate = null;
 
-    // 2 OTHER WAYS, BUT EASIER AND CLEANER IN PARENT COMPONENT, THE ADD AND REMOVE HANDLER BY NOT DEPENDING ON THE STATE UNFORTUNATELY, IN ORDER TO MAKE ANIMATIONS ON ADDING POSSIBLE AND BE AWARE OF THE ORDER THAT SOMEONE IS ADDING
-    // let ingredients = [];
-    // for(let firstKey in props.ingredients){
-    //     for(let [key, value] of Object.entries(props.ingredients[firstKey])){
-    //         if(value !== 0 && value !== false){
-    //             [...Array(value)].map(e => {
-    //                 return ingredients.push(key);
-    //             })
-    //         }else if(value === true){
-    //             ingredients.push(key);
-    //         }
-    //     }
-    // }
-
-    // let ingredients = Object.keys(props.ingredients).map( firstEl => {
-    //     return Object.keys(props.ingredients[firstEl]).map( (secondEl, index) => {
-    //         if(typeof props.ingredients[firstEl][secondEl] === 'number'){
-    //             return [...Array(props.ingredients[firstEl][secondEl])].map( (bla, index) => {
-    //                 return <BurgerBuilder ingredients={secondEl} key={index}/>
-    //             })
-    //         }else if(props.ingredients[firstEl][secondEl] === true){
-    //             return <BurgerBuilder ingredients={secondEl} key={index}/>
-    //         }
-    //     })
-    // });
-
     const checkingMenuTypeClickedHandler = (e) => {
         for(let firstKey in props.builderState){
             for(let secondKey in props.builderState[firstKey]){
                 if(secondKey === e){
-                    console.log(firstKey + ' from the function');
                     return firstKey
                 }
             }
