@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import { connect } from 'react-redux';
 import { logout } from '../../../store/actions/auth';
 
-class Logout extends Component {
+const logoutUser = (props) => {
 
-    componentDidMount(){
+    useEffect(() => {
         setTimeout(e => {
-            this.props.logout();
-            this.props.history.replace('/')
+            props.logout();
+            props.history.replace('/')
         }, 1000);
-    }
+    }, []);
 
-    render(){
-        return <Spinner style={{marginTop: '340px', fontSize: '12px'}}/>
-    }
+    return <Spinner style={{marginTop: '340px', fontSize: '12px'}}/>
 }
 
 const mapDispatchToProps = dispatch => {
@@ -24,4 +22,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(Logout);
+export default connect(null, mapDispatchToProps)(logoutUser);

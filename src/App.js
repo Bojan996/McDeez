@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import 'intersection-observer';
@@ -19,89 +19,85 @@ import Careers from './hoc/Routes/Careers/Careers';
 import { connect } from 'react-redux';
 import { authCheckState } from './store/actions/auth';
 
-class App extends Component {
+const app = (props) => {
 
-  componentDidMount(){
-    this.props.shouldAuth();
-    
-  }
+  useEffect(() => {
+    props.shouldAuth(); 
+  }, []);
 
-  render() {
+  let routes = (
+    <Switch>
+        <Route path='/foodmaker' component={FoodMaker}/>
+        <Route path='/orders' component={Orders}/>
+        <Route path='/locations' exact component={Location}/>
+        <Route path='/locations/:id' component={SingleLocation}/>
+        <Route path='/history' component={History}/>
+        <Route path='/careers' component={Careers}/>
+        <Route path='/login' component={Login}/>
+        <Route path='/register' component={Register}/>
+        <Route path='/' exact component={Home}/>
+        <Redirect to='/'/>
+      </Switch>
+  )
 
-    let routes = (
+  if(props.isAuth){
+    routes = (
       <Switch>
           <Route path='/foodmaker' component={FoodMaker}/>
-          <Route path='/orders' component={Orders}/>
+          <Route path='/checkout' component={Checkout}/>
           <Route path='/locations' exact component={Location}/>
           <Route path='/locations/:id' component={SingleLocation}/>
           <Route path='/history' component={History}/>
           <Route path='/careers' component={Careers}/>
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
+          <Route path='/orders' component={Orders}/>
+          <Route path='/logout' component={Logout}/>
           <Route path='/' exact component={Home}/>
           <Redirect to='/'/>
         </Switch>
     )
-
-    if(this.props.isAuth){
-      routes = (
-        <Switch>
-            <Route path='/foodmaker' component={FoodMaker}/>
-            <Route path='/checkout' component={Checkout}/>
-            <Route path='/locations' exact component={Location}/>
-            <Route path='/locations/:id' component={SingleLocation}/>
-            <Route path='/history' component={History}/>
-            <Route path='/careers' component={Careers}/>
-            <Route path='/login' component={Login}/>
-            <Route path='/register' component={Register}/>
-            <Route path='/orders' component={Orders}/>
-            <Route path='/logout' component={Logout}/>
-            <Route path='/' exact component={Home}/>
-            <Redirect to='/'/>
-          </Switch>
-      )
-    }
+  }
 
 
-      window.onscroll = () => {
-        if(window.screen.width > 915){
-          if(this.props.orders.length === 0 || document.querySelector('.FDFloatingButton') === null){
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-              document.querySelector('.NavContainer').style.padding = '0';
-              document.querySelector('.LogoDiv').style.height = '41px';
-            } else {
-              document.querySelector('.NavContainer').style.padding = '15px 0';
-              document.querySelector('.LogoDiv').style.height = '53px';
-            }
-          }else{
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-              document.querySelector('.NavContainer').style.padding = '0';
-              document.querySelector('.LogoDiv').style.height = '41px';
-              document.querySelector('.FDFloatingButton').style.top = '57px';
-              document.querySelector('.divInFloatingButton').style.top = '53px';
-              if(document.querySelector('#OSContainerScroll') !== null){
-                document.querySelector('#OSContainerScroll').style.top = '131px';
-              }
-            } else {
-              document.querySelector('.NavContainer').style.padding = '15px 0';
-              document.querySelector('.LogoDiv').style.height = '53px';
-              document.querySelector('.FDFloatingButton').style.top = '90px';
-              document.querySelector('.divInFloatingButton').style.top = '84px';
-              if(document.querySelector('#OSContainerScroll') !== null){
-                document.querySelector('#OSContainerScroll').style.top = '166px';
-              }
-            }
+  window.onscroll = () => {
+    if(window.screen.width > 915){
+      if(props.orders.length === 0 || document.querySelector('.FDFloatingButton') === null){
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          document.querySelector('.NavContainer').style.padding = '0';
+          document.querySelector('.LogoDiv').style.height = '41px';
+        } else {
+          document.querySelector('.NavContainer').style.padding = '15px 0';
+          document.querySelector('.LogoDiv').style.height = '53px';
+        }
+      }else{
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          document.querySelector('.NavContainer').style.padding = '0';
+          document.querySelector('.LogoDiv').style.height = '41px';
+          document.querySelector('.FDFloatingButton').style.top = '57px';
+          document.querySelector('.divInFloatingButton').style.top = '53px';
+          if(document.querySelector('#OSContainerScroll') !== null){
+            document.querySelector('#OSContainerScroll').style.top = '131px';
+          }
+        } else {
+          document.querySelector('.NavContainer').style.padding = '15px 0';
+          document.querySelector('.LogoDiv').style.height = '53px';
+          document.querySelector('.FDFloatingButton').style.top = '90px';
+          document.querySelector('.divInFloatingButton').style.top = '84px';
+          if(document.querySelector('#OSContainerScroll') !== null){
+            document.querySelector('#OSContainerScroll').style.top = '166px';
           }
         }
       }
-
-    return (
-      <div className="App">
-          <NavBar/>
-        {routes}
-      </div>
-    );
+    }
   }
+
+  return (
+    <div className="App">
+        <NavBar/>
+      {routes}
+    </div>
+  );
 }
 
 const mapStateToProps = state => {
@@ -117,4 +113,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(app);

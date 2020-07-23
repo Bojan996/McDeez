@@ -1,7 +1,5 @@
 export const foodBuilderState = () => {
     return {
-        ingredients: [],
-        totalPrice: 1,
         Burger: {
             Regular: {
                 salad: 0,
@@ -95,68 +93,60 @@ export const foodBuilderState = () => {
     }
 }
 
-export const foodMakerState = () => {
+export const foodMakerStateDrinks = () => {
     return {
-        showDrawer: false,
-        drawerClicked: '',
-        drawerIngredients: '',
-        drawerPrice: '',
-        showBuilder: false,
-        whichBuidler: null,
-        showOrderSummary: false,
-        totalPriceDrinksAdditionals: 0,
-        drinksAdditionals: {},
-        drinks: {
-            Cola: {
-                price: '1.25',
-                amount: 0
-            },
-            Pepsi: {
-                price: '1.25',
-                amount: 0
-            },
-            Sprite: {
-                price: '1.00',
-                amount: 0
-            },
-            Fanta: {
-                price: '1.00',
-                amount: 0
-            },
-            Water: {
-                price: '1.50',
-                amount: 0
-            },
-            Juice: {
-                price: '1.75',
-                amount: 0
-            }
+        Cola: {
+            price: '1.25',
+            amount: 0
         },
-        additionals: {
-            friesFrench: {
-                price: '1.25',
-                amount: 0
-            },
-            wafelsFries: {
-                price: '1.75',
-                amount: 0
-            },
-            cheeseFried: {
-                price: '1.75',
-                amount: 0
-            },
-            chocolateIceCream: {
-                price: '2.00',
-                amount: 0
-            },
-            strawberryIceCream: {
-                price: '2.00',
-                amount: 0
-            },
-            blueberryIceCream: {
-                price: '2.25',
-                amount: 0
-            }
+        Pepsi: {
+            price: '1.25',
+            amount: 0
+        },
+        Sprite: {
+            price: '1.00',
+            amount: 0
+        },
+        Fanta: {
+            price: '1.00',
+            amount: 0
+        },
+        Water: {
+            price: '1.50',
+            amount: 0
+        },
+        Juice: {
+            price: '1.75',
+            amount: 0
+        }
+    }
+}
+
+export const foodMakerStateAdditionals = () => {
+    return {
+        friesFrench: {
+            price: '1.25',
+            amount: 0
+        },
+        wafelsFries: {
+            price: '1.75',
+            amount: 0
+        },
+        cheeseFried: {
+            price: '1.75',
+            amount: 0
+        },
+        chocolateIceCream: {
+            price: '2.00',
+            amount: 0
+        },
+        strawberryIceCream: {
+            price: '2.00',
+            amount: 0
+        },
+        blueberryIceCream: {
+            price: '2.25',
+            amount: 0
         }
     }
 }

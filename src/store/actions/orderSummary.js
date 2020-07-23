@@ -14,6 +14,12 @@ export const deleteOrderSummary = (order) => {
     }
 }
 
+export const clearOrderSummary = () => {
+    return {
+        type: actionTypes.CLEAR_ORDER_SUMMARY
+    }
+}
+
 export const somethingFailed = () => {
     return {
         type: actionTypes.SOMETHING_FAILED
